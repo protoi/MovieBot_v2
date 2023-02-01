@@ -6,7 +6,7 @@ class send_imdb_query {
     this.actor_mapping = {};
     this.genre_mapping = {};
 
-    this.genre_ID_pre_mapping();
+    // this.genre_ID_pre_mapping();
   }
 
   async genre_ID_pre_mapping() {
@@ -23,7 +23,7 @@ class send_imdb_query {
         this.genre_mapping[element["name"].toLowerCase()] = element["id"];
         this.genre_mapping[element["id"]] = element["name"].toLowerCase();
       });
-      //   console.log(this.genre_mapping);
+      // console.log(this.genre_mapping);
       return true;
     } catch (err) {
       console.log(`Failed to map genres`);
@@ -32,7 +32,7 @@ class send_imdb_query {
   }
 
   // map a list of actor names with their corresponding IDs
-  // input = list of strings, output = hashmap key = string, value =
+  // input = list of strings, output = hashmap key = string, value = id
   async map_actors_with_ID(actor_names) {
     const actor_mappings = new Map();
 
@@ -47,9 +47,12 @@ class send_imdb_query {
 
         const actor_response = await axios(config);
 
-        if (actor_response["total_results"] >= 1)
+        if (actor_response.data.results.length != 0) {
           actor_mappings.set(actor_name, actor_response.data.results[0]["id"]);
-        else actor_mappings.set(actor_name, null);
+          console.log(
+            `mapping ${actor_name} with ${actor_response.data.results[0]["id"]}`
+          );
+        } else actor_mappings.set(actor_name, null);
       } catch (err) {
         console.error(`failed to map ${actor_name} ----> ${err.message}`);
       }
@@ -66,6 +69,16 @@ class send_imdb_query {
       else genre_mapping.set(genre, null);
     });
     return genre_mapping;
+  }
+
+  get_genre_from_IDs(genre_IDs) {
+    return genre_IDs
+      .map((id) => {
+        return this.genre_mapping[id] || null;
+      })
+      .filter((element) => {
+        return element != null;
+      });
   }
 
   // find information about the movie
@@ -116,66 +129,59 @@ class send_imdb_query {
   }
 
   async find_queries(search_terms) {
-    let movie_names = [];
-    let err_flag = false;
+    function join_and_stringify_IDs(entity_map) {
+      console.log("stringifying now");
+      const temp = Array.from(entity_map.values())
+        .filter((element) => {
+          return element != null;
+        })
+        .join(",");
+      console.log(`temp ---> ${temp}`);
+      return temp;
+    }
+
     let actor_id_string = "";
     let genre_id_string = "";
-
-    let actor_IDs = {};
-    let genre_IDs = {};
-
-    // map actor names with their IDs
+    let actor_IDs = null;
+    let genre_IDs = null;
 
     let actor_names = search_terms["actor"];
+    console.log(`actor -------> ${actor_names}`);
     let genre_names = search_terms["genre"];
+    console.log(`genre -------> ${genre_names}`);
 
-    let normalized_name = "";
-
-    //mapped actors with their corresponding IDs
     try {
+      //generating the genre mappings and forming a comma separated string
+      genre_IDs = await this.map_genres_with_ID(genre_names);
+      if (genre_IDs != null)
+        genre_id_string = join_and_stringify_IDs(genre_IDs); // {"a":1, "b":2, "c":null, "d":4} ---> "1,2,4"
+
+      //mapped actors with their corresponding IDs
+      //turning the ID map into a comma separated string strings
       actor_IDs = await this.map_actors_with_ID(actor_names);
-      //mapped genres with their corresponding IDs
-      genre_IDs = this.map_genres_with_ID(genre_names);
+      console.log(actor_IDs);
 
-      /*
-    genre_IDs = {"horror": 10, "comedy": 20, "sjkasa": null}
-    new_str = "10,20"
-    */
-
-      // turning the IDs into strings
-
-      actor_IDs.forEach((value, key) => {
-        if (value != null) actor_id_string += `,${value}`;
-      });
-      actor_id_string = actor_id_string.substring(1);
-
-      genre_IDs.forEach((value, key) => {
-        if (value != null) genre_id_string += `,${value}`;
-      });
-      genre_id_string = genre_id_string.substring(1);
-
-      console.log(`actor_IDs: ${actor_IDs}`);
-      console.log(`genre_id_string: ${genre_id_string}`);
-      console.log(`actor_id_string: ${actor_id_string}`);
-      console.log(`genre mapping ${this.genre_mapping}`, { depth: null });
+      if (actor_IDs != null) {
+        actor_id_string = join_and_stringify_IDs(actor_IDs);
+      }
+      console.log(`actor_IDs ----->  ${actor_IDs}`);
+      console.log(`genre_id_string ----->  ${genre_id_string}`);
+      console.log(`actor_id_string ----->  ${actor_id_string}`);
     } catch (err) {
       console.error(err.message);
     }
-    const extracted_information = {
+    return {
       actor_ID_mapping: actor_IDs,
       genre_ID_mapping: genre_IDs,
       actor_string: actor_id_string,
       genre_string: genre_id_string,
     };
-    return extracted_information;
   }
 
-  async GET_movie_names_using_entities(entities) {
+  async GET_movie_names_using_genre_and_actor(entities) {
     // send GET request to discover
     let imdb_data = null;
     try {
-      console.log("test");
-
       let config = {
         method: "get",
         url: `https://api.themoviedb.org/3/discover/movie?with_genres=${entities.genre_id_string}&with_people=${entities.actor_id_string}&sort_by=vote_average.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
@@ -187,7 +193,6 @@ class send_imdb_query {
       return imdb_data;
     } catch (err) {
       console.error(err.message);
-      movie_names = "...";
     }
     // console.table(movie_names);
     return imdb_data;

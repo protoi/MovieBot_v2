@@ -47,9 +47,9 @@ class natural_language_processing_model {
   }
 }
 
-const obj = new natural_language_processing_model();
-obj.load_model();
+// const obj = new natural_language_processing_model();
+// obj.load_model();
 
-obj.testing();
+// obj.testing();
 
 module.exports = { natural_language_processing_model };

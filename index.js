@@ -49,20 +49,22 @@ function extract_movie_name(msg) {
 
     let movie_name;
     if (ans.intents != "message.get_movie") {
-      const movie_name = extract_movie_name(q);
+      // const movie_name = extract_movie_name(q);
+
+      const movie_name = ans.entities.moviename[0];
+
       if (movie_name != null) {
         const movie_info = await movieDB.find_movie_info(movie_name);
+
         if (ans.intents == "message.get_genre") {
           console.log(movie_info.genre_ids);
         } else if (ans.intents == "message.get_actor") {
           console.log(`movie ID -----> ${movie_info.id}`);
           // lookup the movie using movie ID
-          const cast = await movieDB.get_actors_from_movie_id(movie_info.id);
+          const cast = await movieDB.get_cast_from_movie_id(movie_info.id);
           if (cast != null)
             // console.log(cast.male[0]);
-            console.log(
-              `cast member ----->${cast.male[0]}, ${cast.female[0]}, ${cast.others}`
-            );
+            console.log(`cast member ----->${cast.male[0]}, ${cast.female[0]}`);
         } else if (ans.intents == "message.get_movie_year") {
           console.log(`movie release year -----> ${movie_info.release_date}`);
         }

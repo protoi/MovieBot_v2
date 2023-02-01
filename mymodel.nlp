@@ -67,83 +67,83 @@
             "intent": "message.get_movie_year",
             "domain": "default"
           },
-          "@movienam,actor,in,the,was,who": {
+          "actor,in,the,was,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,in,star,who": {
+          "in,star,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,actor,in,is,the,who": {
+          "actor,in,is,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,in,star,was,who": {
+          "in,star,was,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,actor,name": {
+          "actor,name": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,in,the,was,who": {
+          "guy,in,the,was,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,in,is,the,who": {
+          "guy,in,is,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,name": {
+          "guy,name": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,in,the,was,who": {
+          "girl,in,the,was,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,in,is,the,who": {
+          "girl,in,is,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,name": {
+          "girl,name": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,actor,in,name,of,the": {
+          "actor,in,name,of,the": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,actor,in,name,of,star,who": {
+          "actor,in,name,of,star,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,actor,in,is,name,of,the,who": {
+          "actor,in,is,name,of,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,in,name,of,the": {
+          "guy,in,name,of,the": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,in,name,of,star": {
+          "guy,in,name,of,star": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,guy,in,is,name,of,the,who": {
+          "guy,in,is,name,of,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,in,name,of,the": {
+          "girl,in,name,of,the": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,in,name,of,star": {
+          "girl,in,name,of,star": {
             "intent": "message.get_actor",
             "domain": "default"
           },
-          "@movienam,girl,in,is,name,of,the,who": {
+          "girl,in,is,name,of,the,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
@@ -409,112 +409,112 @@
           },
           {
             "domain": "default",
-            "utterance": "Who was the actor in @moviename",
+            "utterance": "Who was the actor in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who starred in @moviename",
+            "utterance": "Who starred in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who is the actor in @moviename",
+            "utterance": "Who is the actor in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who was starring in @moviename",
+            "utterance": "Who was starring in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "@moviename actor name",
+            "utterance": " actor name",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who was the guy in @moviename",
+            "utterance": "Who was the guy in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who starred in @moviename",
+            "utterance": "Who starred in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who is the guy in @moviename",
+            "utterance": "Who is the guy in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "@moviename guy name",
+            "utterance": " guy name",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who was the girl in @moviename",
+            "utterance": "Who was the girl in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who starred in @moviename",
+            "utterance": "Who starred in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "Who is the girl in @moviename",
+            "utterance": "Who is the girl in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "@moviename girl name",
+            "utterance": " girl name",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of the actor in @moviename",
+            "utterance": "name of the actor in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of actor who starred in @moviename",
+            "utterance": "name of actor who starred in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of who is the actor in @moviename",
+            "utterance": "name of who is the actor in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of the guy in @moviename",
+            "utterance": "name of the guy in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of guy starring in @moviename",
+            "utterance": "name of guy starring in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of who is the guy in @moviename",
+            "utterance": "name of who is the guy in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of the girl in @moviename",
+            "utterance": "name of the girl in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of girl starring in @moviename",
+            "utterance": "name of girl starring in ",
             "intent": "message.get_actor"
           },
           {
             "domain": "default",
-            "utterance": "name of who is the girl in @moviename",
+            "utterance": "name of who is the girl in ",
             "intent": "message.get_actor"
           },
           {
@@ -853,7 +853,6 @@
               "out": 1,
               "who": 1,
               "actor": 1,
-              "@movienam": 1,
               "star": 1,
               "is": 1,
               "name": 1,
@@ -911,7 +910,6 @@
                 "the": 1,
                 "actor": 1,
                 "in": 1,
-                "@movienam": 1,
                 "star": 1,
                 "is": 1,
                 "name": 1,
@@ -1031,9 +1029,6 @@
               "actor": [
                 "message.get_actor"
               ],
-              "@movienam": [
-                "message.get_actor"
-              ],
               "star": [
                 "message.get_actor",
                 "message.get_movie"
@@ -1151,7 +1146,6 @@
                 "out",
                 "who",
                 "actor",
-                "@movienam",
                 "star",
                 "is",
                 "name",
@@ -1188,192 +1182,188 @@
               ],
               "perceptrons": [
                 [
-                  -0.07724536955356598,
-                  0.07424947619438171,
-                  6.35366678237915,
-                  0.0018864339217543602,
-                  6.35366678237915,
-                  -1.022707223892212,
-                  0.7869733572006226,
-                  0.24435749650001526,
-                  -0.32039350271224976,
-                  -0.053329046815633774,
-                  3.18573260307312,
-                  3.18573260307312,
-                  3.18573260307312,
-                  3.18573260307312,
-                  -1.3347371816635132,
-                  -0.7527817487716675,
-                  -1.9610105752944946,
-                  -0.5829931497573853,
-                  -0.7235231995582581,
-                  -0.5386620759963989,
-                  -0.3692646920681,
-                  -0.16723012924194336,
-                  -1.8943746089935303,
-                  -0.8572453856468201,
-                  -0.11592798680067062,
-                  -0.005205393303185701,
-                  -0.14529941976070404,
-                  -1.5143808126449585,
-                  -0.39141666889190674,
-                  -1.5521210432052612,
-                  -0.13259771466255188,
-                  -0.13259771466255188,
-                  -0.35118865966796875,
-                  -0.07949533313512802,
-                  -0.05310662090778351,
-                  -0.32685184478759766,
+                  -0.020051684230566025,
+                  0.018450140953063965,
+                  6.441352367401123,
+                  0.002209646860137582,
+                  6.441352367401123,
+                  -1.2960801124572754,
+                  1.042871117591858,
+                  0.25653165578842163,
+                  -0.2763303816318512,
+                  -0.013913878239691257,
+                  3.2232234477996826,
+                  3.2232234477996826,
+                  3.2232234477996826,
+                  3.2232234477996826,
+                  -1.6140761375427246,
+                  -0.968090832233429,
+                  -0.708426296710968,
+                  -0.6946319341659546,
+                  -1.1826413869857788,
+                  -0.7134138941764832,
+                  -0.4930824637413025,
+                  -1.7148922681808472,
+                  -0.8258863687515259,
+                  -0.11554934084415436,
+                  -0.0023859208449721336,
+                  -0.1270534247159958,
+                  -1.3853108882904053,
+                  -0.3849688768386841,
+                  -1.3940625190734863,
+                  -0.16747377812862396,
+                  -0.16747377812862396,
+                  -0.3324061632156372,
+                  -0.09756267070770264,
+                  -0.05500451475381851,
+                  -0.30763959884643555,
                   0,
-                  -0.16328756511211395,
-                  -0.06881053000688553,
-                  -0.06881053000688553,
-                  -0.19995589554309845,
-                  -0.15279608964920044,
-                  -0.15279608964920044,
-                  -0.13095831871032715,
-                  1.5718688574343394
+                  -0.15335960686206818,
+                  -0.054837826639413834,
+                  -0.054837826639413834,
+                  -0.16131122410297394,
+                  -0.09781703352928162,
+                  -0.09781703352928162,
+                  -0.12765200436115265,
+                  1.4003937824558037
                 ],
                 [
-                  -0.18455223739147186,
-                  0.9891752600669861,
-                  -1.291162133216858,
-                  -3.1237611770629883,
-                  -1.291162133216858,
-                  2.1403841972351074,
-                  -1.4446980953216553,
-                  -0.06761738657951355,
-                  -0.8586675524711609,
-                  -1.572694182395935,
-                  -0.49412694573402405,
-                  -0.49412694573402405,
-                  -0.49412694573402405,
-                  -0.49412694573402405,
-                  0.0728447213768959,
-                  0.0845557302236557,
-                  9.106283187866211,
-                  0.9929159879684448,
-                  -0.07722634077072144,
-                  3.1179964542388916,
-                  0.09667111933231354,
-                  0.0967945083975792,
-                  -1.8657726049423218,
-                  -0.4641185998916626,
-                  -0.21610622107982635,
-                  -0.46963468194007874,
-                  -0.07690244168043137,
-                  -0.8662669658660889,
-                  -0.10989629477262497,
-                  -1.381407618522644,
-                  -0.03311838209629059,
-                  -0.03311838209629059,
-                  -0.19992679357528687,
-                  -0.03487024083733559,
+                  -0.5781761407852173,
+                  2.6843745708465576,
+                  -3.586409091949463,
+                  -8.444927215576172,
+                  -3.586409091949463,
+                  5.774876117706299,
+                  -3.873617649078369,
+                  -0.213443785905838,
+                  -1.360851526260376,
+                  -4.234633445739746,
+                  -1.3766145706176758,
+                  -1.3766145706176758,
+                  -1.3766145706176758,
+                  -1.3766145706176758,
+                  0.25690123438835144,
+                  0.27632296085357666,
+                  2.695225954055786,
+                  -0.2606416940689087,
+                  8.430329322814941,
+                  0.3230045735836029,
+                  0.3214864730834961,
+                  -5.19120454788208,
+                  -0.6398847699165344,
+                  -0.29526424407958984,
+                  -1.5623348951339722,
+                  -0.10542674362659454,
+                  -1.2834755182266235,
+                  -0.1553942710161209,
+                  -3.9603755474090576,
+                  -0.04150773584842682,
+                  -0.04150773584842682,
+                  -0.5226632952690125,
+                  -0.04961699992418289,
                   0,
                   0,
-                  -0.009946132078766823,
+                  -0.030168861150741577,
                   0,
                   0,
                   0,
                   0,
-                  -0.23357583582401276,
-                  -0.23357583582401276,
-                  0,
-                  1.9592314733945189
+                  -0.42111527919769287,
+                  -0.42111527919769287,
+                  -0.003519746707752347,
+                  5.5110584104461635
                 ],
                 [
-                  3.3853888511657715,
-                  1.2594044208526611,
-                  -3.855255365371704,
-                  -1.501233696937561,
-                  -3.855255365371704,
-                  -2.774198055267334,
+                  3.380315065383911,
+                  1.103583812713623,
+                  -3.716801404953003,
+                  -1.306452751159668,
+                  -3.716801404953003,
+                  -3.595917224884033,
                   -0.04222232848405838,
-                  4.875429153442383,
-                  0.386243999004364,
-                  -0.015373855829238892,
-                  -0.6910034418106079,
-                  -0.6910034418106079,
-                  -0.6910034418106079,
-                  -0.6910034418106079,
-                  -2.689753532409668,
-                  -0.9629822373390198,
-                  -2.689753532409668,
-                  -1.3937461376190186,
-                  5.054193496704102,
-                  -0.014337888918817043,
-                  -0.8513239026069641,
-                  -0.8494997620582581,
-                  6.434248447418213,
-                  3.278463125228882,
-                  3.388531446456909,
-                  5.1725993156433105,
-                  11.037236213684082,
-                  -4.494663238525391,
-                  -6.429420471191406,
-                  -4.838791370391846,
-                  -2.2746026515960693,
-                  -2.2746026515960693,
-                  -3.113415479660034,
+                  5.006773471832275,
+                  0.32411739230155945,
+                  -0.012780587188899517,
+                  -0.7009265422821045,
+                  -0.7009265422821045,
+                  -0.7009265422821045,
+                  -0.7009265422821045,
+                  -3.511472702026367,
+                  -1.4578075408935547,
+                  -1.6145961284637451,
+                  5.155482292175293,
+                  -0.9571287035942078,
+                  -1.4568954706192017,
+                  -1.4555991888046265,
+                  6.735154151916504,
+                  3.1731879711151123,
+                  3.382883310317993,
+                  5.254949569702148,
+                  11.268428802490234,
+                  -4.442754745483398,
+                  -6.481574058532715,
+                  -4.590219020843506,
+                  -2.3228392601013184,
+                  -2.3228392601013184,
+                  -3.2776577472686768,
                   0,
-                  -0.47215956449508667,
-                  -0.17849379777908325,
+                  -0.22691503167152405,
+                  -0.09006983786821365,
                   -0.09941807389259338,
                   0,
-                  -0.3093532919883728,
-                  -0.3093532919883728,
-                  -0.6955384016036987,
+                  -0.16776977479457855,
+                  -0.16776977479457855,
+                  -0.4994707405567169,
                   0,
                   0,
-                  -3.113520860671997,
-                  2.698042702518153
+                  -3.2776997089385986,
+                  2.31119998769027
                 ],
                 [
-                  -1.3384642601013184,
-                  -0.4523613452911377,
-                  -4.13621711730957,
-                  -1.2380400896072388,
-                  -4.13621711730957,
-                  -0.7710778117179871,
-                  0.3318469822406769,
-                  -1.5237712860107422,
-                  -0.9521098136901855,
-                  8.282833099365234,
-                  -2.4874374866485596,
-                  -2.4874374866485596,
-                  -2.4874374866485596,
-                  -2.4874374866485596,
-                  -0.7936263084411621,
-                  -0.17384061217308044,
-                  -1.2598483562469482,
-                  -0.09686100482940674,
-                  -7.0458807945251465,
-                  -0.4975549280643463,
-                  -0.2029799520969391,
-                  -0.1342252790927887,
-                  0.37784966826438904,
-                  -3.523017644882202,
-                  1.0966073274612427,
-                  -1.4007467031478882,
-                  -7.012642860412598,
-                  4.9516921043396,
-                  3.2119245529174805,
-                  4.87749719619751,
-                  0.17399539053440094,
-                  0.17399539053440094,
-                  -0.11480555683374405,
-                  -1.70661461353302,
-                  -0.7797032594680786,
-                  0.8796839118003845,
-                  -0.1449911892414093,
-                  1.73662531375885,
-                  0.11007191985845566,
-                  0.11007191985845566,
-                  3.225137233734131,
-                  0.5290625095367432,
-                  0.5290625095367432,
-                  1.5205779075622559,
-                  1.6839299880961203
+                  -1.3522671461105347,
+                  -0.462609201669693,
+                  -4.1400322914123535,
+                  -1.2417869567871094,
+                  -4.1400322914123535,
+                  -1.0525392293930054,
+                  0.42287901043891907,
+                  -1.4647804498672485,
+                  -0.8989633917808533,
+                  8.505151748657227,
+                  -2.493108034133911,
+                  -2.493108034133911,
+                  -2.493108034133911,
+                  -2.493108034133911,
+                  -1.099117636680603,
+                  -0.3883923590183258,
+                  -0.12998215854167938,
+                  -7.048849582672119,
+                  -1.0940054655075073,
+                  -0.38842812180519104,
+                  -0.3882128596305847,
+                  0.3583481013774872,
+                  -3.5185658931732178,
+                  1.0560986995697021,
+                  -1.2752872705459595,
+                  -7.031904220581055,
+                  4.9296441078186035,
+                  3.1711394786834717,
+                  4.8337225914001465,
+                  0.13515082001686096,
+                  0.13515082001686096,
+                  -0.1370750516653061,
+                  -1.7462462186813354,
+                  -0.8180791735649109,
+                  0.888053834438324,
+                  -0.17868833243846893,
+                  1.7149662971496582,
+                  0.10648172348737717,
+                  0.10648172348737717,
+                  3.208456039428711,
+                  0.6200948357582092,
+                  0.6200948357582092,
+                  1.5066214799880981,
+                  1.4835574291062756
                 ]
               ]
             }
@@ -1417,91 +1407,91 @@
       ],
       [
         "en",
-        "Who was the actor in @moviename"
+        "Who was the actor in "
       ],
       [
         "en",
-        "Who starred in @moviename"
+        "Who starred in "
       ],
       [
         "en",
-        "Who is the actor in @moviename"
+        "Who is the actor in "
       ],
       [
         "en",
-        "Who was starring in @moviename"
+        "Who was starring in "
       ],
       [
         "en",
-        "@moviename actor name"
+        " actor name"
       ],
       [
         "en",
-        "Who was the guy in @moviename"
+        "Who was the guy in "
       ],
       [
         "en",
-        "Who starred in @moviename"
+        "Who starred in "
       ],
       [
         "en",
-        "Who is the guy in @moviename"
+        "Who is the guy in "
       ],
       [
         "en",
-        "@moviename guy name"
+        " guy name"
       ],
       [
         "en",
-        "Who was the girl in @moviename"
+        "Who was the girl in "
       ],
       [
         "en",
-        "Who starred in @moviename"
+        "Who starred in "
       ],
       [
         "en",
-        "Who is the girl in @moviename"
+        "Who is the girl in "
       ],
       [
         "en",
-        "@moviename girl name"
+        " girl name"
       ],
       [
         "en",
-        "name of the actor in @moviename"
+        "name of the actor in "
       ],
       [
         "en",
-        "name of actor who starred in @moviename"
+        "name of actor who starred in "
       ],
       [
         "en",
-        "name of who is the actor in @moviename"
+        "name of who is the actor in "
       ],
       [
         "en",
-        "name of the guy in @moviename"
+        "name of the guy in "
       ],
       [
         "en",
-        "name of guy starring in @moviename"
+        "name of guy starring in "
       ],
       [
         "en",
-        "name of who is the guy in @moviename"
+        "name of who is the guy in "
       ],
       [
         "en",
-        "name of the girl in @moviename"
+        "name of the girl in "
       ],
       [
         "en",
-        "name of girl starring in @moviename"
+        "name of girl starring in "
       ],
       [
         "en",
-        "name of who is the girl in @moviename"
+        "name of who is the girl in "
       ],
       [
         "en",
@@ -4885,7 +4875,7 @@
           "name": "moviename",
           "type": "regex",
           "rules": [
-            "/([\\w\\s]+)/g"
+            "/['\"]+([\\w\\s]*)['\"]+/gm"
           ]
         }
       }
@@ -4904,14 +4894,6 @@
     "actions": {}
   },
   "slotManager": {
-    "message.get_actor": {
-      "moviename": {
-        "intent": "message.get_actor",
-        "entity": "moviename",
-        "mandatory": false,
-        "locales": {}
-      }
-    },
     "message.get_genre": {
       "genre": {
         "intent": "message.get_genre",

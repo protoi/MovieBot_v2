@@ -16,7 +16,7 @@ class natural_language_processing_model {
   async extract_characteristics(message) {
     const result = await this.manager.process("en", message);
 
-    let our_entities = { genre: [], actor: [], daterange: [] };
+    let our_entities = { genre: [], actor: [], daterange: [], moviename: [] };
 
     // console.dir(result);
 
@@ -25,6 +25,8 @@ class natural_language_processing_model {
       if (our_entities[entity_type] != null) {
         if (entity_type === "daterange")
           our_entities[entity_type].push(element["resolution"]["timex"]);
+        else if (entity_type === "moviename")
+          our_entities[entity_type].push(element["sourceText"]);
         else our_entities[entity_type].push(element["option"]);
       }
     });
@@ -37,12 +39,11 @@ class natural_language_processing_model {
   }
 
   async testing() {
-    const result = await this.manager.process(
-      "en",
-      "name of the guy in the dark knight rises"
+    const result = await this.extract_characteristics(
+      `is "the dark knight" and "spirited away" a comedy and action movie?`
     );
 
-    console.log(JSON.stringify(result, null, 2));
+    console.log(JSON.stringify(result.entities, null, 2));
   }
 }
 

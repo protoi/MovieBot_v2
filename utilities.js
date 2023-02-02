@@ -1,3 +1,10 @@
+// const { send_imdb_query } = require("./query_movieDB");
+
+/**
+ * Extracts Mobile number and received message from the user.
+ * @param {Object} payload the whatsapp webhook message
+ * @returns {[object|null]} if successful it will return an object containing the number and message of the sender otherwise it will return null
+ */
 function extract_number_and_message(payload) {
   console.log(payload);
   try {
@@ -11,15 +18,20 @@ function extract_number_and_message(payload) {
     return null;
   }
 }
-
-
-
-
+/**
+ * generates a message to be sent to whatsapp upon the intent message.get_movie_year
+ * @param {Object} data object containing the movie name and it's release year
+ * @returns {String} reponse string to be sent to whatsapp
+ */
 function generate_body_movie_year(data) {
-  // let message = "";
   return `${data.movie_name} was released in ${data.release_year}.`;
 }
 
+/**
+ * generates a message to be sent to whatsapp upon the intent message.get_actor
+ * @param {Object} data object containing the movie name and three lists (male, female and other gender) cast members.
+ * @returns {String} response string to be sent to whatsapp, the lists will be top 5 cast members in their category
+ */
 function generate_body_actor(data) {
   let male_list = `Actors: ${data.actors.male.slice(0, 5).join(", ")}`;
   let female_list = `Actress: ${data.actors.female.slice(0, 5).join(", ")}`;
@@ -28,10 +40,21 @@ function generate_body_actor(data) {
   return `Cast of ${data.movie_name}:\n${male_list}.\n${female_list}.\n${other_list}.`;
 }
 
+/**
+ * generates a meessage to be sent to whatsapp upon the intent message.get_genre
+ * @param {Object} data object containing the movie name and it's list of genres
+ * @returns {String}  response string to be sent to whatsapp, it is a comma separated list of genres for that movie
+ */
 function generate_body_genre(data) {
   return `Genre of ${data.movie_name} is:
 ${data.genre.join(".\n")}.`;
 }
+
+/**
+ * generates a message to be sent to whatsapp upon the intent message.get_movie
+ * @param {Array} data  Array of objects containing detailed information about the movies
+ * @returns {String} response string to be sent to whatsapp, it contains the movie name, it's genres, release date and rating out of 10
+ */
 function generate_body_movie(data) {
   return data
     .map((movie) => {
@@ -42,10 +65,21 @@ function generate_body_movie(data) {
     .join("\n\n");
 }
 
+/**
+ * generates a message to be sent to whatsapp upon the intent message.get_plot
+ * @param {Object} data object containing the title of the movie and it's summary/plot
+ * @returns {String} response string to be sent to whatsapp, it contains the full summary of the requested movie
+ */
 function generate_body_plot(data) {
   return `${data.title}:\n${data.plot}`;
 }
 
+/**
+ * returns an Object which is to be used by axios to send a message to the whatsapp API directed towards the user
+ * @param {integer} number mobile number of the query sender
+ * @param {String} message_body raw message to be sent to the user
+ * @returns {Object}  Object to be sent to the whatsapp API as a HTTP POST request
+ */
 function generate_payload(number, message_body) {
   let reply_body = JSON.stringify({
     messaging_product: "whatsapp",
@@ -68,7 +102,17 @@ function generate_payload(number, message_body) {
   return config;
 }
 
-async function get_message_and_movie_info(IMDB, ans, movie_info, message_body) {
+/**
+ *
+ * @param {Object} IMDB It is an instance of the send_imdb_query class
+ * @param {Object} ans
+ * @param {Object} movie_info
+ * @param {String} message_body
+ * @returns
+ */
+async function get_message_and_movie_info(IMDB, ans) {
+  let movie_info = null,
+    message_body = null;
   switch (ans.intents) {
     case "message.get_movie":
       /*

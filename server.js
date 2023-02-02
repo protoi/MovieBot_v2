@@ -47,33 +47,31 @@ exp.post("/movie", async (req, res) => {
   let movie_info = null;
   let message_body = null;
 
-  let ans = null;
+  let EntityIntent_tuple = null;
 
   try {
-    ans = await model.extract_characteristics(msg);
+    EntityIntent_tuple = await model.extract_characteristics(msg);
 
-    console.log(ans.entities);
-    console.log(ans.intents);
+    console.log(EntityIntent_tuple.entities);
+    console.log(EntityIntent_tuple.intents);
 
-    logger.debug(`Entitites extraced : \n ${ans.entities}`);
+    logger.debug(`Entitites extraced : \n ${EntityIntent_tuple.entities}`);
     logger.debug(
-      `Intent extraced : ${ans.intents} with probability: ${ans.score}`
+      `Intent extraced : ${EntityIntent_tuple.intents} with probability: ${EntityIntent_tuple.score}`
     );
   } catch (err) {
-    console.error(`entity and intent extraction failed: ${err.message_body}`);
+    console.error(`entity and intent extraction failed: ${err.message}`);
   }
 
-  if (ans != null) {
+  if (EntityIntent_tuple != null) {
     try {
       ({ movie_info, message_body } = await get_message_and_movie_info(
         IMDB,
-        ans,
-        movie_info,
-        message_body
+        EntityIntent_tuple
       ));
     } catch (err) {
       console.error(
-        `could not fetch movie information or response message: ${err.message_body}`
+        `could not fetch movie information or response message: ${err.message}`
       );
     }
   }

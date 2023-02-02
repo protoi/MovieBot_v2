@@ -9,6 +9,9 @@ class send_imdb_query {
     this.genre_ID_pre_mapping();
   }
 
+  /**
+   *  Maps genres with their IDs and vice versa for quick look-up
+   */
   async genre_ID_pre_mapping() {
     try {
       // console.log(`mapping ${genre_name}`);
@@ -24,23 +27,24 @@ class send_imdb_query {
         this.genre_mapping[element["id"]] = element["name"].toLowerCase();
       });
       // console.log(this.genre_mapping);
-      return true;
+      // return true;
     } catch (err) {
-      console.log(`Failed to map genres`);
-      return null;
+      console.error(`Failed to map genres: ${err.message}`);
+      // return null;
     }
   }
 
-  // map a list of actor names with their corresponding IDs
-  // input = list of strings, output = hashmap key = string, value = id
+  /**
+   * Function to map an actor with their corresponding IMDB ID. The actor will be mapped with null if their ID is not found
+   * @param {array} actor_names an array of strings, which are the cast names
+   * @returns {Map} mapping of actor name with ID
+   */
   async map_actors_with_ID(actor_names) {
     const actor_mappings = new Map();
 
     for (let index = 0; index < actor_names.length; index++) {
       const actor_name = actor_names[index];
 
-      // }// first loop over the actor names
-      // actor_names.forEach(async (actor_name) => {
       try {
         let config = {
           method: "get",
@@ -60,10 +64,14 @@ class send_imdb_query {
         console.error(`failed to map ${actor_name} ----> ${err.message}`);
       }
     }
-    // );
     return actor_mappings;
   }
 
+  /**
+   * Maps the string genre list to it's corresponding IMDB ID. The ID can be null if genre cannot be mapped
+   * @param {array} genre_names an array of strings which are genres
+   * @returns {Map} mapping between genre and it's unique ID
+   */
   map_genres_with_ID(genre_names) {
     const genre_mapping = new Map();
 
@@ -75,6 +83,11 @@ class send_imdb_query {
     return genre_mapping;
   }
 
+  /**
+   * returns an array of strings which is the genre strings associated with the genre IDs
+   * @param {array} genre_IDs Array of integers, can contain null values.
+   * @returns {array} an array of strings corresponding to an ID's genre name.
+   */
   get_genre_from_IDs(genre_IDs) {
     return genre_IDs
       .map((id) => {
@@ -86,7 +99,11 @@ class send_imdb_query {
       });
   }
 
-  // find information about the movie
+  /**
+   * Look up movie by it's name
+   * @param {string} movie_name name of the movie to be looked up
+   * @returns {[object|null]} detailed information about the movie being looked up, can be null if such a movie is not found
+   */
   async find_movie_info(movie_name) {
     let config = {
       method: "get",
@@ -103,12 +120,16 @@ class send_imdb_query {
       }
       return tmdb_response.data.results[0];
     } catch (err) {
-      console.log(err.message);
+      console.error(`${err.message}`);
       return null;
     }
   }
 
-  //Extract actor names from movie id
+  /**
+   *  male, female and other gender cast members from a movie ID
+   * @param {integer} movie_id unique ID IMDB for a given movie
+   * @returns {Object} returns an object containing three arrays of strings, male, female and other gender cast members, will return null if no such movie is found
+   */
   async get_cast_from_movie_id(movie_id) {
     let config = {
       method: "get",
@@ -131,7 +152,17 @@ class send_imdb_query {
     }
   }
 
+  /**
+   *  queries the IMDB API for IDs of the actors and genres
+   * @param {object} search_terms object containing actor list, genre list, date and movie name, all of these can be null values
+   * @returns {object} returns an object with Maps of actor/genre and their IDs, stringified actor/genre IDs and the year mentioned
+   */
   async find_queries(search_terms) {
+    /**
+     * Turns the actor id or genre id mapping into a string of comma separated IDs
+     * @param {Map} entity_map a Mapping of either (actor, actorID) or (genre, genreID)
+     * @returns {array} stringified comma separated actorIDs or genreIDs, excludes the null values
+     */
     function join_and_stringify_IDs(entity_map) {
       // console.log("stringifying now");
       return Array.from(entity_map.values())
@@ -180,6 +211,11 @@ class send_imdb_query {
     };
   }
 
+  /**
+   * sends a GET request to the IMDB API /discover/
+   * @param {object} entities object containing Maps of actor/genre and their IDs, stringified actor/genre IDs and a year
+   * @returns {array} array of objects containing detailed movie informations
+   */
   async GET_movie_names_using_genre_and_actor(entities) {
     // console.log(entities);
     // send GET request to discover

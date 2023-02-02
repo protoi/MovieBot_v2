@@ -7,12 +7,20 @@ class natural_language_processing_model {
     this.manager = new NlpManager();
     // this.load_model();
   }
+  /**
+   * loads "mymodel.nlp" model from the file directory
+   */
   load_model() {
     const file = path.join(process.cwd(), "mymodel.nlp");
     const data = fs.readFileSync(file, "utf8");
     this.manager.import(data);
   }
 
+  /**
+   * extracts entities, intents and probability of intent from a given string
+   * @param {string} message the message for whom the intents and entities are to be extracted
+   * @returns {object} returns an object containing the entities, intent and the probability of said intent
+   */
   async extract_characteristics(message) {
     const result = await this.manager.process("en", message);
 

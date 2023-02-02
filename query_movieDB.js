@@ -6,7 +6,7 @@ class send_imdb_query {
     this.actor_mapping = {};
     this.genre_mapping = {};
 
-    // this.genre_ID_pre_mapping();
+    this.genre_ID_pre_mapping();
   }
 
   async genre_ID_pre_mapping() {
@@ -78,6 +78,7 @@ class send_imdb_query {
   get_genre_from_IDs(genre_IDs) {
     return genre_IDs
       .map((id) => {
+        console.log(this.genre_mapping[id]);
         return this.genre_mapping[id] || null;
       })
       .filter((element) => {
@@ -144,6 +145,7 @@ class send_imdb_query {
     let genre_id_string = "";
     let actor_IDs = null;
     let genre_IDs = null;
+    let year = null;
 
     let actor_names = search_terms["actor"];
     console.log(`actor -------> ${actor_names}`);
@@ -168,21 +170,24 @@ class send_imdb_query {
     } catch (err) {
       console.error(err.message);
     }
+    console.log(search_terms["daterange"]);
     return {
       actor_ID_mapping: actor_IDs,
       genre_ID_mapping: genre_IDs,
       actor_string: actor_id_string,
       genre_string: genre_id_string,
+      year: search_terms["daterange"][0],
     };
   }
 
   async GET_movie_names_using_genre_and_actor(entities) {
+    // console.log(entities);
     // send GET request to discover
     let imdb_data = null;
     try {
       let config = {
         method: "get",
-        url: `https://api.themoviedb.org/3/discover/movie?with_genres=${entities.genre_string}&with_people=${entities.actor_string}&sort_by=vote_average.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
+        url: `https://api.themoviedb.org/3/discover/movie?primary_release_year=${entities.year}&with_genres=${entities.genre_string}&with_people=${entities.actor_string}&sort_by=popularity.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
         headers: {},
       };
 

@@ -16,8 +16,8 @@ model.load_model();
   await IMDB.genre_ID_pre_mapping();
 
   const queries = [
-    // "show me thriller movies having brad pit and george clooney",
-    "what is the plot of '300'?",
+    "show me thriller movies having brad pit and george clooney in 2001",
+    // "what is the plot of '300'?",
     // 'Who was the actor in "Rise of the planet of the apes"',
     // 'What genre is "RIse of the planet of the apes"',
     // 'is "rise of the planet of the apes" a comedy movie',
@@ -38,6 +38,7 @@ model.load_model();
 
   queries.forEach(async (q) => {
     const ans = await model.extract_characteristics(q);
+    // console.log(ans);
 
     // console.log(ans.entities);
     // console.log("query---> " + q + "  intent ----> ", ans.intents);
@@ -113,9 +114,5 @@ model.load_model();
       console.log(data);
       // console.dir(movie_list);
     }
-
-
-
-    
   });
 })();

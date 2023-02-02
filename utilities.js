@@ -1,9 +1,8 @@
 function extract_number_and_message(payload) {
   try {
-    const number = "349050435943";
-    // payload.entry[0].changes[0].value["messages"][0]["from"];
-    const message = "actors in 'cdgghghffgh'";
-    // payload.entry[0].changes[0].value["messages"][0]["text"]["body"];
+    const number = payload.entry[0].changes[0].value["messages"][0]["from"];
+    const message =
+      payload.entry[0].changes[0].value["messages"][0]["text"]["body"];
 
     console.log(`number -> ${number}, message -> ${message}`);
     return { num: number, msg: message };

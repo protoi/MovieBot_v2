@@ -663,6 +663,6 @@
         "western": ["western"]
       }
     },
-    "moviename": "/['\"]+([\\w\\s]*)['\"]+/gm"
+    "moviename": "/['\"]+([\\w\\W\\s]*)['\"]+/gm"
   }
 }

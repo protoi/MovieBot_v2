@@ -30,6 +30,7 @@ exp.get("/movie", (req, res) => {
 });
 
 exp.post("/movie", async (req, res) => {
+  console.log(req.body);
   const num_msg_tuple = extract_number_and_message(req.body);
 
   if (num_msg_tuple == null) {
@@ -46,8 +47,6 @@ exp.post("/movie", async (req, res) => {
 
   console.log(ans.entities);
   console.log(ans.intents);
-  
-
 
   switch (ans.intents) {
     case "message.get_movie":
@@ -82,16 +81,24 @@ exp.post("/movie", async (req, res) => {
       break;
 
     default:
-      const movie_name = ans.entities.moviename[0];
+      let movie_name = ans.entities.moviename[0];
+      console.log(`movie name before replacing ---> ${movie_name}`);
       if (movie_name == null) {
-        console.log("please specify a movie");
+        console.log("Movie name not detected, possibly due to lack of quotes");
         //also send the user that they need to specify a movie in double/single quotes
+        message_body =
+          "Please enclose the name of the movie in double/single quotes";
         break;
       }
+      // removes anything except digits, alphabets and spaces
+      movie_name = movie_name.replace(/[^\w ]/gm, "");
+      console.log(`movie name after replacing ---> ${movie_name}`);
+
       movie_info = await IMDB.find_movie_info(movie_name);
       if (movie_info == null) {
         console.log(`movie named ${movie_name} not found`);
         // also send this to the user
+        message_body = `movie named ${movie_name} not found`;
         break;
       }
       switch (ans.intents) {
@@ -127,11 +134,21 @@ exp.post("/movie", async (req, res) => {
       break;
   }
 
+  const payload = generate_payload(num, message_body);
+
+  axios(payload)
+    .then((response) => {
+      console.log("Message sent successfully");
+    })
+    .catch((err) => {
+      console.log("Something went wrong while sending the message");
+    });
+
   console.log(`BODY -------> ${message_body}`);
 
-  res.send(message_body);
+//   res.send(message_body);
 
-//   res.sendStatus(200);
+  res.sendStatus(200);
 });
 
 exp.listen(PORT, () => {

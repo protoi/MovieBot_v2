@@ -36,8 +36,11 @@ class send_imdb_query {
   async map_actors_with_ID(actor_names) {
     const actor_mappings = new Map();
 
-    // first loop over the actor names
-    actor_names.forEach(async (actor_name) => {
+    for (let index = 0; index < actor_names.length; index++) {
+      const actor_name = actor_names[index];
+
+      // }// first loop over the actor names
+      // actor_names.forEach(async (actor_name) => {
       try {
         let config = {
           method: "get",
@@ -50,13 +53,14 @@ class send_imdb_query {
         if (actor_response.data.results.length != 0) {
           actor_mappings.set(actor_name, actor_response.data.results[0]["id"]);
           console.log(
-            `mapping ${actor_name} with ${actor_response.data.results[0]["id"]}`
+            `mapping actor = ${actor_name} with ID = ${actor_response.data.results[0]["id"]}`
           );
         } else actor_mappings.set(actor_name, null);
       } catch (err) {
         console.error(`failed to map ${actor_name} ----> ${err.message}`);
       }
-    });
+    }
+    // );
     return actor_mappings;
   }
 
@@ -112,15 +116,13 @@ class send_imdb_query {
     };
     try {
       let cast_response = await axios(config);
-      console.log(cast_response.data.id);
+      // console.log(cast_response.data.id);
       let cast = { male: [], female: [], others: [] };
       cast_response.data.cast.forEach((element) => {
         if (element.gender == 1) cast.female.push(element.original_name);
         else if (element.gender == 2) cast.male.push(element.original_name);
         else cast.others.push(element.original_name);
-        // console.log(":)");
       });
-      //   console.log("here----> "+ cast);
       return cast;
     } catch (err) {
       console.log(err.message);
@@ -130,14 +132,12 @@ class send_imdb_query {
 
   async find_queries(search_terms) {
     function join_and_stringify_IDs(entity_map) {
-      console.log("stringifying now");
-      const temp = Array.from(entity_map.values())
+      // console.log("stringifying now");
+      return Array.from(entity_map.values())
         .filter((element) => {
           return element != null;
         })
         .join(",");
-      console.log(`temp ---> ${temp}`);
-      return temp;
     }
 
     let actor_id_string = "";
@@ -157,16 +157,14 @@ class send_imdb_query {
         genre_id_string = join_and_stringify_IDs(genre_IDs); // {"a":1, "b":2, "c":null, "d":4} ---> "1,2,4"
 
       //mapped actors with their corresponding IDs
-      //turning the ID map into a comma separated string strings
+      //turning the ID map into a comma separated string
       actor_IDs = await this.map_actors_with_ID(actor_names);
-      console.log(actor_IDs);
-
       if (actor_IDs != null) {
         actor_id_string = join_and_stringify_IDs(actor_IDs);
       }
-      console.log(`actor_IDs ----->  ${actor_IDs}`);
-      console.log(`genre_id_string ----->  ${genre_id_string}`);
-      console.log(`actor_id_string ----->  ${actor_id_string}`);
+      // console.log(`actor_IDs ----->  ${actor_IDs}`);
+      // console.log(`genre_id_string ----->  ${genre_id_string}`);
+      // console.log(`actor_id_string ----->  ${actor_id_string}`);
     } catch (err) {
       console.error(err.message);
     }
@@ -184,7 +182,7 @@ class send_imdb_query {
     try {
       let config = {
         method: "get",
-        url: `https://api.themoviedb.org/3/discover/movie?with_genres=${entities.genre_id_string}&with_people=${entities.actor_id_string}&sort_by=vote_average.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
+        url: `https://api.themoviedb.org/3/discover/movie?with_genres=${entities.genre_string}&with_people=${entities.actor_string}&sort_by=vote_average.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
         headers: {},
       };
 

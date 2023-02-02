@@ -3,6 +3,20 @@
   "locale": "en-US",
   "data": [
     {
+      "intent": "message.get_plot",
+      "utterances": [
+        "what is the plot of",
+        "what is the summary of",
+        "tell me the plot of",
+        "tell me the summary of",
+        "plot of",
+        "summary of",
+        "what is the breif summary of",
+        "tell me the breif summary of",
+        "breif summary of"
+      ]
+    },
+    {
       "intent": "message.get_movie_year",
       "utterances": [
         "Give the year of release of",
@@ -649,6 +663,6 @@
         "western": ["western"]
       }
     },
-    "moviename":  "/['\"]+([\\w\\s]*)['\"]+/gm"
+    "moviename": "/['\"]+([\\w\\s]*)['\"]+/gm"
   }
 }

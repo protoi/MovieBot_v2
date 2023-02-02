@@ -394,6 +394,350 @@
           "@genr,categori,movi,of,send": {
             "intent": "message.get_movie",
             "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,star,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,list,movi,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,show,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,some,star,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,in,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,in,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,categori,in,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,in,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,give,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,i,in,movi,of,the,want,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,in,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,act,has,in,movi,the,which,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,me,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,genr,in,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,in,movi,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,me,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,star,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,list,movi,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,show,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,some,star,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,have,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,have,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,categori,from,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,have,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,have,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,from,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,from,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,give,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,from,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,i,movi,of,the,want,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,act,from,has,in,movi,the,which,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,me,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,from,genr,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,from,movi,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,me,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
           }
         },
         "intentDict": {
@@ -903,6 +1247,486 @@
             "domain": "default",
             "utterance": "Send movies of @genre category",
             "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre category movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre category movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre category movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre category movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor and @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies starring @actor and @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies by @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies by @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want all the movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@actor movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "All the movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List all movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies in which @actor has acted in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send me movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of @genre category in the year",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre category movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre category movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre category movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre category movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor and @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies starring @actor and @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies by @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies by @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want all the movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@actor movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "All the movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List all movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies in which @actor has acted from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send me movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of @genre category from the year",
+            "intent": "message.get_movie"
           }
         ],
         "domains": {
@@ -964,7 +1788,8 @@
               "all": 1,
               "has": 1,
               "act": 1,
-              "send": 1
+              "send": 1,
+              "from": 1
             },
             "intents": {
               "message.get_plot": 1,
@@ -1057,7 +1882,9 @@
                 "has": 1,
                 "act": 1,
                 "genr": 1,
-                "send": 1
+                "send": 1,
+                "year": 1,
+                "from": 1
               }
             },
             "featuresToIntent": {
@@ -1111,7 +1938,8 @@
                 "message.get_movie"
               ],
               "year": [
-                "message.get_movie_year"
+                "message.get_movie_year",
+                "message.get_movie"
               ],
               "releas": [
                 "message.get_movie_year"
@@ -1227,6 +2055,9 @@
               ],
               "send": [
                 "message.get_movie"
+              ],
+              "from": [
+                "message.get_movie"
               ]
             },
             "neuralNetwork": {
@@ -1287,7 +2118,8 @@
                 "all",
                 "has",
                 "act",
-                "send"
+                "send",
+                "from"
               ],
               "intents": [
                 "message.get_plot",
@@ -1298,188 +2130,191 @@
               ],
               "perceptrons": [
                 [
-                  0.16411833465099335,
-                  0.635818600654602,
-                  -0.7999358773231506,
-                  8.716948509216309,
-                  4.379959583282471,
-                  8.716938972473145,
-                  0.9547026753425598,
-                  -0.15476641058921814,
-                  0.000005185136615182273,
+                  0.1641537845134735,
+                  0.6358544230461121,
+                  -0.799915611743927,
+                  8.716974258422852,
+                  4.379904747009277,
+                  8.716773986816406,
+                  0.9547255039215088,
+                  -0.1547441929578781,
+                  0.000240602224948816,
                   -1.4408940076828003,
                   -2.992432117462158,
                   -2.992432117462158,
                   -3.0155956745147705,
                   -0.053172431886196136,
                   -1.9300055503845215,
-                  -3.36274790763855,
-                  -0.2972029447555542,
-                  -0.2972029447555542,
-                  -0.2972029447555542,
-                  -0.2972029447555542,
+                  -3.3627045154571533,
+                  -0.297197163105011,
+                  -0.297197163105011,
+                  -0.297197163105011,
+                  -0.297197163105011,
                   -1.7918866872787476,
                   -1.5389785766601562,
                   -0.25517210364341736,
                   -1.9078569412231445,
                   -0.8560200929641724,
                   -0.46394476294517517,
-                  -6.3687052726745605,
+                  -6.368671894073486,
                   0,
                   0,
-                  -1.5358521938323975,
-                  -0.666056752204895,
-                  -1.5399646759033203,
+                  -1.535823106765747,
+                  -0.6660378575325012,
+                  -1.5399450063705444,
                   -0.20959527790546417,
                   -0.20959527790546417,
-                  -0.20620332658290863,
+                  -0.20620021224021912,
                   0,
                   -0.029049813747406006,
-                  -0.6701692342758179,
+                  -0.6701400876045227,
                   -0.03688827529549599,
                   0,
                   -0.14996114373207092,
                   -0.14996114373207092,
-                  -0.4598536491394043,
+                  -0.4598506987094879,
                   0,
                   0,
                   -0.24051904678344727,
-                  1.1888101246853064
+                  0,
+                  1.188789087636732
                 ],
                 [
-                  -0.26200759410858154,
-                  -0.7541705965995789,
-                  0.016518477350473404,
-                  -0.8840420842170715,
-                  -0.03701632469892502,
-                  -0.8836836814880371,
-                  -0.18394219875335693,
-                  -0.8941891193389893,
-                  -0.24939486384391785,
-                  0.0027417452074587345,
-                  6.689762592315674,
-                  6.689762592315674,
-                  -1.2972588539123535,
-                  1.0110211372375488,
-                  0.2650845944881439,
-                  0.0014693744014948606,
-                  3.339724063873291,
-                  3.339724063873291,
-                  3.339724063873291,
-                  3.339724063873291,
+                  -0.5826085209846497,
+                  -0.6291168332099915,
+                  -0.3515625596046448,
+                  -0.7832427620887756,
+                  0.11690773814916611,
+                  -0.8423823714256287,
+                  -0.11561284214258194,
+                  -0.9290926456451416,
+                  -0.28953495621681213,
+                  0.28803130984306335,
+                  4.892393589019775,
+                  8.942995071411133,
+                  -2.3054752349853516,
+                  1.4483009576797485,
+                  0.8758281469345093,
+                  0.1735078990459442,
+                  3.442070245742798,
+                  3.442070245742798,
+                  3.442070245742798,
+                  3.442070245742798,
                   -1.6140761375427246,
-                  -0.9663418531417847,
-                  -0.6925281286239624,
-                  -1.1338716745376587,
-                  -0.6709141135215759,
-                  -0.4562232494354248,
-                  -1.6744275093078613,
-                  -0.0029765707440674305,
-                  -0.12726852297782898,
-                  -1.0630652904510498,
-                  -0.36405235528945923,
-                  -1.3180490732192993,
-                  -0.16700413823127747,
-                  -0.16700413823127747,
-                  -0.3165501654148102,
-                  -0.09810303896665573,
-                  -0.056131575256586075,
-                  -0.13251395523548126,
+                  -0.9656925201416016,
+                  -0.8554058074951172,
+                  -1.1109743118286133,
+                  -0.6703192591667175,
+                  -0.4317929148674011,
+                  -1.73001229763031,
+                  -0.0032260974403470755,
+                  -0.09522245079278946,
+                  -3.0599405765533447,
+                  -0.8298735618591309,
+                  -3.2250328063964844,
+                  -0.26912567019462585,
+                  -0.26912567019462585,
+                  -0.6350289583206177,
+                  -0.18459562957286835,
+                  -0.08646320551633835,
+                  -0.47810307145118713,
                   0,
-                  -0.15213966369628906,
-                  -0.04738689586520195,
-                  -0.04738689586520195,
-                  -0.13008911907672882,
-                  -0.10200387239456177,
-                  -0.10200387239456177,
-                  -0.09886375069618225,
-                  0.9257202763579846
+                  -0.34766870737075806,
+                  -0.2039056271314621,
+                  -0.2039056271314621,
+                  -0.3804660439491272,
+                  -0.5227428674697876,
+                  -0.5227428674697876,
+                  -0.3975085914134979,
+                  -2.064849376678467,
+                  0.4201974044606529
                 ],
                 [
-                  -1.3593900203704834,
-                  -0.4462699294090271,
-                  2.6262497901916504,
-                  -0.12176748365163803,
-                  -8.326030731201172,
-                  -0.13170479238033295,
-                  -0.5152068734169006,
-                  -0.8727601170539856,
-                  -0.037106286734342575,
-                  -0.544649064540863,
-                  -3.4488463401794434,
-                  -3.4488463401794434,
-                  5.7244672775268555,
-                  -3.7944185733795166,
-                  -0.3670971691608429,
-                  -4.137304782867432,
-                  -1.3428899049758911,
-                  -1.3428899049758911,
-                  -1.3428899049758911,
-                  -1.3428899049758911,
-                  0.4415142238140106,
-                  0.4873048663139343,
-                  2.6505424976348877,
-                  8.299492835998535,
-                  0.5676699280738831,
-                  0.5648598074913025,
-                  -4.832733631134033,
-                  -1.5422054529190063,
+                  -1.4889236688613892,
+                  -0.8487626910209656,
+                  1.816023826599121,
+                  -0.09466768801212311,
+                  -7.409419059753418,
+                  -0.1554855853319168,
+                  -0.5488064289093018,
+                  -1.0453734397888184,
+                  -0.0494815856218338,
+                  -0.5988403558731079,
+                  -5.473601341247559,
+                  -2.287738084793091,
+                  5.599277496337891,
+                  -2.7002484798431396,
+                  -0.6896898150444031,
+                  -5.142448425292969,
+                  -1.3989030122756958,
+                  -1.3989030122756958,
+                  -1.3989030122756958,
+                  -1.3989030122756958,
+                  0.8844069242477417,
+                  1.0847516059875488,
+                  1.9467175006866455,
+                  7.3422627449035645,
+                  1.2461060285568237,
+                  1.2388184070587158,
+                  -4.570227146148682,
+                  -1.5763487815856934,
                   -0.10542674362659454,
-                  -1.2472459077835083,
-                  -0.1553942710161209,
-                  -3.874079704284668,
+                  -2.402050018310547,
+                  -0.32128286361694336,
+                  -4.343591690063477,
                   -0.04150773584842682,
                   -0.04150773584842682,
-                  -0.5011981725692749,
-                  -0.04961699992418289,
+                  -0.6501031517982483,
+                  -0.10665886849164963,
                   0,
                   0,
-                  -0.029951555654406548,
+                  -0.06326642632484436,
                   0,
                   0,
                   0,
                   0,
-                  -0.4239020049571991,
-                  -0.4239020049571991,
+                  -0.28014326095581055,
+                  -0.28014326095581055,
+                  -0.1303909420967102,
                   0,
-                  5.380079141696794
+                  5.619164500588869
                 ],
                 [
-                  0.517665684223175,
-                  4.453604221343994,
-                  0.9473491311073303,
-                  -5.842460632324219,
-                  -1.4293156862258911,
-                  -5.826687335968018,
-                  3.473353385925293,
-                  2.3471672534942627,
-                  -0.545645534992218,
-                  3.523531436920166,
-                  -2.3611888885498047,
-                  -2.3611888885498047,
-                  -2.9303624629974365,
-                  -0.20191176235675812,
-                  4.160349369049072,
-                  0.05823023244738579,
-                  -0.5102842450141907,
-                  -0.5102842450141907,
-                  -0.5102842450141907,
-                  -0.5102842450141907,
-                  -2.691272258758545,
-                  -0.9711694717407227,
-                  -1.4593521356582642,
-                  -0.2929812967777252,
-                  -0.9047570824623108,
-                  -0.8556779026985168,
-                  9.284201622009277,
-                  4.392003536224365,
-                  13.350156784057617,
-                  -4.232595920562744,
-                  -6.594340801239014,
-                  -3.9426913261413574,
-                  -2.4076859951019287,
-                  -2.4076859951019287,
-                  -4.229106903076172,
+                  0.7301660776138306,
+                  4.742964267730713,
+                  0.7380585670471191,
+                  -5.317104339599609,
+                  -1.9247153997421265,
+                  -5.275484085083008,
+                  3.4524717330932617,
+                  2.468574047088623,
+                  -0.5544557571411133,
+                  3.662330150604248,
+                  -2.444596290588379,
+                  -1.8939261436462402,
+                  -3.1385040283203125,
+                  -0.12780021131038666,
+                  4.139377117156982,
+                  0.32982727885246277,
+                  -0.5195639133453369,
+                  -0.5195639133453369,
+                  -0.5195639133453369,
+                  -0.5195639133453369,
+                  -2.5402121543884277,
+                  -0.9372233748435974,
+                  -1.5069524049758911,
+                  -0.38311323523521423,
+                  -0.8707162141799927,
+                  -0.8218936920166016,
+                  9.209176063537598,
+                  3.9518203735351562,
+                  12.421649932861328,
+                  -4.45638370513916,
+                  -6.448619842529297,
+                  -3.9496009349823,
+                  -2.3641626834869385,
+                  -2.3641626834869385,
+                  -3.9800894260406494,
                   0,
                   -0.004142432007938623,
                   0,
@@ -1487,60 +2322,62 @@
                   0,
                   -0.16776977479457855,
                   -0.16776977479457855,
-                  -0.4900490641593933,
+                  -0.38252317905426025,
                   0,
                   0,
-                  -4.226524353027344,
-                  0.5704523784624963
+                  -3.9720215797424316,
+                  -0.0779915452003479,
+                  0.8545870775955042
                 ],
                 [
-                  -1.1175040006637573,
-                  -7.388072967529297,
-                  -0.5168370604515076,
-                  -1.1418548822402954,
-                  -1.2722944021224976,
-                  -1.1676428318023682,
-                  1.1301888227462769,
-                  -3.5340545177459717,
-                  -0.22891099750995636,
-                  -1.3073766231536865,
-                  -4.067915439605713,
-                  -4.067915439605713,
-                  -0.742335319519043,
-                  0.33754798769950867,
-                  -1.0464506149291992,
-                  8.791587829589844,
-                  -2.4809372425079346,
-                  -2.4809372425079346,
-                  -2.4809372425079346,
-                  -2.4809372425079346,
-                  -0.9142069220542908,
-                  -0.28733885288238525,
-                  -0.1226448342204094,
-                  -0.8617852926254272,
-                  -0.287209689617157,
-                  -0.2870768904685974,
-                  0.4308178424835205,
-                  -1.0972018241882324,
-                  -6.665724754333496,
-                  4.986443996429443,
-                  3.2401461601257324,
-                  4.946972370147705,
-                  0.2610698342323303,
-                  0.2610698342323303,
-                  -0.10328049957752228,
-                  -1.7397582530975342,
-                  -0.8210015892982483,
-                  0.900531530380249,
-                  -0.11873646080493927,
-                  1.7209875583648682,
-                  0.12984640896320343,
-                  0.12984640896320343,
-                  3.280285120010376,
-                  0.4990345239639282,
-                  0.4990345239639282,
-                  1.5307916402816772,
-                  1.150969011711614
+                  -1.1860909461975098,
+                  -6.482930660247803,
+                  1.1619782447814941,
+                  -0.9165104627609253,
+                  -1.1474931240081787,
+                  -0.9146015048027039,
+                  1.6877343654632568,
+                  -2.0992088317871094,
+                  -0.15311014652252197,
+                  -0.6165230870246887,
+                  -1.5757485628128052,
+                  -9.815816879272461,
+                  0.7057396173477173,
+                  -0.26256394386291504,
+                  -1.8247795104980469,
+                  10.539142608642578,
+                  -2.8803467750549316,
+                  -2.8803467750549316,
+                  -2.8803467750549316,
+                  -2.8803467750549316,
+                  -1.9678080081939697,
+                  -0.47619113326072693,
+                  0.1118941530585289,
+                  -1.2826062440872192,
+                  -0.4390906095504761,
+                  -0.4082471430301666,
+                  1.090027928352356,
+                  -1.1904414892196655,
+                  -5.872796058654785,
+                  2.4405059814453125,
+                  2.431729316711426,
+                  3.2098562717437744,
+                  0.645662248134613,
+                  0.645662248134613,
+                  0.32400909066200256,
+                  -0.7549246549606323,
+                  -0.4469936192035675,
+                  0.7321876883506775,
+                  0.698945939540863,
+                  0.8806033134460449,
+                  0.029355771839618683,
+                  0.029355771839618683,
+                  1.7263730764389038,
+                  0.02623347006738186,
+                  0.02623347006738186,
+                  1.0859613418579102,
+                  1.1737500429153442,
+                  1.0125599909369751
                 ]
               ]
             }
@@ -1949,6 +2786,390 @@
       [
         "en",
         "Send movies of @genre category"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies having @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies having @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre category movies with @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre category movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre category movies having @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre category movies having @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor and @actor in the year "
+      ],
+      [
+        "en",
+        "@genre movies starring @actor and @actor in the year "
+      ],
+      [
+        "en",
+        "Show movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Give movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List movies by @actor in the year "
+      ],
+      [
+        "en",
+        "List movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Movies by @actor in the year "
+      ],
+      [
+        "en",
+        "Movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "I want all the movies of @actor in the year "
+      ],
+      [
+        "en",
+        "@actor movies in the year "
+      ],
+      [
+        "en",
+        "All the movies of @actor in the year "
+      ],
+      [
+        "en",
+        "List all movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Movies in which @actor has acted in the year "
+      ],
+      [
+        "en",
+        "List movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "List @genre movies in the year "
+      ],
+      [
+        "en",
+        "Send movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Send @genre movies in the year "
+      ],
+      [
+        "en",
+        "Show movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Show @genre movies in the year "
+      ],
+      [
+        "en",
+        "Show me movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies in the year "
+      ],
+      [
+        "en",
+        "What are some movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "What are some @genre movies in the year "
+      ],
+      [
+        "en",
+        "@genre movies in the year "
+      ],
+      [
+        "en",
+        "Movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "List movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "Send me movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "Send movies of @genre category in the year"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies having @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies having @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre category movies with @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre category movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre category movies having @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre category movies having @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor and @actor from the year "
+      ],
+      [
+        "en",
+        "@genre movies starring @actor and @actor from the year "
+      ],
+      [
+        "en",
+        "Show movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Give movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List movies by @actor from the year "
+      ],
+      [
+        "en",
+        "List movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Movies by @actor from the year "
+      ],
+      [
+        "en",
+        "Movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "I want all the movies of @actor from the year "
+      ],
+      [
+        "en",
+        "@actor movies from the year "
+      ],
+      [
+        "en",
+        "All the movies of @actor from the year "
+      ],
+      [
+        "en",
+        "List all movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Movies in which @actor has acted from the year "
+      ],
+      [
+        "en",
+        "List movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "List @genre movies from the year "
+      ],
+      [
+        "en",
+        "Send movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Send @genre movies from the year "
+      ],
+      [
+        "en",
+        "Show movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Show @genre movies from the year "
+      ],
+      [
+        "en",
+        "Show me movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies from the year "
+      ],
+      [
+        "en",
+        "What are some movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "What are some @genre movies from the year "
+      ],
+      [
+        "en",
+        "@genre movies from the year "
+      ],
+      [
+        "en",
+        "Movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "List movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "Send me movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "Send movies of @genre category from the year"
       ]
     ]
   },

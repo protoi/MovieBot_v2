@@ -35,21 +35,21 @@ class natural_language_processing_model {
     return {
       entities: our_entities,
       intents: result.classifications[0].intent,
+      score: result.classifications[0].score,
     };
   }
 
   async testing() {
     const result = await this.extract_characteristics(
-      `is "the dark knight" and "spirited away" a comedy and action movie?`
+      `romance movies starring leonardo dicaprio`
     );
 
-    console.log(JSON.stringify(result.entities, null, 2));
+    console.log(JSON.stringify(result.intents, null, 2));
   }
 }
 
 // const obj = new natural_language_processing_model();
 // obj.load_model();
-
 // obj.testing();
 
 module.exports = { natural_language_processing_model };

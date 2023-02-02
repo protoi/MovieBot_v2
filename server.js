@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const movieDB = require("./query_movieDB");
 const nlp_model = require("./retain_model");
+const logger = require("./logger");
 const {
   extract_number_and_message,
   generate_payload,
@@ -25,8 +26,15 @@ exp.get("/", (req, res) => {
 
 exp.get("/movie", (req, res) => {
   if (req.query["hub.verify_token"] == process.env.SECRET)
+  {
+    logger.log("Webhook Verification");
     res.send(req.query["hub.challenge"]);
-  else res.sendStatus(403);
+    
+  }
+  else {
+    logger.error("Permission Denied")
+    res.sendStatus(403);
+  } 
 });
 
 exp.post("/movie", async (req, res) => {
@@ -35,6 +43,7 @@ exp.post("/movie", async (req, res) => {
 
   if (num_msg_tuple == null) {
     console.log("message or phone number were broken");
+    logger.error("Broken phone number or link")
     // res.sendStatus(200);
     return;
   }
@@ -43,10 +52,15 @@ exp.post("/movie", async (req, res) => {
 
   let movie_info = null;
   const ans = await model.extract_characteristics(msg);
+  logger.log(`Extracted message : ${msg} `);
+  logger.log(`Destination Phone number : ${num}`);
   let message_body = null;
 
   console.log(ans.entities);
   console.log(ans.intents);
+
+  logger.log(`Entitites extraced : \n ${ans.entities}`);
+  logger.log(`Intent extraced : \n ${ans.intents}`);
 
   switch (ans.intents) {
     case "message.get_movie":
@@ -57,6 +71,7 @@ exp.post("/movie", async (req, res) => {
             actorIdString, 
             genreIdString}
     */
+      logger.log("Intent - getting movies from quey");
       const movie_queries = await IMDB.find_queries(ans.entities);
 
       movie_info = await IMDB.GET_movie_names_using_genre_and_actor(
@@ -107,28 +122,33 @@ exp.post("/movie", async (req, res) => {
             movie_name: movie_info.original_title,
             genre: await IMDB.get_genre_from_IDs(movie_info.genre_ids),
           });
+          logger.log("Intent - getting genre from query");
           break;
         case "message.get_actor":
           message_body = generate_body(ans.intents, {
             movie_name: movie_info.original_title,
             actors: await IMDB.get_cast_from_movie_id(movie_info.id),
           });
+          logger.log("Intent - getting actor list from query");
           break;
         case "message.get_movie_year":
           message_body = generate_body(ans.intents, {
             movie_name: movie_info.original_title,
             release_year: movie_info.release_date,
           });
+          logger.log("Intent - getting release year from query");
           break;
         case "message.get_plot":
           message_body = generate_body(ans.intents, {
             title: movie_info.original_title,
             plot: movie_info.overview,
           });
+          logger.log("Intent - getting plot from query");
           break;
 
         default:
           message_body = "failed to detect intent";
+          logger.error("Failed to detect intent ");
           break;
       }
       break;
@@ -138,9 +158,11 @@ exp.post("/movie", async (req, res) => {
 
   axios(payload)
     .then((response) => {
+      logger.log("Message sent successfully");
       console.log("Message sent successfully");
     })
     .catch((err) => {
+      logger.err("Something went wrong while sending the message");
       console.log("Something went wrong while sending the message");
     });
 

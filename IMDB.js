@@ -313,7 +313,7 @@ class IMDB {
           });
         }
 
-        message_body = generate_body_movie(top3_movie_list);
+        message_body = WhatsappUtils.generate_body_movie(top3_movie_list);
         // log the message_body here
         break;
 

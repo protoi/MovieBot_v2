@@ -4,6 +4,7 @@
   "data": [
     {
       "intent": "message.get_plot",
+      "signature" : "get_plot(movie_name: String) -> String",
       "utterances": [
         "what is the plot of",
         "what is the summary of",

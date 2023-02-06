@@ -1,41 +1,29 @@
-const express = require("express");
 const axios = require("axios");
-// const movieDB = require("./query_movieDB");
-const nlp_model = require("./retain_model");
-const { logger } = require("./logger");
-// const {
-//   extract_number_and_message,
-//   generate_payload,
-//   get_message_and_movie_info,
-// } = require("./utilities");
+const nlp_model = require("../retain_model");
+const { logger } = require("../logger");
+const WhatsappUtils = new (require("../WhatsappUtils").WhatsappUtils)();
+const IMDB = new (require("../IMDB").IMDB)();
 
 require("dotenv").config();
 
 const PORT = 9999;
-
-// const IMDB = new movieDB.send_imdb_query();
-
-const WhatsappUtils = new (require("./WhatsappUtils").WhatsappUtils)();
-const IMDB = new (require("./IMDB").IMDB)();
-
 const model = new nlp_model.natural_language_processing_model();
 model.load_model();
 
-const exp = express();
-exp.use(express.json());
-exp.use(express.urlencoded({ extended: true }));
+const ping = (req, res) => {
+  res.send("Hello World");
+};
 
-exp.get("/", (req, res) => {
-  res.send("Hello world!");
-});
+//This function verifies the token sent by whatsapp to configure webhook with the server. //
 
-exp.get("/movie", (req, res) => {
-  if (req.query["hub.verify_token"] == process.env.SECRET)
+const verify_token = (req, res) => {
+  if (req.query["hub.verify_token"] == process.env.SECRET) {
+    logger.debug("Token Verified");
     res.send(req.query["hub.challenge"]);
-  else res.sendStatus(403);
-});
+  } else res.sendStatus(403);
+};
 
-exp.post("/movie", async (req, res) => {
+const fetch_info_and_post_to_whatsapp = async (req, res) => {
   console.log(req.body);
   const num_msg_tuple = WhatsappUtils.extract_number_and_message(req.body);
 
@@ -97,9 +85,10 @@ exp.post("/movie", async (req, res) => {
   console.log(`===========BODY===========\n${message_body}`);
 
   res.sendStatus(200);
-});
+};
 
-exp.listen(PORT, () => {
-  console.log(`express app listening to port #${PORT}`);
-  console.log("hello world");
-});
+module.exports = {
+  ping,
+  verify_token,
+  fetch_info_and_post_to_whatsapp,
+};

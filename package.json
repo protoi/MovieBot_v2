@@ -9,11 +9,11 @@
     "winston": "^3.8.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "name": "moviebot_v2",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/protoi/MovieBot_v2.git"

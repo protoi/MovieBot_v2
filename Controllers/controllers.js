@@ -1,13 +1,17 @@
 const axios = require("axios");
 const nlp_model = require("../retain_model");
 const { logger } = require("../logger");
-const WhatsappUtils = new (require("../WhatsappUtils").WhatsappUtils)();
-const IMDB = new (require("../IMDB").IMDB)();
+const WhatsappUtils = require("../WhatsappUtils");
+const IMDB = require("../IMDB");
+
+//Objects
+const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
+const IMDBObj = new IMDB.IMDB();
+const model = new nlp_model.natural_language_processing_model();
 
 require("dotenv").config();
 
 const PORT = 9999;
-const model = new nlp_model.natural_language_processing_model();
 model.load_model();
 
 const ping = (req, res) => {
@@ -25,7 +29,7 @@ const verify_token = (req, res) => {
 
 const fetch_info_and_post_to_whatsapp = async (req, res) => {
   console.log(req.body);
-  const num_msg_tuple = WhatsappUtils.extract_number_and_message(req.body);
+  const num_msg_tuple = WhatsappUtilsObj.extract_number_and_message(req.body);
 
   if (num_msg_tuple == null) {
     console.log("message or phone number were broken");
@@ -58,9 +62,8 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
   if (EntityIntent_tuple != null) {
     try {
-      ({ movie_info, message_body } = await IMDB.get_movie_query_from_intents(
-        EntityIntent_tuple
-      ));
+      ({ movie_info, message_body } =
+        await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
     } catch (err) {
       console.error(
         `could not fetch movie information or response message: ${err.message}`
@@ -70,7 +73,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
   if (message_body == null) message_body = "oh no, something went wrong";
 
-  const payload = WhatsappUtils.generate_payload(num, message_body);
+  const payload = WhatsappUtilsObj.generate_payload(num, message_body);
 
   axios(payload)
     .then((response) => {

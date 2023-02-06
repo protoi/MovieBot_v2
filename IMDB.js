@@ -1,4 +1,6 @@
-const WhatsappUtils = new (require("./WhatsappUtils").WhatsappUtils)();
+const WhatsappUtils = require("./WhatsappUtils");
+const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
+
 const axios = require("axios");
 require("dotenv").config();
 
@@ -313,13 +315,13 @@ class IMDB {
           });
         }
 
-        message_body = WhatsappUtils.generate_body_movie(top3_movie_list);
+        message_body = WhatsappUtilsObj.generate_body_movie(top3_movie_list);
         // log the message_body here
         break;
 
       case "message.get_genre":
         if (message_body != null) break;
-        message_body = WhatsappUtils.generate_body_genre({
+        message_body = WhatsappUtilsObj.generate_body_genre({
           movie_name: movie_info.original_title,
           genre: await this.get_genre_from_IDs(movie_info.genre_ids),
         });
@@ -327,7 +329,7 @@ class IMDB {
         break;
       case "message.get_actor":
         if (message_body != null) break;
-        message_body = WhatsappUtils.generate_body_actor({
+        message_body = WhatsappUtilsObj.generate_body_actor({
           movie_name: movie_info.original_title,
           actors: await this.get_cast_from_movie_id(movie_info.id),
         });
@@ -335,7 +337,7 @@ class IMDB {
         break;
       case "message.get_movie_year":
         if (message_body != null) break;
-        message_body = WhatsappUtils.generate_body_movie_year({
+        message_body = WhatsappUtilsObj.generate_body_movie_year({
           movie_name: movie_info.original_title,
           release_year: movie_info.release_date,
         });
@@ -343,7 +345,7 @@ class IMDB {
         break;
       case "message.get_plot":
         if (message_body != null) break;
-        message_body = WhatsappUtils.generate_body_plot({
+        message_body = WhatsappUtilsObj.generate_body_plot({
           title: movie_info.original_title,
           plot: movie_info.overview,
         });

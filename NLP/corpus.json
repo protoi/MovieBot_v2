@@ -21,66 +21,66 @@
       "intent": "message.get_movie_year",
       "signature": "get_movie_year(movie_name: String) -> String",
       "utterances": [
-        "Give the year of release of",
-        "In which year was released",
-        "release year",
-        "Release year of ",
-        "What was the year of release of",
-        "Year of release of the movie",
-        "when did come out",
-        "when did movie come out"
+        "Give the year of release of @moviename",
+        "In which year was @moviename released",
+        "release year @moviename",
+        "Release year of @moviename",
+        "What was the year of release of @moviename",
+        "Year of release of the movie @moviename",
+        "when did @moviename come out",
+        "when did @moviename movie come out"
       ]
     },
     {
       "intent": "message.get_actor",
       "signature": "get_actor(movie_name: String) -> {male: [String], female: [String], other: [String]}",
       "utterances": [
-        "Who was the actor in ",
-        "Who starred in ",
-        "Who is the actor in ",
-        "Who was starring in ",
-        " actor name",
+        "Who was the actor in @moviename",
+        "Who starred in @moviename",
+        "Who is the actor in @moviename",
+        "Who was starring in @moviename",
+        "@moviename actor name",
 
-        "Who was the guy in ",
-        "Who starred in ",
-        "Who is the guy in ",
-        " guy name",
+        "Who was the guy in @moviename",
+        "Who starred in @moviename",
+        "Who is the guy in @moviename",
+        "@moviename guy name",
 
-        "Who was the girl in ",
-        "Who starred in ",
-        "Who is the girl in ",
-        " girl name",
+        "Who was the girl in @moviename",
+        "Who starred in @moviename",
+        "Who is the girl in @moviename",
+        "@moviename girl name",
 
-        "name of the actor in ",
-        "name of actor who starred in ",
-        "name of who is the actor in ",
+        "name of the actor in @moviename",
+        "name of actor who starred in @moviename",
+        "name of who is the actor in @moviename",
 
-        "name of the guy in ",
-        "name of guy starring in ",
-        "name of who is the guy in ",
+        "name of the guy in @moviename",
+        "name of guy starring in @moviename",
+        "name of who is the guy in @moviename",
 
-        "name of the girl in ",
-        "name of girl starring in ",
-        "name of who is the girl in "
+        "name of the girl in @moviename",
+        "name of girl starring in @moviename",
+        "name of who is the girl in @moviename"
       ]
     },
     {
       "intent": "message.get_genre",
       "signature": "get_genre(movie_name: String) -> [String]",
       "utterances": [
-        "What genre was",
-        "what was the genre of",
-        "what is the genre of",
-        "what is the genre of ?",
-        "give me genre of movie",
-        "give me genre of ?",
-        "give me genre of",
-        "tell me genre of movie",
-        "tell me genre of ?",
-        "tell me genre of ",
-        "s genre",
+        "What genre was @moviename",
+        "what was the genre of @moviename",
+        "what is the genre of @moviename",
+        "what is the genre of @moviename ?",
+        "give me genre of movie @moviename",
+        "give me genre of @moviename ?",
+        "give me genre of @moviename",
+        "tell me genre of movie @moviename",
+        "tell me genre of @moviename ?",
+        "tell me genre of @moviename ",
+        "@moviename s genre",
         "'s genre",
-        "is a @genre movie"
+        "is @moviename a @genre movie"
       ]
     },
     {

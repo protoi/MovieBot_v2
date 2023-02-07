@@ -15,7 +15,7 @@ const { dockStart } = require("@nlpjs/basic");
 
   const manager = dock.get("nlp");
 
-  const queries = [
+ /*  const queries = [
     "Who was the actor in Rise of the planet of the apes",
     "What genre is RIse of the planet of the apes",
     "is rise of the planet of the apes a comedy movie",
@@ -27,7 +27,7 @@ const { dockStart } = require("@nlpjs/basic");
     "which year did rise of the planet of the apes get released",
     "which year did avengers age of ultron get released",
     "release date of action and horror movie starring tom hanks",
-  ];
+  ]; */
   const answers = {};
   // Train the network
   await manager.train();

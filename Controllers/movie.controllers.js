@@ -15,9 +15,9 @@ require("dotenv").config();
 const PORT = 9999;
 // model.load_model();
 
-const ping = (req, res) => {
+/* const ping = (req, res) => {
   res.send("Hello World");
-};
+}; */
 
 //This function verifies the token sent by whatsapp to configure webhook with the server. //
 const verify_token = (req, res) => {
@@ -117,7 +117,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 };
 
 module.exports = {
-  ping,
+  // ping,
   verify_token,
   fetch_info_and_post_to_whatsapp,
   WhatsappUtilsObj,

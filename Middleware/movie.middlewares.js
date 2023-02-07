@@ -4,7 +4,7 @@ const {
   WhatsappUtilsObj,
   IMDBObj,
   model,
-} = require("../Controllers/controllers");
+} = require("../Controllers/movie.controllers");
 
 const validate_dependencies = async (req, res, next) => {
   console.log("entered middleware");

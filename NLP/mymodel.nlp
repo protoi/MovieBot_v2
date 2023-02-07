@@ -35,39 +35,39 @@
           "useStemDict": true
         },
         "stemDict": {
-          "is,of,plot,the,what": {
+          "@movienam,is,of,plot,the,what": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "is,of,summari,the,what": {
+          "@movienam,is,of,summari,the,what": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "me,of,plot,tell,the": {
+          "@movienam,me,of,plot,tell,the": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "me,of,summari,tell,the": {
+          "@movienam,me,of,summari,tell,the": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "of,plot": {
+          "@movienam,of,plot": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "of,summari": {
+          "@movienam,of,summari": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "breif,is,of,summari,the,what": {
+          "@movienam,breif,is,of,summari,the,what": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "breif,me,of,summari,tell,the": {
+          "@movienam,breif,me,of,summari,tell,the": {
             "intent": "message.get_plot",
             "domain": "default"
           },
-          "breif,of,summari": {
+          "@movienam,breif,of,summari": {
             "intent": "message.get_plot",
             "domain": "default"
           },
@@ -103,11 +103,55 @@
             "intent": "message.get_movie_year",
             "domain": "default"
           },
-          "@movienam,actor,in,the,was,who": {
+          "@movienam,actor,list": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,for,list": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,in,list,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,list,me,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,for,list,me,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,in,list,me,of,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,list,me,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,for,list,me,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,in,list,me,of,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,in,the,were,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
           "@movienam,in,star,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,name": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,actor,in,the,was,who": {
             "intent": "message.get_actor",
             "domain": "default"
           },
@@ -116,10 +160,6 @@
             "domain": "default"
           },
           "@movienam,in,star,was,who": {
-            "intent": "message.get_actor",
-            "domain": "default"
-          },
-          "@movienam,actor,name": {
             "intent": "message.get_actor",
             "domain": "default"
           },
@@ -183,6 +223,22 @@
             "intent": "message.get_actor",
             "domain": "default"
           },
+          "@movienam,actor,in": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,cast,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,cast,in,list,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "@movienam,cast,in,the,were,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
           "@movienam,genr,was,what": {
             "intent": "message.get_genre",
             "domain": "default"
@@ -215,7 +271,7 @@
             "intent": "message.get_genre",
             "domain": "default"
           },
-          "genr,is": {
+          "@movienam,genr,is": {
             "intent": "message.get_genre",
             "domain": "default"
           },
@@ -750,47 +806,47 @@
         "sentences": [
           {
             "domain": "default",
-            "utterance": "what is the plot of",
+            "utterance": "what is the plot of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "what is the summary of",
+            "utterance": "what is the summary of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "tell me the plot of",
+            "utterance": "tell me the plot of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "tell me the summary of",
+            "utterance": "tell me the summary of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "plot of",
+            "utterance": "plot of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "summary of",
+            "utterance": "summary of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "what is the breif summary of",
+            "utterance": "what is the breif summary of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "tell me the breif summary of",
+            "utterance": "tell me the breif summary of @moviename",
             "intent": "message.get_plot"
           },
           {
             "domain": "default",
-            "utterance": "breif summary of",
+            "utterance": "breif summary of @moviename",
             "intent": "message.get_plot"
           },
           {
@@ -832,6 +888,86 @@
             "domain": "default",
             "utterance": "when did @moviename movie come out",
             "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "@moviename actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "actor list @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "actor list for @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me @moviename actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me actor list @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me actor list for @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me list of actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me @moviename actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me actor list @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me actor list for @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me list of actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who were the actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who starred in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who were the actor in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "@moviename actor name",
+            "intent": "message.get_actor"
           },
           {
             "domain": "default",
@@ -945,6 +1081,31 @@
           },
           {
             "domain": "default",
+            "utterance": "actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of actors in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "cast of @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of cast in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "who were the cast in @moviename",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
             "utterance": "What genre was @moviename",
             "intent": "message.get_genre"
           },
@@ -1000,7 +1161,7 @@
           },
           {
             "domain": "default",
-            "utterance": "'s genre",
+            "utterance": "@moviename 's genre",
             "intent": "message.get_genre"
           },
           {
@@ -1748,6 +1909,7 @@
               "the": 1,
               "plot": 1,
               "of": 1,
+              "@movienam": 1,
               "summari": 1,
               "tell": 1,
               "me": 1,
@@ -1755,7 +1917,6 @@
               "give": 1,
               "year": 1,
               "releas": 1,
-              "@movienam": 1,
               "in": 1,
               "which": 1,
               "was": 1,
@@ -1764,21 +1925,24 @@
               "did": 1,
               "come": 1,
               "out": 1,
-              "who": 1,
               "actor": 1,
+              "list": 1,
+              "for": 1,
+              "show": 1,
+              "who": 1,
+              "were": 1,
               "star": 1,
               "name": 1,
               "guy": 1,
               "girl": 1,
+              "cast": 1,
               "genr": 1,
               "s": 1,
               "a": 1,
               "@genr": 1,
-              "show": 1,
               "@actor": 1,
               "are": 1,
               "some": 1,
-              "list": 1,
               "with": 1,
               "have": 1,
               "categori": 1,
@@ -1806,6 +1970,7 @@
                 "the": 1,
                 "plot": 1,
                 "of": 1,
+                "@movienam": 1,
                 "summari": 1,
                 "tell": 1,
                 "me": 1,
@@ -1829,18 +1994,25 @@
                 "out": 1
               },
               "message.get_actor": {
-                "who": 1,
-                "was": 1,
-                "the": 1,
-                "actor": 1,
-                "in": 1,
                 "@movienam": 1,
+                "actor": 1,
+                "list": 1,
+                "for": 1,
+                "of": 1,
+                "in": 1,
+                "show": 1,
+                "me": 1,
+                "tell": 1,
+                "who": 1,
+                "were": 1,
+                "the": 1,
                 "star": 1,
-                "is": 1,
                 "name": 1,
+                "was": 1,
+                "is": 1,
                 "guy": 1,
                 "girl": 1,
-                "of": 1
+                "cast": 1
               },
               "message.get_genre": {
                 "what": 1,
@@ -1920,16 +2092,24 @@
                 "message.get_genre",
                 "message.get_movie"
               ],
+              "@movienam": [
+                "message.get_plot",
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_genre"
+              ],
               "summari": [
                 "message.get_plot"
               ],
               "tell": [
                 "message.get_plot",
+                "message.get_actor",
                 "message.get_genre",
                 "message.get_movie"
               ],
               "me": [
                 "message.get_plot",
+                "message.get_actor",
                 "message.get_genre",
                 "message.get_movie"
               ],
@@ -1947,11 +2127,6 @@
               ],
               "releas": [
                 "message.get_movie_year"
-              ],
-              "@movienam": [
-                "message.get_movie_year",
-                "message.get_actor",
-                "message.get_genre"
               ],
               "in": [
                 "message.get_movie_year",
@@ -1984,10 +2159,24 @@
               "out": [
                 "message.get_movie_year"
               ],
+              "actor": [
+                "message.get_actor"
+              ],
+              "list": [
+                "message.get_actor",
+                "message.get_movie"
+              ],
+              "for": [
+                "message.get_actor"
+              ],
+              "show": [
+                "message.get_actor",
+                "message.get_movie"
+              ],
               "who": [
                 "message.get_actor"
               ],
-              "actor": [
+              "were": [
                 "message.get_actor"
               ],
               "star": [
@@ -2001,6 +2190,9 @@
                 "message.get_actor"
               ],
               "girl": [
+                "message.get_actor"
+              ],
+              "cast": [
                 "message.get_actor"
               ],
               "genr": [
@@ -2017,9 +2209,6 @@
                 "message.get_genre",
                 "message.get_movie"
               ],
-              "show": [
-                "message.get_movie"
-              ],
               "@actor": [
                 "message.get_movie"
               ],
@@ -2027,9 +2216,6 @@
                 "message.get_movie"
               ],
               "some": [
-                "message.get_movie"
-              ],
-              "list": [
                 "message.get_movie"
               ],
               "with": [
@@ -2087,6 +2273,7 @@
                 "the",
                 "plot",
                 "of",
+                "@movienam",
                 "summari",
                 "tell",
                 "me",
@@ -2094,7 +2281,6 @@
                 "give",
                 "year",
                 "releas",
-                "@movienam",
                 "in",
                 "which",
                 "was",
@@ -2103,21 +2289,24 @@
                 "did",
                 "come",
                 "out",
-                "who",
                 "actor",
+                "list",
+                "for",
+                "show",
+                "who",
+                "were",
                 "star",
                 "name",
                 "guy",
                 "girl",
+                "cast",
                 "genr",
                 "s",
                 "a",
                 "@genr",
-                "show",
                 "@actor",
                 "are",
                 "some",
-                "list",
                 "with",
                 "have",
                 "categori",
@@ -2140,259 +2329,274 @@
               ],
               "perceptrons": [
                 [
-                  0.37780675292015076,
-                  0.5188764929771423,
-                  -0.893711507320404,
-                  7.018486022949219,
-                  5.217516899108887,
-                  7.012189865112305,
-                  1.0145351886749268,
-                  -0.11787166446447372,
-                  0.007643452845513821,
-                  -0.7756343483924866,
-                  -2.126420497894287,
-                  -2.126420497894287,
-                  -6.147195339202881,
-                  -1.610175609588623,
-                  -0.034820567816495895,
-                  -1.0835493803024292,
-                  -3.867079496383667,
+                  0.2086174339056015,
+                  0.680701494216919,
+                  -0.889114260673523,
+                  10.0850248336792,
+                  3.1663732528686523,
+                  1.0684758424758911,
+                  10.084969520568848,
+                  0.9458545446395874,
+                  -0.05653158575296402,
+                  0.00008247826917795464,
+                  -1.2451974153518677,
+                  -3.81398606300354,
+                  -3.81398606300354,
+                  -3.8769116401672363,
+                  -0.16649800539016724,
+                  -2.1215744018554688,
+                  -1.8963661193847656,
+                  -0.4710322618484497,
+                  -0.4710322618484497,
+                  -0.4710322618484497,
+                  -0.4710322618484497,
+                  -2.7637434005737305,
+                  -2.271960735321045,
+                  -0.16135253012180328,
+                  -0.662385106086731,
+                  -1.6695466041564941,
+                  0,
+                  -0.09283611923456192,
+                  -1.6056228876113892,
+                  -1.1960437297821045,
+                  -0.6368542909622192,
+                  -4.200160503387451,
+                  -5.588029384613037,
                   0,
                   0,
+                  -0.8715025782585144,
+                  -0.7580162882804871,
+                  -0.23378799855709076,
+                  -0.23378799855709076,
+                  0,
+                  -0.022674651816487312,
+                  -0.3641551434993744,
                   0,
                   0,
-                  -0.9755364060401917,
-                  -0.885834276676178,
-                  -0.21022042632102966,
-                  -1.0801345109939575,
-                  -0.33465316891670227,
-                  -0.09937617182731628,
-                  -2.6026833057403564,
+                  -0.1232636496424675,
+                  -0.1232636496424675,
+                  -0.2506173551082611,
                   0,
                   0,
-                  -2.3897452354431152,
-                  -0.9686874151229858,
-                  -2.4295125007629395,
-                  -0.3430957794189453,
-                  -0.3430957794189453,
-                  -0.17836792767047882,
+                  -0.28832241892814636,
                   0,
-                  -0.024431461468338966,
-                  -1.0077627897262573,
-                  -0.05774805694818497,
-                  0,
-                  -0.3292020559310913,
-                  -0.3292020559310913,
-                  -0.793946385383606,
-                  0,
-                  0,
-                  -0.395303338766098,
-                  0,
-                  2.048082359093243
+                  -0.03435197623636427
                 ],
                 [
-                  -0.37031468749046326,
-                  -0.8221486806869507,
-                  -0.4053046405315399,
-                  -0.1739945411682129,
-                  0.23524758219718933,
-                  -0.21027134358882904,
-                  -0.07921179383993149,
-                  -1.2752306461334229,
-                  -0.07425588369369507,
-                  0.23901967704296112,
-                  4.44424295425415,
-                  7.41234827041626,
-                  2.8122408390045166,
-                  -2.164485454559326,
-                  1.548534631729126,
-                  0.6477963924407959,
-                  0.1119566559791565,
-                  2.9657509326934814,
-                  2.9657509326934814,
-                  2.9657509326934814,
-                  2.9657509326934814,
-                  -2.442758321762085,
-                  -1.7352092266082764,
-                  -1.075807809829712,
-                  -2.1807515621185303,
-                  -1.0279721021652222,
-                  -0.7517075538635254,
-                  -2.7040538787841797,
-                  -0.15448026359081268,
-                  -0.1427983194589615,
-                  -1.9892656803131104,
-                  -0.5793392658233643,
-                  -2.173762559890747,
-                  -0.1572933942079544,
-                  -0.1572933942079544,
-                  -0.44237029552459717,
-                  -0.10454154014587402,
-                  -0.057081159204244614,
-                  -0.4572544991970062,
-                  0,
-                  -0.26523837447166443,
-                  -0.15209059417247772,
-                  -0.15209059417247772,
-                  -0.29931119084358215,
-                  -0.44753843545913696,
-                  -0.44753843545913696,
-                  -0.22303852438926697,
-                  -1.688801646232605,
-                  -0.4505081193405727
+                  -0.5902557373046875,
+                  -0.25297486782073975,
+                  -0.2592017352581024,
+                  -0.7382240891456604,
+                  0.037215039134025574,
+                  1.6867815256118774,
+                  -0.7597463726997375,
+                  -0.13546472787857056,
+                  -1.0735281705856323,
+                  -0.24347160756587982,
+                  0.24070043861865997,
+                  5.103872776031494,
+                  8.502730369567871,
+                  -2.3943140506744385,
+                  1.5450079441070557,
+                  0.8356295228004456,
+                  0.15567424893379211,
+                  3.3787295818328857,
+                  3.3787295818328857,
+                  3.3787295818328857,
+                  3.3787295818328857,
+                  -2.9714407920837402,
+                  -2.2849581241607666,
+                  -0.19849590957164764,
+                  -0.7931885719299316,
+                  -1.8719650506973267,
+                  -0.21722868084907532,
+                  -1.216018557548523,
+                  -1.3608269691467285,
+                  -0.949553370475769,
+                  -0.6802914142608643,
+                  -0.9553685784339905,
+                  -1.738136649131775,
+                  -0.05493057519197464,
+                  -0.09970322996377945,
+                  -2.0662546157836914,
+                  -2.204338312149048,
+                  -0.2802134156227112,
+                  -0.2802134156227112,
+                  -0.058562103658914566,
+                  -0.02292877435684204,
+                  -0.19102077186107635,
+                  -0.0010805248748511076,
+                  -0.3058869540691376,
+                  -0.14403246343135834,
+                  -0.14403246343135834,
+                  -0.18202203512191772,
+                  -0.47020289301872253,
+                  -0.47020289301872253,
+                  -0.435543417930603,
+                  -1.9302767515182495,
+                  -1.0015931384589545
                 ],
                 [
-                  -2.178698778152466,
-                  -0.932367742061615,
-                  1.7342008352279663,
-                  0,
-                  -5.44229793548584,
-                  0,
-                  -0.38552871346473694,
-                  -0.8885979652404785,
-                  0,
-                  -0.5522986650466919,
-                  -4.163980484008789,
-                  -3.2092220783233643,
-                  5.502954483032227,
-                  3.7551252841949463,
-                  -2.743663787841797,
-                  -0.8203510642051697,
-                  -3.1785218715667725,
-                  -1.8128862380981445,
-                  -1.8128862380981445,
-                  -1.8128862380981445,
-                  -1.8128862380981445,
-                  0.9846044778823853,
-                  1.2933868169784546,
-                  1.9073480367660522,
-                  5.378814697265625,
-                  1.4574470520019531,
-                  1.455342411994934,
-                  -4.928055763244629,
-                  -2.3194682598114014,
-                  -1.1225425004959106,
-                  -2.003312349319458,
-                  -0.12261571735143661,
-                  -1.8678432703018188,
-                  0,
-                  0,
-                  -0.4005676209926605,
-                  -0.010143651627004147,
-                  0,
-                  0,
-                  -0.03967790678143501,
+                  -2.5287439823150635,
+                  -1.1721657514572144,
+                  -0.021842634305357933,
+                  -8.735397338867188,
+                  -1.4456278085708618,
+                  7.986794948577881,
+                  -8.67300796508789,
+                  0.2998477816581726,
+                  -0.35858550667762756,
+                  -0.7580552101135254,
+                  -1.0004494190216064,
+                  -5.553141117095947,
+                  -4.680729866027832,
+                  1.2666234970092773,
+                  -2.026045560836792,
+                  -1.0871388912200928,
+                  -4.8514556884765625,
+                  -2.574690103530884,
+                  -2.574690103530884,
+                  -2.574690103530884,
+                  -2.574690103530884,
+                  2.404351234436035,
+                  1.3976556062698364,
+                  0.04402889311313629,
+                  0.48908737301826477,
+                  1.2261790037155151,
+                  -1.6555079221725464,
+                  0.6191285848617554,
+                  1.1509653329849243,
+                  2.481182813644409,
+                  2.430544376373291,
+                  3.3942923545837402,
+                  -9.0747652053833,
+                  -1.7356828451156616,
+                  -1.422947883605957,
+                  -2.993274450302124,
+                  -2.6949756145477295,
                   0,
                   0,
+                  -0.3499111533164978,
+                  -0.07447081059217453,
                   0,
                   0,
-                  -0.18808475136756897,
-                  -0.18808475136756897,
+                  -0.3793562650680542,
                   0,
                   0,
-                  1.813524336334739
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2.524510222820379
                 ],
                 [
-                  -1.6524065732955933,
-                  5.767898082733154,
-                  -0.3168858587741852,
-                  -1.336706280708313,
-                  -2.150874137878418,
-                  -1.603004813194275,
-                  1.9222691059112549,
-                  1.533677339553833,
-                  -0.49611344933509827,
-                  1.9012418985366821,
-                  -2.965487241744995,
-                  -2.55849552154541,
-                  5.3525214195251465,
-                  -4.542118549346924,
-                  -0.4913691580295563,
-                  3.98987078666687,
-                  -0.10185624659061432,
-                  -1.3257540464401245,
-                  -1.3257540464401245,
-                  -1.3257540464401245,
-                  -1.3257540464401245,
-                  -3.5780038833618164,
-                  -2.2667078971862793,
-                  -0.880365252494812,
-                  -3.4260854721069336,
-                  -1.9867318868637085,
-                  -1.9721797704696655,
-                  8.35922908782959,
-                  1.2117360830307007,
-                  6.780248165130615,
-                  -3.1358461380004883,
-                  -3.8111777305603027,
-                  -2.217345952987671,
-                  -1.5448079109191895,
-                  -1.5448079109191895,
-                  -2.2501144409179688,
+                  0.3580476641654968,
+                  2.475372076034546,
+                  0.9002899527549744,
+                  -6.01577615737915,
+                  -1.22003173828125,
+                  5.912367343902588,
+                  -6.005135536193848,
+                  2.3458263874053955,
+                  1.3206422328948975,
+                  -0.82365483045578,
+                  2.377977132797241,
+                  -2.7469258308410645,
+                  -2.2573721408843994,
+                  -3.272634506225586,
+                  -0.6553862690925598,
+                  2.2804665565490723,
+                  0.049329791218042374,
+                  -1.1011404991149902,
+                  -1.1011404991149902,
+                  -1.1011404991149902,
+                  -1.1011404991149902,
+                  -3.065972089767456,
+                  -3.9000890254974365,
+                  -0.25123119354248047,
+                  -4.716099262237549,
+                  -2.056178092956543,
+                  -0.012543724849820137,
+                  -1.2731268405914307,
+                  -2.263359308242798,
+                  -1.2550995349884033,
+                  -1.1886570453643799,
+                  -1.4507759809494019,
+                  9.113707542419434,
+                  2.4453048706054688,
+                  10.336633682250977,
+                  -1.337059736251831,
+                  -2.201310634613037,
+                  -1.907353401184082,
+                  -1.907353401184082,
+                  -0.0006398007390089333,
                   0,
                   0,
+                  -0.08480681478977203,
                   0,
-                  -0.07859409600496292,
-                  0,
-                  -0.1478000432252884,
-                  -0.1478000432252884,
-                  -0.33746540546417236,
+                  -0.14632943272590637,
+                  -0.14632943272590637,
+                  -0.3317299783229828,
                   0,
                   0,
-                  -2.247321367263794,
-                  -0.027292925864458084,
-                  -0.6360871636157439
+                  -3.37874174118042,
+                  -0.047194331884384155,
+                  -3.2023067409960206
                 ],
                 [
-                  -0.4304070770740509,
-                  -3.366490602493286,
-                  -0.03445618972182274,
-                  -2.3071706295013428,
-                  -0.20880411565303802,
-                  -2.2964301109313965,
-                  0.1076984629034996,
-                  -0.0725017786026001,
-                  -0.20173229277133942,
-                  0.15786853432655334,
-                  -0.16572734713554382,
-                  -2.030531167984009,
-                  -14.250381469726562,
-                  0.193661630153656,
-                  -0.2450510859489441,
-                  -0.2220298796892166,
-                  11.705425262451172,
-                  -1.1382578611373901,
-                  -1.1382578611373901,
-                  -1.1382578611373901,
-                  -1.1382578611373901,
-                  -0.2613167464733124,
+                  -0.3833487927913666,
+                  -2.195150375366211,
+                  0.027970483526587486,
+                  -0.5058803558349609,
+                  -0.009499965235590935,
+                  -14.334991455078125,
+                  -0.45177558064460754,
+                  0.004221674054861069,
+                  -0.0018180798506364226,
+                  -0.019519349560141563,
+                  0.008259561844170094,
+                  -0.14619974792003632,
+                  -1.8217729330062866,
+                  0.1129232868552208,
+                  -0.14001086354255676,
+                  -0.1301262378692627,
+                  10.130885124206543,
+                  -0.9848938584327698,
+                  -0.9848938584327698,
+                  -0.9848938584327698,
+                  -0.9848938584327698,
+                  -0.20276501774787903,
+                  0.0031633100006729364,
+                  -0.02339654043316841,
+                  0.001956955064088106,
+                  -0.08816859871149063,
                   0,
-                  -0.2527213990688324,
+                  -0.015308992005884647,
                   0,
                   0,
                   0,
-                  0.21515116095542908,
                   0,
-                  -1.5709877014160156,
-                  0.04039232060313225,
-                  0.08750639110803604,
-                  0.14202548563480377,
-                  0.22198081016540527,
-                  0.22198081016540527,
-                  0.048438869416713715,
-                  -0.31321388483047485,
-                  -0.33833810687065125,
-                  0.15163445472717285,
-                  0.1053982749581337,
-                  -0.1455262303352356,
-                  -0.004927663132548332,
-                  -0.004927663132548332,
-                  0.06640706211328506,
-                  -0.004833335522562265,
-                  -0.004833335522562265,
-                  0.05388157069683075,
-                  0.2155022770166397,
-                  2.568939749059744
+                  0.01039906032383442,
+                  0,
+                  -1.6216933727264404,
+                  -0.00015143236669246107,
+                  0.010905634611845016,
+                  0.19171075522899628,
+                  0.19171075522899628,
+                  -0.017595257610082626,
+                  -0.01974196545779705,
+                  0.007623315788805485,
+                  0.004301589448004961,
+                  -0.01124006137251854,
+                  -0.001730339601635933,
+                  -0.001730339601635933,
+                  -0.004918237216770649,
+                  0.026644093915820122,
+                  0.026644093915820122,
+                  0.0019842314068228006,
+                  0.11684972047805786,
+                  4.157167019514373
                 ]
               ]
             }
@@ -2404,39 +2608,39 @@
     "extraSentences": [
       [
         "en",
-        "what is the plot of"
+        "what is the plot of @moviename"
       ],
       [
         "en",
-        "what is the summary of"
+        "what is the summary of @moviename"
       ],
       [
         "en",
-        "tell me the plot of"
+        "tell me the plot of @moviename"
       ],
       [
         "en",
-        "tell me the summary of"
+        "tell me the summary of @moviename"
       ],
       [
         "en",
-        "plot of"
+        "plot of @moviename"
       ],
       [
         "en",
-        "summary of"
+        "summary of @moviename"
       ],
       [
         "en",
-        "what is the breif summary of"
+        "what is the breif summary of @moviename"
       ],
       [
         "en",
-        "tell me the breif summary of"
+        "tell me the breif summary of @moviename"
       ],
       [
         "en",
-        "breif summary of"
+        "breif summary of @moviename"
       ],
       [
         "en",
@@ -2469,6 +2673,70 @@
       [
         "en",
         "when did @moviename movie come out"
+      ],
+      [
+        "en",
+        "@moviename actor list"
+      ],
+      [
+        "en",
+        "actor list @moviename"
+      ],
+      [
+        "en",
+        "actor list for @moviename"
+      ],
+      [
+        "en",
+        "list of actors in @moviename"
+      ],
+      [
+        "en",
+        "show me @moviename actor list"
+      ],
+      [
+        "en",
+        "show me actor list @moviename"
+      ],
+      [
+        "en",
+        "show me actor list for @moviename"
+      ],
+      [
+        "en",
+        "show me list of actors in @moviename"
+      ],
+      [
+        "en",
+        "tell me @moviename actor list"
+      ],
+      [
+        "en",
+        "tell me actor list @moviename"
+      ],
+      [
+        "en",
+        "tell me actor list for @moviename"
+      ],
+      [
+        "en",
+        "tell me list of actors in @moviename"
+      ],
+      [
+        "en",
+        "Who were the actors in @moviename"
+      ],
+      [
+        "en",
+        "Who starred in @moviename"
+      ],
+      [
+        "en",
+        "Who were the actor in @moviename"
+      ],
+      [
+        "en",
+        "@moviename actor name"
       ],
       [
         "en",
@@ -2560,6 +2828,26 @@
       ],
       [
         "en",
+        "actors in @moviename"
+      ],
+      [
+        "en",
+        "list of actors in @moviename"
+      ],
+      [
+        "en",
+        "cast of @moviename"
+      ],
+      [
+        "en",
+        "list of cast in @moviename"
+      ],
+      [
+        "en",
+        "who were the cast in @moviename"
+      ],
+      [
+        "en",
         "What genre was @moviename"
       ],
       [
@@ -2604,7 +2892,7 @@
       ],
       [
         "en",
-        "'s genre"
+        "@moviename 's genre"
       ],
       [
         "en",
@@ -6343,6 +6631,14 @@
     "actions": {}
   },
   "slotManager": {
+    "message.get_plot": {
+      "moviename": {
+        "intent": "message.get_plot",
+        "entity": "moviename",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
     "message.get_movie_year": {
       "moviename": {
         "intent": "message.get_movie_year",

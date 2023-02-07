@@ -2,8 +2,6 @@ const fs = require("fs");
 const { NlpManager } = require("node-nlp");
 const path = require("path");
 
-
-
 class NLP {
   constructor() {
     this.SCORE_THRESHOLD = 0.3;
@@ -31,7 +29,7 @@ class NLP {
 
     let our_entities = { genre: [], actor: [], daterange: [], moviename: [] };
 
-    // console.dir(result);
+    console.dir(result, { depth: null });
 
     result.entities.forEach((element) => {
       let entity_type = element["entity"];

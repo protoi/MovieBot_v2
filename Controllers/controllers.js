@@ -1,25 +1,25 @@
 const axios = require("axios");
-const nlp_model = require("../retain_model");
 const { logger } = require("../logger");
+//our classes
+const nlp_model = require("../NLP/retain_model");
 const WhatsappUtils = require("../WhatsappUtils");
 const IMDB = require("../IMDB");
 
 //Objects
 const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
 const IMDBObj = new IMDB.IMDB();
-const model = new nlp_model.natural_language_processing_model();
+const model = new nlp_model.NLP();
 
 require("dotenv").config();
 
 const PORT = 9999;
-model.load_model();
+// model.load_model();
 
 const ping = (req, res) => {
   res.send("Hello World");
 };
 
 //This function verifies the token sent by whatsapp to configure webhook with the server. //
-
 const verify_token = (req, res) => {
   if (req.query["hub.verify_token"] == process.env.SECRET) {
     logger.debug("Token Verified");
@@ -28,17 +28,20 @@ const verify_token = (req, res) => {
 };
 
 const fetch_info_and_post_to_whatsapp = async (req, res) => {
-  console.log(req.body);
-  const num_msg_tuple = WhatsappUtilsObj.extract_number_and_message(req.body);
+  // console.log(req.body);
+  // const num_msg_tuple = WhatsappUtilsObj.extract_number_and_message(req.body);
 
-  if (num_msg_tuple == null) {
-    console.log("message or phone number were broken");
-    logger.error("Broken phone number or link");
-    // res.sendStatus(200);
-    return;
-  }
-  let num = num_msg_tuple.num;
-  let msg = num_msg_tuple.msg;
+  // if (num_msg_tuple == null) {
+  //   console.log("message or phone number were broken");
+  //   logger.error("Broken phone number or link");
+  //   // res.sendStatus(200);
+  //   return;
+  // }
+  // let num = num_msg_tuple.num;
+  // let msg = num_msg_tuple.msg;
+
+  let { num, msg } = req.num_msg_tuple;
+
   logger.debug(`Extracted message : ${msg} `);
   logger.debug(`Destination Phone number : ${num}`);
   let movie_info = null;
@@ -56,6 +59,26 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     logger.debug(
       `Intent extraced : ${EntityIntent_tuple.intents} with probability: ${EntityIntent_tuple.score}`
     );
+
+    if (EntityIntent_tuple.score < model.SCORE_THRESHOLD) {
+      const payload = WhatsappUtilsObj.generate_payload(
+        num,
+        "I donot understand, please try another message."
+      );
+      try {
+        const success = await WhatsappUtilsObj.send_message_to_whatsapp(
+          payload
+        );
+        logger.debug(`success status: ${success}`);
+        res.sendStatus(200);
+      } catch (err) {
+        logger.error(
+          `something went wrong trying to send intent failure message to user ${err.message}`
+        );
+        res.sendStatus(403);
+      }
+      return;
+    }
   } catch (err) {
     console.error(`entity and intent extraction failed: ${err.message}`);
   }
@@ -75,7 +98,9 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
   const payload = WhatsappUtilsObj.generate_payload(num, message_body);
 
-  axios(payload)
+  const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
+
+  /* axios(payload)
     .then((response) => {
       logger.debug("Message sent successfully");
       console.log("Message sent successfully");
@@ -83,9 +108,10 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     .catch((err) => {
       logger.error("Something went wrong while sending the message");
       console.log("Something went wrong while sending the message");
-    });
+    }); */
 
   console.log(`===========BODY===========\n${message_body}`);
+  console.log(`success status: ${success}`);
 
   res.sendStatus(200);
 };
@@ -94,4 +120,7 @@ module.exports = {
   ping,
   verify_token,
   fetch_info_and_post_to_whatsapp,
+  WhatsappUtilsObj,
+  IMDBObj,
+  model,
 };

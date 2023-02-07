@@ -4,7 +4,7 @@
   "data": [
     {
       "intent": "message.get_plot",
-      "signature" : "get_plot(movie_name: String) -> String",
+      "signature": "get_plot(movie_name: String) -> String",
       "utterances": [
         "what is the plot of",
         "what is the summary of",
@@ -19,6 +19,7 @@
     },
     {
       "intent": "message.get_movie_year",
+      "signature": "get_movie_year(movie_name: String) -> String",
       "utterances": [
         "Give the year of release of",
         "In which year was released",
@@ -32,6 +33,7 @@
     },
     {
       "intent": "message.get_actor",
+      "signature": "get_actor(movie_name: String) -> {male: [String], female: [String], other: [String]}",
       "utterances": [
         "Who was the actor in ",
         "Who starred in ",
@@ -64,6 +66,7 @@
     },
     {
       "intent": "message.get_genre",
+      "signature": "get_genre(movie_name: String) -> [String]",
       "utterances": [
         "What genre was",
         "what was the genre of",
@@ -82,6 +85,8 @@
     },
     {
       "intent": "message.get_movie",
+      "signature": "get_movie(actors: [String], genres: [String], year: Integer) -> ",
+      "signature_continued...": "[{ title: String, poster: String (url), genre: [String], release: String, rating: Float }]",
       "utterances": [
         "Show me @genre movies of @actor",
         "what are some @genre movies of @actor",

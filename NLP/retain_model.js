@@ -2,18 +2,23 @@ const fs = require("fs");
 const { NlpManager } = require("node-nlp");
 const path = require("path");
 
-class natural_language_processing_model {
+
+
+class NLP {
   constructor() {
+    this.SCORE_THRESHOLD = 0.3;
+    this.model_finished_loading = false;
     this.manager = new NlpManager();
-    // this.load_model();
+    this.load_model();
   }
   /**
    * loads "mymodel.nlp" model from the file directory
    */
   load_model() {
-    const file = path.join(process.cwd(), "mymodel.nlp");
+    const file = path.join(process.cwd(), "NLP", "mymodel.nlp");
     const data = fs.readFileSync(file, "utf8");
     this.manager.import(data);
+    this.model_finished_loading = true;
   }
 
   /**
@@ -60,4 +65,4 @@ class natural_language_processing_model {
 // obj.load_model();
 // obj.testing();
 
-module.exports = { natural_language_processing_model };
+module.exports = { NLP };

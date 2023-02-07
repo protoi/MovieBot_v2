@@ -1,3 +1,7 @@
+// const { default: axios } = require("axios");
+const axios = require("axios");
+const { logger } = require("./logger");
+
 class WhatsappUtils {
   /**
    * Extracts Mobile number and received message from the user.
@@ -126,6 +130,17 @@ class WhatsappUtils {
     } catch (err) {
       console.log(err.message);
       return null;
+    }
+  }
+
+  async send_message_to_whatsapp(payload) {
+    try {
+      await axios(payload);
+      logger.debug("Message sent successfully");
+      return true;
+    } catch (err) {
+      logger.error("Something went wrong while sending the message");
+      return false;
     }
   }
 }

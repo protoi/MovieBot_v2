@@ -7,7 +7,7 @@ require("dotenv").config();
 class IMDB {
   constructor() {
     this.genre_mapping = {};
-
+    this.genre_mapper_initialized = false;
     this.genre_ID_pre_mapping();
   }
 
@@ -28,6 +28,7 @@ class IMDB {
         this.genre_mapping[element["name"].toLowerCase()] = element["id"];
         this.genre_mapping[element["id"]] = element["name"].toLowerCase();
       });
+      this.genre_mapper_initialized = true;
       // console.log(this.genre_mapping);
       // return true;
     } catch (err) {

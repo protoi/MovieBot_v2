@@ -1,0 +1,6640 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "forceNER": true,
+    "languages": [
+      "en"
+    ],
+    "autoSave": false,
+    "corpora": [
+      "./corpus.json"
+    ],
+    "calculateSentiment": true,
+    "executeActionsBeforeAnswers": false
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "is,of,plot,the,what": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "is,of,summari,the,what": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "me,of,plot,tell,the": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "me,of,summari,tell,the": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "of,plot": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "of,summari": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "breif,is,of,summari,the,what": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "breif,me,of,summari,tell,the": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "breif,of,summari": {
+            "intent": "message.get_plot",
+            "domain": "default"
+          },
+          "give,of,releas,the,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "in,releas,was,which,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "releas,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "of,releas,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "of,releas,the,was,what,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "movi,of,releas,the,year": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "come,did,out,when": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "come,did,movi,out,when": {
+            "intent": "message.get_movie_year",
+            "domain": "default"
+          },
+          "actor,list": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,for,list": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,list,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,list,me,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,for,list,me,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,list,me,of,show": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,list,me,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,for,list,me,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,list,me,of,tell": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,the,were,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "in,star,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,name": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,the,was,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,is,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "in,star,was,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,in,the,was,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,in,is,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,name": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,in,the,was,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,in,is,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,name": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,name,of,the": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,name,of,star,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in,is,name,of,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,in,name,of,the": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,in,name,of,star": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "guy,in,is,name,of,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,in,name,of,the": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,in,name,of,star": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "girl,in,is,name,of,the,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "actor,in": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "cast,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "cast,in,list,of": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "cast,in,the,were,who": {
+            "intent": "message.get_actor",
+            "domain": "default"
+          },
+          "genr,was,what": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,of,the,was,what": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,is,of,the,what": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,give,me,movi,of": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,give,me,of": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,me,movi,of,tell": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,me,of,tell": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,s": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "genr,is": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "@genr,a,is,movi": {
+            "intent": "message.get_genre",
+            "domain": "default"
+          },
+          "@actor,@genr,me,movi,of,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,movi,of,some,what": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,me,movi,star,tell": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,list,movi,with": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,me,movi,show,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,movi,some,star,what": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,list,movi,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,me,movi,show,with": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,movi,some,what,with": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,me,movi,tell": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,list,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,me,movi,show,with": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,categori,movi,some,what,with": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,me,movi,tell": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,list,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,me,movi,of,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,movi,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,movi,of,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,give,movi,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,list,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,list,movi,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,movi,star": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,i,movi,of,the,want": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,movi,of,the": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,list,movi,of": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,act,has,in,movi,which": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,list,movi,of": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,list,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,movi,of,send": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,movi,send": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,movi,of,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,movi,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,me,movi,of,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,me,movi,show": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,genr,movi,of,some,what": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,movi,some,what": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,movi": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,movi,of": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,list,movi,of": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,me,movi,of,send": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,movi,of,send": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,star,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,list,movi,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,show,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,some,star,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,in,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,in,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,in,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,have,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,in,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,categori,in,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,in,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,have,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,give,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,i,in,movi,of,the,want,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,in,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,act,has,in,movi,the,which,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,genr,in,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,me,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,genr,in,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,in,movi,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,in,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,me,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,in,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,star,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,list,movi,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,show,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,some,star,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,from,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,have,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,from,have,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,me,movi,show,the,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,are,categori,from,movi,some,the,what,with,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,have,me,movi,tell,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,categori,from,have,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,from,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,@genr,and,from,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,give,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,from,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,list,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,by,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,star,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,i,movi,of,the,want,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,all,from,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@actor,act,from,has,in,movi,the,which,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,list,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,genr,me,movi,of,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,me,movi,show,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,from,genr,movi,of,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,are,from,movi,some,the,what,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,from,movi,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,list,movi,of,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,me,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          },
+          "@genr,categori,from,movi,of,send,the,year": {
+            "intent": "message.get_movie",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "message.get_plot": "default",
+          "message.get_movie_year": "default",
+          "message.get_actor": "default",
+          "message.get_genre": "default",
+          "message.get_movie": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "what is the plot of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the plot of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "plot of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the breif summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the breif summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "breif summary of ",
+            "intent": "message.get_plot"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give the year of release of ",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "In which year was  released",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "release year ",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "Release year of ",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "What was the year of release of ",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "Year of release of the movie ",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "when did  come out",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": "when did  movie come out",
+            "intent": "message.get_movie_year"
+          },
+          {
+            "domain": "default",
+            "utterance": " actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "actor list ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "actor list for ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me  actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me actor list ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me actor list for ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "show me list of actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me  actor list",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me actor list ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me actor list for ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me list of actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who were the actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who starred in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who were the actor in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": " actor name",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who was the actor in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who starred in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who is the actor in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who was starring in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": " actor name",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who was the guy in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who starred in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who is the guy in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": " guy name",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who was the girl in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who starred in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "Who is the girl in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": " girl name",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of the actor in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of actor who starred in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of who is the actor in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of the guy in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of guy starring in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of who is the guy in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of the girl in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of girl starring in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "name of who is the girl in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of actors in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "cast of ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "list of cast in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "who were the cast in ",
+            "intent": "message.get_actor"
+          },
+          {
+            "domain": "default",
+            "utterance": "What genre was ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "what was the genre of ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the genre of ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the genre of  ?",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me genre of movie ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me genre of  ?",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me genre of ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me genre of movie ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me genre of  ?",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me genre of  ",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": " s genre",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": " 's genre",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "is  a @genre movie",
+            "intent": "message.get_genre"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies with @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies with @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies with @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies having @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies having @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre category movies with @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre category movies with @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre category movies having @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre category movies having @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor and @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies starring @actor and @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies by @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies by @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies starring @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want all the movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@actor movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "All the movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List all movies of @actor",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies in which @actor has acted",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of genre @genre",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of genre @genre",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send @genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of genre @genre",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show @genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me movies of genre @genre",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some movies of genre @genre",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some @genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies of @genre category",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of @genre category",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send me movies of @genre category",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of @genre category",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre category movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre category movies with @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre category movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre category movies having @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor and @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies starring @actor and @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies by @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies by @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies starring @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want all the movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@actor movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "All the movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List all movies of @actor in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies in which @actor has acted in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some movies of genre @genre in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some @genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send me movies of @genre category in the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of @genre category in the year",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre category movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "what are some @genre category movies with @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me @genre category movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre category movies having @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies of @actor and @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies starring @actor and @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Give movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies by @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies by @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies starring @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want all the movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@actor movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "All the movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List all movies of @actor from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies in which @actor has acted from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Show me @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some movies of genre @genre from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are some @genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "@genre movies from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "List movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send me movies of @genre category from the year ",
+            "intent": "message.get_movie"
+          },
+          {
+            "domain": "default",
+            "utterance": "Send movies of @genre category from the year",
+            "intent": "message.get_movie"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "what": 1,
+              "is": 1,
+              "the": 1,
+              "plot": 1,
+              "of": 1,
+              "summari": 1,
+              "tell": 1,
+              "me": 1,
+              "breif": 1,
+              "give": 1,
+              "year": 1,
+              "releas": 1,
+              "in": 1,
+              "which": 1,
+              "was": 1,
+              "movi": 1,
+              "when": 1,
+              "did": 1,
+              "come": 1,
+              "out": 1,
+              "actor": 1,
+              "list": 1,
+              "for": 1,
+              "show": 1,
+              "who": 1,
+              "were": 1,
+              "star": 1,
+              "name": 1,
+              "guy": 1,
+              "girl": 1,
+              "cast": 1,
+              "genr": 1,
+              "s": 1,
+              "a": 1,
+              "@genr": 1,
+              "@actor": 1,
+              "are": 1,
+              "some": 1,
+              "with": 1,
+              "have": 1,
+              "categori": 1,
+              "and": 1,
+              "by": 1,
+              "i": 1,
+              "want": 1,
+              "all": 1,
+              "has": 1,
+              "act": 1,
+              "send": 1,
+              "from": 1
+            },
+            "intents": {
+              "message.get_plot": 1,
+              "message.get_movie_year": 1,
+              "message.get_actor": 1,
+              "message.get_genre": 1,
+              "message.get_movie": 1
+            },
+            "intentFeatures": {
+              "message.get_plot": {
+                "what": 1,
+                "is": 1,
+                "the": 1,
+                "plot": 1,
+                "of": 1,
+                "summari": 1,
+                "tell": 1,
+                "me": 1,
+                "breif": 1
+              },
+              "message.get_movie_year": {
+                "give": 1,
+                "the": 1,
+                "year": 1,
+                "of": 1,
+                "releas": 1,
+                "in": 1,
+                "which": 1,
+                "was": 1,
+                "what": 1,
+                "movi": 1,
+                "when": 1,
+                "did": 1,
+                "come": 1,
+                "out": 1
+              },
+              "message.get_actor": {
+                "actor": 1,
+                "list": 1,
+                "for": 1,
+                "of": 1,
+                "in": 1,
+                "show": 1,
+                "me": 1,
+                "tell": 1,
+                "who": 1,
+                "were": 1,
+                "the": 1,
+                "star": 1,
+                "name": 1,
+                "was": 1,
+                "is": 1,
+                "guy": 1,
+                "girl": 1,
+                "cast": 1
+              },
+              "message.get_genre": {
+                "what": 1,
+                "genr": 1,
+                "was": 1,
+                "the": 1,
+                "of": 1,
+                "is": 1,
+                "give": 1,
+                "me": 1,
+                "movi": 1,
+                "tell": 1,
+                "s": 1,
+                "a": 1,
+                "@genr": 1
+              },
+              "message.get_movie": {
+                "show": 1,
+                "me": 1,
+                "@genr": 1,
+                "movi": 1,
+                "of": 1,
+                "@actor": 1,
+                "what": 1,
+                "are": 1,
+                "some": 1,
+                "tell": 1,
+                "star": 1,
+                "list": 1,
+                "with": 1,
+                "have": 1,
+                "categori": 1,
+                "and": 1,
+                "give": 1,
+                "by": 1,
+                "i": 1,
+                "want": 1,
+                "all": 1,
+                "the": 1,
+                "in": 1,
+                "which": 1,
+                "has": 1,
+                "act": 1,
+                "genr": 1,
+                "send": 1,
+                "year": 1,
+                "from": 1
+              }
+            },
+            "featuresToIntent": {
+              "what": [
+                "message.get_plot",
+                "message.get_movie_year",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "is": [
+                "message.get_plot",
+                "message.get_actor",
+                "message.get_genre"
+              ],
+              "the": [
+                "message.get_plot",
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "plot": [
+                "message.get_plot"
+              ],
+              "of": [
+                "message.get_plot",
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "summari": [
+                "message.get_plot"
+              ],
+              "tell": [
+                "message.get_plot",
+                "message.get_actor",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "me": [
+                "message.get_plot",
+                "message.get_actor",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "breif": [
+                "message.get_plot"
+              ],
+              "give": [
+                "message.get_movie_year",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "year": [
+                "message.get_movie_year",
+                "message.get_movie"
+              ],
+              "releas": [
+                "message.get_movie_year"
+              ],
+              "in": [
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_movie"
+              ],
+              "which": [
+                "message.get_movie_year",
+                "message.get_movie"
+              ],
+              "was": [
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_genre"
+              ],
+              "movi": [
+                "message.get_movie_year",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "when": [
+                "message.get_movie_year"
+              ],
+              "did": [
+                "message.get_movie_year"
+              ],
+              "come": [
+                "message.get_movie_year"
+              ],
+              "out": [
+                "message.get_movie_year"
+              ],
+              "actor": [
+                "message.get_actor"
+              ],
+              "list": [
+                "message.get_actor",
+                "message.get_movie"
+              ],
+              "for": [
+                "message.get_actor"
+              ],
+              "show": [
+                "message.get_actor",
+                "message.get_movie"
+              ],
+              "who": [
+                "message.get_actor"
+              ],
+              "were": [
+                "message.get_actor"
+              ],
+              "star": [
+                "message.get_actor",
+                "message.get_movie"
+              ],
+              "name": [
+                "message.get_actor"
+              ],
+              "guy": [
+                "message.get_actor"
+              ],
+              "girl": [
+                "message.get_actor"
+              ],
+              "cast": [
+                "message.get_actor"
+              ],
+              "genr": [
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "s": [
+                "message.get_genre"
+              ],
+              "a": [
+                "message.get_genre"
+              ],
+              "@genr": [
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "@actor": [
+                "message.get_movie"
+              ],
+              "are": [
+                "message.get_movie"
+              ],
+              "some": [
+                "message.get_movie"
+              ],
+              "with": [
+                "message.get_movie"
+              ],
+              "have": [
+                "message.get_movie"
+              ],
+              "categori": [
+                "message.get_movie"
+              ],
+              "and": [
+                "message.get_movie"
+              ],
+              "by": [
+                "message.get_movie"
+              ],
+              "i": [
+                "message.get_movie"
+              ],
+              "want": [
+                "message.get_movie"
+              ],
+              "all": [
+                "message.get_movie"
+              ],
+              "has": [
+                "message.get_movie"
+              ],
+              "act": [
+                "message.get_movie"
+              ],
+              "send": [
+                "message.get_movie"
+              ],
+              "from": [
+                "message.get_movie"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "what",
+                "is",
+                "the",
+                "plot",
+                "of",
+                "summari",
+                "tell",
+                "me",
+                "breif",
+                "give",
+                "year",
+                "releas",
+                "in",
+                "which",
+                "was",
+                "movi",
+                "when",
+                "did",
+                "come",
+                "out",
+                "actor",
+                "list",
+                "for",
+                "show",
+                "who",
+                "were",
+                "star",
+                "name",
+                "guy",
+                "girl",
+                "cast",
+                "genr",
+                "s",
+                "a",
+                "@genr",
+                "@actor",
+                "are",
+                "some",
+                "with",
+                "have",
+                "categori",
+                "and",
+                "by",
+                "i",
+                "want",
+                "all",
+                "has",
+                "act",
+                "send",
+                "from"
+              ],
+              "intents": [
+                "message.get_plot",
+                "message.get_movie_year",
+                "message.get_actor",
+                "message.get_genre",
+                "message.get_movie"
+              ],
+              "perceptrons": [
+                [
+                  0.07005053013563156,
+                  0.6498402953147888,
+                  -0.7198893427848816,
+                  10.13169002532959,
+                  3.4961307048797607,
+                  10.131689071655273,
+                  0.904228925704956,
+                  -0.18433810770511627,
+                  0.0000010758951702882769,
+                  -0.9783532619476318,
+                  -3.1015889644622803,
+                  -3.1015889644622803,
+                  -3.4373281002044678,
+                  -0.053172431886196136,
+                  -1.8113621473312378,
+                  -2.5301272869110107,
+                  -0.2182450145483017,
+                  -0.2182450145483017,
+                  -0.2182450145483017,
+                  -0.2182450145483017,
+                  -2.488088369369507,
+                  -1.9427093267440796,
+                  -0.16944220662117004,
+                  -0.7653291821479797,
+                  -1.4840878248214722,
+                  -0.0024255416356027126,
+                  -0.09876155108213425,
+                  -1.5801615715026855,
+                  -1.0248150825500488,
+                  -0.5953927040100098,
+                  -4.154019832611084,
+                  -5.437882423400879,
+                  0,
+                  0,
+                  -1.0758719444274902,
+                  -0.9982482194900513,
+                  -0.22896850109100342,
+                  -0.22896850109100342,
+                  0,
+                  -0.0007880778284743428,
+                  -0.5480234622955322,
+                  -0.0038478232454508543,
+                  0,
+                  -0.21769481897354126,
+                  -0.21769481897354126,
+                  -0.470150887966156,
+                  0,
+                  0,
+                  -0.2703571915626526,
+                  0,
+                  0.6578923500054752
+                ],
+                [
+                  -0.8813214898109436,
+                  -0.3632596433162689,
+                  -0.14467839896678925,
+                  -0.5692739486694336,
+                  0.02493562363088131,
+                  -0.6110771298408508,
+                  -0.2249504178762436,
+                  -1.0105561017990112,
+                  -0.20684942603111267,
+                  0.1344364881515503,
+                  4.919332981109619,
+                  9.130681991577148,
+                  -2.4753899574279785,
+                  1.4577672481536865,
+                  1.0149891376495361,
+                  0.08534444868564606,
+                  3.5010435581207275,
+                  3.5010435581207275,
+                  3.5010435581207275,
+                  3.5010435581207275,
+                  -1.9261306524276733,
+                  -1.4506757259368896,
+                  -0.14270733296871185,
+                  -0.9643401503562927,
+                  -1.2539687156677246,
+                  -0.1962878257036209,
+                  -0.9723993539810181,
+                  -0.7338646054267883,
+                  -0.6117597222328186,
+                  -0.419325053691864,
+                  -0.7163577675819397,
+                  -1.4101351499557495,
+                  -0.007237141951918602,
+                  -0.104840949177742,
+                  -2.9616336822509766,
+                  -3.0638997554779053,
+                  -0.41387006640434265,
+                  -0.41387006640434265,
+                  -0.09852844476699829,
+                  -0.012781243771314621,
+                  -0.4635559320449829,
+                  -0.046653080731630325,
+                  -0.3639260232448578,
+                  -0.19005133211612701,
+                  -0.19005133211612701,
+                  -0.30310577154159546,
+                  -0.5052165389060974,
+                  -0.5052165389060974,
+                  -0.48673805594444275,
+                  -2.1309051513671875,
+                  0.23432341738983795
+                ],
+                [
+                  -1.6316559314727783,
+                  -0.8480057716369629,
+                  -0.03867644816637039,
+                  -10.317670822143555,
+                  -1.0438677072525024,
+                  -10.29425048828125,
+                  0.2465881109237671,
+                  -0.2565259337425232,
+                  -0.645829439163208,
+                  -0.7929702401161194,
+                  -6.486937999725342,
+                  -4.936338424682617,
+                  0.9371813535690308,
+                  -2.26981520652771,
+                  -0.7772994637489319,
+                  -7.710188865661621,
+                  -2.8682973384857178,
+                  -2.8682973384857178,
+                  -2.8682973384857178,
+                  -2.8682973384857178,
+                  1.8131049871444702,
+                  0.8572583198547363,
+                  0.031045012176036835,
+                  0.34740185737609863,
+                  0.8988255262374878,
+                  -1.2638498544692993,
+                  0.4569846987724304,
+                  0.7885239124298096,
+                  1.859618902206421,
+                  1.8338088989257812,
+                  2.6004602909088135,
+                  -10.4987211227417,
+                  -1.8328419923782349,
+                  -0.10973545908927917,
+                  -4.655930519104004,
+                  -5.179164409637451,
+                  0,
+                  0,
+                  -0.5450952649116516,
+                  -0.0645337700843811,
+                  0,
+                  0,
+                  -0.5163770914077759,
+                  0,
+                  0,
+                  0,
+                  -0.10531597584486008,
+                  -0.10531597584486008,
+                  0,
+                  0,
+                  11.549373001799466
+                ],
+                [
+                  0.1740184724330902,
+                  4.355224132537842,
+                  0.8035047650337219,
+                  -5.64492130279541,
+                  -0.9379972815513611,
+                  -5.64188814163208,
+                  3.414971113204956,
+                  1.8928842544555664,
+                  -0.5671092867851257,
+                  3.4237799644470215,
+                  -2.6667380332946777,
+                  -2.11444354057312,
+                  -2.9284744262695312,
+                  -0.12693536281585693,
+                  4.265718460083008,
+                  0.005719906184822321,
+                  -0.5072647929191589,
+                  -0.5072647929191589,
+                  -0.5072647929191589,
+                  -0.5072647929191589,
+                  -1.9475406408309937,
+                  -4.8735785484313965,
+                  -0.13518603146076202,
+                  -6.772468566894531,
+                  -2.3316969871520996,
+                  -0.0022919452749192715,
+                  -1.434805989265442,
+                  -0.24781771004199982,
+                  -0.999464750289917,
+                  -0.9392186999320984,
+                  0,
+                  9.426871299743652,
+                  4.3735857009887695,
+                  13.525574684143066,
+                  -4.0997772216796875,
+                  -3.88608717918396,
+                  -2.569931745529175,
+                  -2.569931745529175,
+                  0,
+                  -0.004142432007938623,
+                  0,
+                  -0.09941807389259338,
+                  0,
+                  -0.16776977479457855,
+                  -0.16776977479457855,
+                  -0.38252317905426025,
+                  0,
+                  0,
+                  -4.873163223266602,
+                  -0.07837473601102829,
+                  0.4844576204520407
+                ],
+                [
+                  -1.1244226694107056,
+                  -6.570076942443848,
+                  1.0150009393692017,
+                  -0.8435680866241455,
+                  -0.9637386202812195,
+                  -0.8406176567077637,
+                  1.459751009941101,
+                  -2.071049690246582,
+                  -0.12012442201375961,
+                  -0.7782532572746277,
+                  -1.0159211158752441,
+                  -10.61840534210205,
+                  0.31550586223602295,
+                  -0.14680583775043488,
+                  -1.5374083518981934,
+                  10.993732452392578,
+                  -2.9038429260253906,
+                  -2.9038429260253906,
+                  -2.9038429260253906,
+                  -2.9038429260253906,
+                  -2.0404202938079834,
+                  0.2107543647289276,
+                  -0.3398590087890625,
+                  2.2723913192749023,
+                  -1.8563969135284424,
+                  -0.2175922393798828,
+                  0.19721627235412598,
+                  -0.8590346574783325,
+                  -0.44630542397499084,
+                  -0.4126143455505371,
+                  -0.4769304096698761,
+                  0.809723973274231,
+                  -0.8899639844894409,
+                  -5.976466178894043,
+                  2.371323347091675,
+                  2.915656089782715,
+                  0.5622958540916443,
+                  0.5622958540916443,
+                  -0.6536716222763062,
+                  -0.26171785593032837,
+                  0.6193423867225647,
+                  0.5118250250816345,
+                  0.9869636297225952,
+                  0.01585993357002735,
+                  0.01585993357002735,
+                  1.6619651317596436,
+                  0.14381876587867737,
+                  0.14381876587867737,
+                  1.0346109867095947,
+                  0.7079225778579712,
+                  0.6396893883322703
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "what is the plot of "
+      ],
+      [
+        "en",
+        "what is the summary of "
+      ],
+      [
+        "en",
+        "tell me the plot of "
+      ],
+      [
+        "en",
+        "tell me the summary of "
+      ],
+      [
+        "en",
+        "plot of "
+      ],
+      [
+        "en",
+        "summary of "
+      ],
+      [
+        "en",
+        "what is the breif summary of "
+      ],
+      [
+        "en",
+        "tell me the breif summary of "
+      ],
+      [
+        "en",
+        "breif summary of "
+      ],
+      [
+        "en",
+        "Give the year of release of "
+      ],
+      [
+        "en",
+        "In which year was  released"
+      ],
+      [
+        "en",
+        "release year "
+      ],
+      [
+        "en",
+        "Release year of "
+      ],
+      [
+        "en",
+        "What was the year of release of "
+      ],
+      [
+        "en",
+        "Year of release of the movie "
+      ],
+      [
+        "en",
+        "when did  come out"
+      ],
+      [
+        "en",
+        "when did  movie come out"
+      ],
+      [
+        "en",
+        " actor list"
+      ],
+      [
+        "en",
+        "actor list "
+      ],
+      [
+        "en",
+        "actor list for "
+      ],
+      [
+        "en",
+        "list of actors in "
+      ],
+      [
+        "en",
+        "show me  actor list"
+      ],
+      [
+        "en",
+        "show me actor list "
+      ],
+      [
+        "en",
+        "show me actor list for "
+      ],
+      [
+        "en",
+        "show me list of actors in "
+      ],
+      [
+        "en",
+        "tell me  actor list"
+      ],
+      [
+        "en",
+        "tell me actor list "
+      ],
+      [
+        "en",
+        "tell me actor list for "
+      ],
+      [
+        "en",
+        "tell me list of actors in "
+      ],
+      [
+        "en",
+        "Who were the actors in "
+      ],
+      [
+        "en",
+        "Who starred in "
+      ],
+      [
+        "en",
+        "Who were the actor in "
+      ],
+      [
+        "en",
+        " actor name"
+      ],
+      [
+        "en",
+        "Who was the actor in "
+      ],
+      [
+        "en",
+        "Who starred in "
+      ],
+      [
+        "en",
+        "Who is the actor in "
+      ],
+      [
+        "en",
+        "Who was starring in "
+      ],
+      [
+        "en",
+        " actor name"
+      ],
+      [
+        "en",
+        "Who was the guy in "
+      ],
+      [
+        "en",
+        "Who starred in "
+      ],
+      [
+        "en",
+        "Who is the guy in "
+      ],
+      [
+        "en",
+        " guy name"
+      ],
+      [
+        "en",
+        "Who was the girl in "
+      ],
+      [
+        "en",
+        "Who starred in "
+      ],
+      [
+        "en",
+        "Who is the girl in "
+      ],
+      [
+        "en",
+        " girl name"
+      ],
+      [
+        "en",
+        "name of the actor in "
+      ],
+      [
+        "en",
+        "name of actor who starred in "
+      ],
+      [
+        "en",
+        "name of who is the actor in "
+      ],
+      [
+        "en",
+        "name of the guy in "
+      ],
+      [
+        "en",
+        "name of guy starring in "
+      ],
+      [
+        "en",
+        "name of who is the guy in "
+      ],
+      [
+        "en",
+        "name of the girl in "
+      ],
+      [
+        "en",
+        "name of girl starring in "
+      ],
+      [
+        "en",
+        "name of who is the girl in "
+      ],
+      [
+        "en",
+        "actors in "
+      ],
+      [
+        "en",
+        "list of actors in "
+      ],
+      [
+        "en",
+        "cast of "
+      ],
+      [
+        "en",
+        "list of cast in "
+      ],
+      [
+        "en",
+        "who were the cast in "
+      ],
+      [
+        "en",
+        "What genre was "
+      ],
+      [
+        "en",
+        "what was the genre of "
+      ],
+      [
+        "en",
+        "what is the genre of "
+      ],
+      [
+        "en",
+        "what is the genre of  ?"
+      ],
+      [
+        "en",
+        "give me genre of movie "
+      ],
+      [
+        "en",
+        "give me genre of  ?"
+      ],
+      [
+        "en",
+        "give me genre of "
+      ],
+      [
+        "en",
+        "tell me genre of movie "
+      ],
+      [
+        "en",
+        "tell me genre of  ?"
+      ],
+      [
+        "en",
+        "tell me genre of  "
+      ],
+      [
+        "en",
+        " s genre"
+      ],
+      [
+        "en",
+        " 's genre"
+      ],
+      [
+        "en",
+        "is  a @genre movie"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor"
+      ],
+      [
+        "en",
+        "what are some @genre movies of @actor"
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "List @genre movies with @actor"
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "Show me @genre movies with @actor"
+      ],
+      [
+        "en",
+        "what are some @genre movies with @actor"
+      ],
+      [
+        "en",
+        "Tell me @genre movies having @actor"
+      ],
+      [
+        "en",
+        "List @genre movies having @actor"
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor"
+      ],
+      [
+        "en",
+        "Show me @genre category movies with @actor"
+      ],
+      [
+        "en",
+        "what are some @genre category movies with @actor"
+      ],
+      [
+        "en",
+        "Tell me @genre category movies having @actor"
+      ],
+      [
+        "en",
+        "List @genre category movies having @actor"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor and @actor"
+      ],
+      [
+        "en",
+        "@genre movies starring @actor and @actor"
+      ],
+      [
+        "en",
+        "Show movies of @actor"
+      ],
+      [
+        "en",
+        "Give movies starring @actor"
+      ],
+      [
+        "en",
+        "List movies by @actor"
+      ],
+      [
+        "en",
+        "List movies starring @actor"
+      ],
+      [
+        "en",
+        "Movies by @actor"
+      ],
+      [
+        "en",
+        "Movies starring @actor"
+      ],
+      [
+        "en",
+        "I want all the movies of @actor"
+      ],
+      [
+        "en",
+        "@actor movies"
+      ],
+      [
+        "en",
+        "All the movies of @actor"
+      ],
+      [
+        "en",
+        "List all movies of @actor"
+      ],
+      [
+        "en",
+        "Movies in which @actor has acted"
+      ],
+      [
+        "en",
+        "List movies of genre @genre"
+      ],
+      [
+        "en",
+        "List @genre movies"
+      ],
+      [
+        "en",
+        "Send movies of genre @genre"
+      ],
+      [
+        "en",
+        "Send @genre movies"
+      ],
+      [
+        "en",
+        "Show movies of genre @genre"
+      ],
+      [
+        "en",
+        "Show @genre movies"
+      ],
+      [
+        "en",
+        "Show me movies of genre @genre"
+      ],
+      [
+        "en",
+        "Show me @genre movies"
+      ],
+      [
+        "en",
+        "What are some movies of genre @genre"
+      ],
+      [
+        "en",
+        "What are some @genre movies"
+      ],
+      [
+        "en",
+        "@genre movies"
+      ],
+      [
+        "en",
+        "Movies of @genre category"
+      ],
+      [
+        "en",
+        "List movies of @genre category"
+      ],
+      [
+        "en",
+        "Send me movies of @genre category"
+      ],
+      [
+        "en",
+        "Send movies of @genre category"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies having @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies having @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre category movies with @actor in the year "
+      ],
+      [
+        "en",
+        "what are some @genre category movies with @actor in the year "
+      ],
+      [
+        "en",
+        "Tell me @genre category movies having @actor in the year "
+      ],
+      [
+        "en",
+        "List @genre category movies having @actor in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor and @actor in the year "
+      ],
+      [
+        "en",
+        "@genre movies starring @actor and @actor in the year "
+      ],
+      [
+        "en",
+        "Show movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Give movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "List movies by @actor in the year "
+      ],
+      [
+        "en",
+        "List movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "Movies by @actor in the year "
+      ],
+      [
+        "en",
+        "Movies starring @actor in the year "
+      ],
+      [
+        "en",
+        "I want all the movies of @actor in the year "
+      ],
+      [
+        "en",
+        "@actor movies in the year "
+      ],
+      [
+        "en",
+        "All the movies of @actor in the year "
+      ],
+      [
+        "en",
+        "List all movies of @actor in the year "
+      ],
+      [
+        "en",
+        "Movies in which @actor has acted in the year "
+      ],
+      [
+        "en",
+        "List movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "List @genre movies in the year "
+      ],
+      [
+        "en",
+        "Send movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Send @genre movies in the year "
+      ],
+      [
+        "en",
+        "Show movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Show @genre movies in the year "
+      ],
+      [
+        "en",
+        "Show me movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies in the year "
+      ],
+      [
+        "en",
+        "What are some movies of genre @genre in the year "
+      ],
+      [
+        "en",
+        "What are some @genre movies in the year "
+      ],
+      [
+        "en",
+        "@genre movies in the year "
+      ],
+      [
+        "en",
+        "Movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "List movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "Send me movies of @genre category in the year "
+      ],
+      [
+        "en",
+        "Send movies of @genre category in the year"
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies having @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies having @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre category movies with @actor from the year "
+      ],
+      [
+        "en",
+        "what are some @genre category movies with @actor from the year "
+      ],
+      [
+        "en",
+        "Tell me @genre category movies having @actor from the year "
+      ],
+      [
+        "en",
+        "List @genre category movies having @actor from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies of @actor and @actor from the year "
+      ],
+      [
+        "en",
+        "@genre movies starring @actor and @actor from the year "
+      ],
+      [
+        "en",
+        "Show movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Give movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "List movies by @actor from the year "
+      ],
+      [
+        "en",
+        "List movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "Movies by @actor from the year "
+      ],
+      [
+        "en",
+        "Movies starring @actor from the year "
+      ],
+      [
+        "en",
+        "I want all the movies of @actor from the year "
+      ],
+      [
+        "en",
+        "@actor movies from the year "
+      ],
+      [
+        "en",
+        "All the movies of @actor from the year "
+      ],
+      [
+        "en",
+        "List all movies of @actor from the year "
+      ],
+      [
+        "en",
+        "Movies in which @actor has acted from the year "
+      ],
+      [
+        "en",
+        "List movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "List @genre movies from the year "
+      ],
+      [
+        "en",
+        "Send movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Send @genre movies from the year "
+      ],
+      [
+        "en",
+        "Show movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Show @genre movies from the year "
+      ],
+      [
+        "en",
+        "Show me movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "Show me @genre movies from the year "
+      ],
+      [
+        "en",
+        "What are some movies of genre @genre from the year "
+      ],
+      [
+        "en",
+        "What are some @genre movies from the year "
+      ],
+      [
+        "en",
+        "@genre movies from the year "
+      ],
+      [
+        "en",
+        "Movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "List movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "Send me movies of @genre category from the year "
+      ],
+      [
+        "en",
+        "Send movies of @genre category from the year"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {
+      "en": {
+        "actor": {
+          "name": "actor",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "Scarlett Johansson",
+              "texts": [
+                "Scarlett Johansson"
+              ]
+            },
+            {
+              "option": "Robert Downey, Jr.",
+              "texts": [
+                "Robert Downey, Jr."
+              ]
+            },
+            {
+              "option": "Samuel L. Jackson",
+              "texts": [
+                "Samuel L. Jackson"
+              ]
+            },
+            {
+              "option": "Zoe Saldana",
+              "texts": [
+                "Zoe Saldana"
+              ]
+            },
+            {
+              "option": "Chris Hemsworth",
+              "texts": [
+                "Chris Hemsworth"
+              ]
+            },
+            {
+              "option": "Chris Pratt",
+              "texts": [
+                "Chris Pratt"
+              ]
+            },
+            {
+              "option": "Tom Cruise",
+              "texts": [
+                "Tom Cruise"
+              ]
+            },
+            {
+              "option": "Chris Evans",
+              "texts": [
+                "Chris Evans"
+              ]
+            },
+            {
+              "option": "Tom Hanks",
+              "texts": [
+                "Tom Hanks"
+              ]
+            },
+            {
+              "option": "Vin Diesel",
+              "texts": [
+                "Vin Diesel"
+              ]
+            },
+            {
+              "option": "Bradley Cooper",
+              "texts": [
+                "Bradley Cooper"
+              ]
+            },
+            {
+              "option": "Johnny Depp",
+              "texts": [
+                "Johnny Depp"
+              ]
+            },
+            {
+              "option": "Dwayne Johnson",
+              "texts": [
+                "Dwayne Johnson"
+              ]
+            },
+            {
+              "option": "Tom Holland",
+              "texts": [
+                "Tom Holland"
+              ]
+            },
+            {
+              "option": "Mark Ruffalo",
+              "texts": [
+                "Mark Ruffalo"
+              ]
+            },
+            {
+              "option": "Emma Watson",
+              "texts": [
+                "Emma Watson"
+              ]
+            },
+            {
+              "option": "Don Cheadle",
+              "texts": [
+                "Don Cheadle"
+              ]
+            },
+            {
+              "option": "Jeremy Renner",
+              "texts": [
+                "Jeremy Renner"
+              ]
+            },
+            {
+              "option": "Will Smith",
+              "texts": [
+                "Will Smith"
+              ]
+            },
+            {
+              "option": "Elizabeth Olsen",
+              "texts": [
+                "Elizabeth Olsen"
+              ]
+            },
+            {
+              "option": "Daniel Radcliffe",
+              "texts": [
+                "Daniel Radcliffe"
+              ]
+            },
+            {
+              "option": "Benedict Cumberbatch",
+              "texts": [
+                "Benedict Cumberbatch"
+              ]
+            },
+            {
+              "option": "Harrison Ford",
+              "texts": [
+                "Harrison Ford"
+              ]
+            },
+            {
+              "option": "Josh Brolin",
+              "texts": [
+                "Josh Brolin"
+              ]
+            },
+            {
+              "option": "Karen Gillan",
+              "texts": [
+                "Karen Gillan"
+              ]
+            },
+            {
+              "option": "Rupert Grint",
+              "texts": [
+                "Rupert Grint"
+              ]
+            },
+            {
+              "option": "Chadwick Boseman",
+              "texts": [
+                "Chadwick Boseman"
+              ]
+            },
+            {
+              "option": "Letitia Wright",
+              "texts": [
+                "Letitia Wright"
+              ]
+            },
+            {
+              "option": "Dave Bautista",
+              "texts": [
+                "Dave Bautista"
+              ]
+            },
+            {
+              "option": "Sebastian Stan",
+              "texts": [
+                "Sebastian Stan"
+              ]
+            },
+            {
+              "option": "Steve Carell",
+              "texts": [
+                "Steve Carell"
+              ]
+            },
+            {
+              "option": "Leonardo DiCaprio",
+              "texts": [
+                "Leonardo DiCaprio"
+              ]
+            },
+            {
+              "option": "Matt Damon",
+              "texts": [
+                "Matt Damon"
+              ]
+            },
+            {
+              "option": "Danai Gurira",
+              "texts": [
+                "Danai Gurira"
+              ]
+            },
+            {
+              "option": "Tom Hiddleston",
+              "texts": [
+                "Tom Hiddleston"
+              ]
+            },
+            {
+              "option": "Brad Pitt",
+              "texts": [
+                "Brad Pitt"
+              ]
+            },
+            {
+              "option": "Paul Bettany",
+              "texts": [
+                "Paul Bettany"
+              ]
+            },
+            {
+              "option": "Bruce Willis",
+              "texts": [
+                "Bruce Willis"
+              ]
+            },
+            {
+              "option": "Eddie Murphy",
+              "texts": [
+                "Eddie Murphy"
+              ]
+            },
+            {
+              "option": "Liam Neeson",
+              "texts": [
+                "Liam Neeson"
+              ]
+            },
+            {
+              "option": "Benedict Wong",
+              "texts": [
+                "Benedict Wong"
+              ]
+            },
+            {
+              "option": "Ben Stiller",
+              "texts": [
+                "Ben Stiller"
+              ]
+            },
+            {
+              "option": "Hugh Jackman",
+              "texts": [
+                "Hugh Jackman"
+              ]
+            },
+            {
+              "option": "Ian McKellen",
+              "texts": [
+                "Ian McKellen"
+              ]
+            },
+            {
+              "option": "Sam Worthington",
+              "texts": [
+                "Sam Worthington"
+              ]
+            },
+            {
+              "option": "Gwyneth Paltrow",
+              "texts": [
+                "Gwyneth Paltrow"
+              ]
+            },
+            {
+              "option": "Mark Wahlberg",
+              "texts": [
+                "Mark Wahlberg"
+              ]
+            },
+            {
+              "option": "Jennifer Lawrence",
+              "texts": [
+                "Jennifer Lawrence"
+              ]
+            },
+            {
+              "option": "Nicolas Cage",
+              "texts": [
+                "Nicolas Cage"
+              ]
+            },
+            {
+              "option": "Cameron Diaz",
+              "texts": [
+                "Cameron Diaz"
+              ]
+            },
+            {
+              "option": "Ewan McGregor",
+              "texts": [
+                "Ewan McGregor"
+              ]
+            },
+            {
+              "option": "Pom Klementieff",
+              "texts": [
+                "Pom Klementieff"
+              ]
+            },
+            {
+              "option": "Jim Carrey",
+              "texts": [
+                "Jim Carrey"
+              ]
+            },
+            {
+              "option": "Idris Elba",
+              "texts": [
+                "Idris Elba"
+              ]
+            },
+            {
+              "option": "Christian Bale",
+              "texts": [
+                "Christian Bale"
+              ]
+            },
+            {
+              "option": "Natalie Portman",
+              "texts": [
+                "Natalie Portman"
+              ]
+            },
+            {
+              "option": "Josh Gad",
+              "texts": [
+                "Josh Gad"
+              ]
+            },
+            {
+              "option": "Julia Roberts",
+              "texts": [
+                "Julia Roberts"
+              ]
+            },
+            {
+              "option": "Sandra Bullock",
+              "texts": [
+                "Sandra Bullock"
+              ]
+            },
+            {
+              "option": "Martin Freeman",
+              "texts": [
+                "Martin Freeman"
+              ]
+            },
+            {
+              "option": "Adam Sandler",
+              "texts": [
+                "Adam Sandler"
+              ]
+            },
+            {
+              "option": "Ralph Fiennes",
+              "texts": [
+                "Ralph Fiennes"
+              ]
+            },
+            {
+              "option": "Ryan Reynolds",
+              "texts": [
+                "Ryan Reynolds"
+              ]
+            },
+            {
+              "option": "Jack Black",
+              "texts": [
+                "Jack Black"
+              ]
+            },
+            {
+              "option": "Ben Affleck",
+              "texts": [
+                "Ben Affleck"
+              ]
+            },
+            {
+              "option": "Robert De Niro",
+              "texts": [
+                "Robert De Niro"
+              ]
+            },
+            {
+              "option": "Jason Statham",
+              "texts": [
+                "Jason Statham"
+              ]
+            },
+            {
+              "option": "Sylvester Stallone",
+              "texts": [
+                "Sylvester Stallone"
+              ]
+            },
+            {
+              "option": "Paul Rudd",
+              "texts": [
+                "Paul Rudd"
+              ]
+            },
+            {
+              "option": "Owen Wilson",
+              "texts": [
+                "Owen Wilson"
+              ]
+            },
+            {
+              "option": "Adam Driver",
+              "texts": [
+                "Adam Driver"
+              ]
+            },
+            {
+              "option": "Daniel Craig",
+              "texts": [
+                "Daniel Craig"
+              ]
+            },
+            {
+              "option": "Daisy Ridley",
+              "texts": [
+                "Daisy Ridley"
+              ]
+            },
+            {
+              "option": "John Boyega",
+              "texts": [
+                "John Boyega"
+              ]
+            },
+            {
+              "option": "Morgan Freeman",
+              "texts": [
+                "Morgan Freeman"
+              ]
+            },
+            {
+              "option": "Robin Williams",
+              "texts": [
+                "Robin Williams"
+              ]
+            },
+            {
+              "option": "Keanu Reeves",
+              "texts": [
+                "Keanu Reeves"
+              ]
+            },
+            {
+              "option": "Orlando Bloom",
+              "texts": [
+                "Orlando Bloom"
+              ]
+            },
+            {
+              "option": "Mel Gibson",
+              "texts": [
+                "Mel Gibson"
+              ]
+            },
+            {
+              "option": "George Clooney",
+              "texts": [
+                "George Clooney"
+              ]
+            },
+            {
+              "option": "Kevin Hart",
+              "texts": [
+                "Kevin Hart"
+              ]
+            },
+            {
+              "option": "Robert Pattinson",
+              "texts": [
+                "Robert Pattinson"
+              ]
+            },
+            {
+              "option": "Brie Larson",
+              "texts": [
+                "Brie Larson"
+              ]
+            },
+            {
+              "option": "Simon Pegg",
+              "texts": [
+                "Simon Pegg"
+              ]
+            },
+            {
+              "option": "Lupita Nyong'o",
+              "texts": [
+                "Lupita Nyong'o"
+              ]
+            },
+            {
+              "option": "Arnold Schwarzenegger",
+              "texts": [
+                "Arnold Schwarzenegger"
+              ]
+            },
+            {
+              "option": "Shia LaBeouf",
+              "texts": [
+                "Shia LaBeouf"
+              ]
+            },
+            {
+              "option": "Meryl Streep",
+              "texts": [
+                "Meryl Streep"
+              ]
+            },
+            {
+              "option": "Anthony Mackie",
+              "texts": [
+                "Anthony Mackie"
+              ]
+            },
+            {
+              "option": "Jude Law",
+              "texts": [
+                "Jude Law"
+              ]
+            },
+            {
+              "option": "Jon Favreau",
+              "texts": [
+                "Jon Favreau"
+              ]
+            },
+            {
+              "option": "Mark Hamill",
+              "texts": [
+                "Mark Hamill"
+              ]
+            },
+            {
+              "option": "Denzel Washington",
+              "texts": [
+                "Denzel Washington"
+              ]
+            },
+            {
+              "option": "Anthony Hopkins",
+              "texts": [
+                "Anthony Hopkins"
+              ]
+            },
+            {
+              "option": "Keegan-Michael Key",
+              "texts": [
+                "Keegan-Michael Key"
+              ]
+            },
+            {
+              "option": "Tim Allen",
+              "texts": [
+                "Tim Allen"
+              ]
+            },
+            {
+              "option": "Keira Knightley",
+              "texts": [
+                "Keira Knightley"
+              ]
+            },
+            {
+              "option": "Channing Tatum",
+              "texts": [
+                "Channing Tatum"
+              ]
+            },
+            {
+              "option": "Geoffrey Rush",
+              "texts": [
+                "Geoffrey Rush"
+              ]
+            },
+            {
+              "option": "Mike Myers",
+              "texts": [
+                "Mike Myers"
+              ]
+            },
+            {
+              "option": "Russell Crowe",
+              "texts": [
+                "Russell Crowe"
+              ]
+            },
+            {
+              "option": "Paul Walker",
+              "texts": [
+                "Paul Walker"
+              ]
+            },
+            {
+              "option": "Kristen Stewart",
+              "texts": [
+                "Kristen Stewart"
+              ]
+            },
+            {
+              "option": "Angelina Jolie",
+              "texts": [
+                "Angelina Jolie"
+              ]
+            },
+            {
+              "option": "Michelle Rodriguez",
+              "texts": [
+                "Michelle Rodriguez"
+              ]
+            },
+            {
+              "option": "Colin Farrell",
+              "texts": [
+                "Colin Farrell"
+              ]
+            },
+            {
+              "option": "John Travolta",
+              "texts": [
+                "John Travolta"
+              ]
+            },
+            {
+              "option": "Evangeline Lilly",
+              "texts": [
+                "Evangeline Lilly"
+              ]
+            },
+            {
+              "option": "Nicole Kidman",
+              "texts": [
+                "Nicole Kidman"
+              ]
+            },
+            {
+              "option": "Anne Hathaway",
+              "texts": [
+                "Anne Hathaway"
+              ]
+            },
+            {
+              "option": "Seth Rogen",
+              "texts": [
+                "Seth Rogen"
+              ]
+            },
+            {
+              "option": "Taylor Lautner",
+              "texts": [
+                "Taylor Lautner"
+              ]
+            },
+            {
+              "option": "Viggo Mortensen",
+              "texts": [
+                "Viggo Mortensen"
+              ]
+            },
+            {
+              "option": "Pierce Brosnan",
+              "texts": [
+                "Pierce Brosnan"
+              ]
+            },
+            {
+              "option": "Cate Blanchett",
+              "texts": [
+                "Cate Blanchett"
+              ]
+            },
+            {
+              "option": "Michael Douglas",
+              "texts": [
+                "Michael Douglas"
+              ]
+            },
+            {
+              "option": "John Leguizamo",
+              "texts": [
+                "John Leguizamo"
+              ]
+            },
+            {
+              "option": "Michelle Pfeiffer",
+              "texts": [
+                "Michelle Pfeiffer"
+              ]
+            },
+            {
+              "option": "Angela Bassett",
+              "texts": [
+                "Angela Bassett"
+              ]
+            },
+            {
+              "option": "Chiwetel Ejiofor",
+              "texts": [
+                "Chiwetel Ejiofor"
+              ]
+            },
+            {
+              "option": "Andy Serkis",
+              "texts": [
+                "Andy Serkis"
+              ]
+            },
+            {
+              "option": "Tommy Lee Jones",
+              "texts": [
+                "Tommy Lee Jones"
+              ]
+            },
+            {
+              "option": "Woody Harrelson",
+              "texts": [
+                "Woody Harrelson"
+              ]
+            },
+            {
+              "option": "Colin Firth",
+              "texts": [
+                "Colin Firth"
+              ]
+            },
+            {
+              "option": "Kate Winslet",
+              "texts": [
+                "Kate Winslet"
+              ]
+            },
+            {
+              "option": "Kristen Bell",
+              "texts": [
+                "Kristen Bell"
+              ]
+            },
+            {
+              "option": "James McAvoy",
+              "texts": [
+                "James McAvoy"
+              ]
+            },
+            {
+              "option": "Charlize Theron",
+              "texts": [
+                "Charlize Theron"
+              ]
+            },
+            {
+              "option": "Ben Kingsley",
+              "texts": [
+                "Ben Kingsley"
+              ]
+            },
+            {
+              "option": "Rachel McAdams",
+              "texts": [
+                "Rachel McAdams"
+              ]
+            },
+            {
+              "option": "Chris Rock",
+              "texts": [
+                "Chris Rock"
+              ]
+            },
+            {
+              "option": "Matthew McConaughey",
+              "texts": [
+                "Matthew McConaughey"
+              ]
+            },
+            {
+              "option": "Henry Cavill",
+              "texts": [
+                "Henry Cavill"
+              ]
+            },
+            {
+              "option": "Oscar Isaac",
+              "texts": [
+                "Oscar Isaac"
+              ]
+            },
+            {
+              "option": "Denis Leary",
+              "texts": [
+                "Denis Leary"
+              ]
+            },
+            {
+              "option": "Kevin Costner",
+              "texts": [
+                "Kevin Costner"
+              ]
+            },
+            {
+              "option": "Ray Romano",
+              "texts": [
+                "Ray Romano"
+              ]
+            },
+            {
+              "option": "Chris Pine",
+              "texts": [
+                "Chris Pine"
+              ]
+            },
+            {
+              "option": "Jon Hamm",
+              "texts": [
+                "Jon Hamm"
+              ]
+            },
+            {
+              "option": "Will Ferrell",
+              "texts": [
+                "Will Ferrell"
+              ]
+            },
+            {
+              "option": "Jamie Foxx",
+              "texts": [
+                "Jamie Foxx"
+              ]
+            },
+            {
+              "option": "Tobey Maguire",
+              "texts": [
+                "Tobey Maguire"
+              ]
+            },
+            {
+              "option": "Reese Witherspoon",
+              "texts": [
+                "Reese Witherspoon"
+              ]
+            },
+            {
+              "option": "Gerard Butler",
+              "texts": [
+                "Gerard Butler"
+              ]
+            },
+            {
+              "option": "John Goodman",
+              "texts": [
+                "John Goodman"
+              ]
+            },
+            {
+              "option": "Antonio Banderas",
+              "texts": [
+                "Antonio Banderas"
+              ]
+            },
+            {
+              "option": "Carrie Fisher",
+              "texts": [
+                "Carrie Fisher"
+              ]
+            },
+            {
+              "option": "Bill Murray",
+              "texts": [
+                "Bill Murray"
+              ]
+            },
+            {
+              "option": "Zendaya",
+              "texts": [
+                "Zendaya"
+              ]
+            },
+            {
+              "option": "Kevin James",
+              "texts": [
+                "Kevin James"
+              ]
+            },
+            {
+              "option": "Alan Tudyk",
+              "texts": [
+                "Alan Tudyk"
+              ]
+            },
+            {
+              "option": "Kristen Wiig",
+              "texts": [
+                "Kristen Wiig"
+              ]
+            },
+            {
+              "option": "Ben Mendelsohn",
+              "texts": [
+                "Ben Mendelsohn"
+              ]
+            },
+            {
+              "option": "Jackie Chan",
+              "texts": [
+                "Jackie Chan"
+              ]
+            },
+            {
+              "option": "Bryce Dallas Howard",
+              "texts": [
+                "Bryce Dallas Howard"
+              ]
+            },
+            {
+              "option": "Michael Fassbender",
+              "texts": [
+                "Michael Fassbender"
+              ]
+            },
+            {
+              "option": "Dustin Hoffman",
+              "texts": [
+                "Dustin Hoffman"
+              ]
+            },
+            {
+              "option": "Emma Thompson",
+              "texts": [
+                "Emma Thompson"
+              ]
+            },
+            {
+              "option": "Sacha Baron Cohen",
+              "texts": [
+                "Sacha Baron Cohen"
+              ]
+            },
+            {
+              "option": "Jake Gyllenhaal",
+              "texts": [
+                "Jake Gyllenhaal"
+              ]
+            },
+            {
+              "option": "Amy Adams",
+              "texts": [
+                "Amy Adams"
+              ]
+            },
+            {
+              "option": "Javier Bardem",
+              "texts": [
+                "Javier Bardem"
+              ]
+            },
+            {
+              "option": "Terry Notary",
+              "texts": [
+                "Terry Notary"
+              ]
+            },
+            {
+              "option": "Richard Gere",
+              "texts": [
+                "Richard Gere"
+              ]
+            },
+            {
+              "option": "Queen Latifah",
+              "texts": [
+                "Queen Latifah"
+              ]
+            },
+            {
+              "option": "Tom Hardy",
+              "texts": [
+                "Tom Hardy"
+              ]
+            },
+            {
+              "option": "Gal Gadot",
+              "texts": [
+                "Gal Gadot"
+              ]
+            },
+            {
+              "option": "Idina Menzel",
+              "texts": [
+                "Idina Menzel"
+              ]
+            },
+            {
+              "option": "Emily Blunt",
+              "texts": [
+                "Emily Blunt"
+              ]
+            },
+            {
+              "option": "Michael Caine",
+              "texts": [
+                "Michael Caine"
+              ]
+            },
+            {
+              "option": "Robert Redford",
+              "texts": [
+                "Robert Redford"
+              ]
+            },
+            {
+              "option": "Michael Peña",
+              "texts": [
+                "Michael Peña"
+              ]
+            },
+            {
+              "option": "Jada Pinkett Smith",
+              "texts": [
+                "Jada Pinkett Smith"
+              ]
+            },
+            {
+              "option": "Patrick Stewart",
+              "texts": [
+                "Patrick Stewart"
+              ]
+            },
+            {
+              "option": "Willem Dafoe",
+              "texts": [
+                "Willem Dafoe"
+              ]
+            },
+            {
+              "option": "Ezra Miller",
+              "texts": [
+                "Ezra Miller"
+              ]
+            },
+            {
+              "option": "Zach Galifianakis",
+              "texts": [
+                "Zach Galifianakis"
+              ]
+            },
+            {
+              "option": "Eddie Redmayne",
+              "texts": [
+                "Eddie Redmayne"
+              ]
+            },
+            {
+              "option": "Aaron Taylor-Johnson",
+              "texts": [
+                "Aaron Taylor-Johnson"
+              ]
+            },
+            {
+              "option": "Elijah Wood",
+              "texts": [
+                "Elijah Wood"
+              ]
+            },
+            {
+              "option": "Tilda Swinton",
+              "texts": [
+                "Tilda Swinton"
+              ]
+            },
+            {
+              "option": "Florence Kasumba",
+              "texts": [
+                "Florence Kasumba"
+              ]
+            },
+            {
+              "option": "Beyoncé Knowles",
+              "texts": [
+                "Beyoncé Knowles"
+              ]
+            },
+            {
+              "option": "Jennifer Aniston",
+              "texts": [
+                "Jennifer Aniston"
+              ]
+            },
+            {
+              "option": "Helena Bonham Carter",
+              "texts": [
+                "Helena Bonham Carter"
+              ]
+            },
+            {
+              "option": "Michael Keaton",
+              "texts": [
+                "Michael Keaton"
+              ]
+            },
+            {
+              "option": "Al Pacino",
+              "texts": [
+                "Al Pacino"
+              ]
+            },
+            {
+              "option": "Clint Eastwood",
+              "texts": [
+                "Clint Eastwood"
+              ]
+            },
+            {
+              "option": "Kevin Kline",
+              "texts": [
+                "Kevin Kline"
+              ]
+            },
+            {
+              "option": "Alec Baldwin",
+              "texts": [
+                "Alec Baldwin"
+              ]
+            },
+            {
+              "option": "Tyrese Gibson",
+              "texts": [
+                "Tyrese Gibson"
+              ]
+            },
+            {
+              "option": "Kurt Russell",
+              "texts": [
+                "Kurt Russell"
+              ]
+            },
+            {
+              "option": "Emma Stone",
+              "texts": [
+                "Emma Stone"
+              ]
+            },
+            {
+              "option": "Amanda Seyfried",
+              "texts": [
+                "Amanda Seyfried"
+              ]
+            },
+            {
+              "option": "Jack Nicholson",
+              "texts": [
+                "Jack Nicholson"
+              ]
+            },
+            {
+              "option": "Anthony Daniels",
+              "texts": [
+                "Anthony Daniels"
+              ]
+            },
+            {
+              "option": "Jonah Hill",
+              "texts": [
+                "Jonah Hill"
+              ]
+            },
+            {
+              "option": "Alan Rickman",
+              "texts": [
+                "Alan Rickman"
+              ]
+            },
+            {
+              "option": "Dennis Quaid",
+              "texts": [
+                "Dennis Quaid"
+              ]
+            },
+            {
+              "option": "Zac Efron",
+              "texts": [
+                "Zac Efron"
+              ]
+            },
+            {
+              "option": "Jesse Eisenberg",
+              "texts": [
+                "Jesse Eisenberg"
+              ]
+            },
+            {
+              "option": "Rami Malek",
+              "texts": [
+                "Rami Malek"
+              ]
+            },
+            {
+              "option": "Rowan Atkinson",
+              "texts": [
+                "Rowan Atkinson"
+              ]
+            },
+            {
+              "option": "Penélope Cruz",
+              "texts": [
+                "Penélope Cruz"
+              ]
+            },
+            {
+              "option": "Steve Martin",
+              "texts": [
+                "Steve Martin"
+              ]
+            },
+            {
+              "option": "Jeff Bridges",
+              "texts": [
+                "Jeff Bridges"
+              ]
+            },
+            {
+              "option": "Jason Momoa",
+              "texts": [
+                "Jason Momoa"
+              ]
+            },
+            {
+              "option": "Margot Robbie",
+              "texts": [
+                "Margot Robbie"
+              ]
+            },
+            {
+              "option": "Salma Hayek",
+              "texts": [
+                "Salma Hayek"
+              ]
+            },
+            {
+              "option": "John Cusack",
+              "texts": [
+                "John Cusack"
+              ]
+            },
+            {
+              "option": "David Spade",
+              "texts": [
+                "David Spade"
+              ]
+            },
+            {
+              "option": "Donnie Yen",
+              "texts": [
+                "Donnie Yen"
+              ]
+            },
+            {
+              "option": "Jason Bateman",
+              "texts": [
+                "Jason Bateman"
+              ]
+            },
+            {
+              "option": "Taron Egerton",
+              "texts": [
+                "Taron Egerton"
+              ]
+            },
+            {
+              "option": "Catherine Zeta-Jones",
+              "texts": [
+                "Catherine Zeta-Jones"
+              ]
+            },
+            {
+              "option": "John C. Reilly",
+              "texts": [
+                "John C. Reilly"
+              ]
+            },
+            {
+              "option": "Billy Crystal",
+              "texts": [
+                "Billy Crystal"
+              ]
+            },
+            {
+              "option": "Chris ‘Ludacris’ Bridges",
+              "texts": [
+                "Chris ‘Ludacris’ Bridges"
+              ]
+            },
+            {
+              "option": "Michael B. Jordan",
+              "texts": [
+                "Michael B. Jordan"
+              ]
+            },
+            {
+              "option": "Rachel Weisz",
+              "texts": [
+                "Rachel Weisz"
+              ]
+            },
+            {
+              "option": "Karl Urban",
+              "texts": [
+                "Karl Urban"
+              ]
+            },
+            {
+              "option": "Jordana Brewster",
+              "texts": [
+                "Jordana Brewster"
+              ]
+            },
+            {
+              "option": "Bill Hader",
+              "texts": [
+                "Bill Hader"
+              ]
+            },
+            {
+              "option": "Justin Long",
+              "texts": [
+                "Justin Long"
+              ]
+            },
+            {
+              "option": "Matthew Broderick",
+              "texts": [
+                "Matthew Broderick"
+              ]
+            },
+            {
+              "option": "Annette Bening",
+              "texts": [
+                "Annette Bening"
+              ]
+            },
+            {
+              "option": "Eva Green",
+              "texts": [
+                "Eva Green"
+              ]
+            },
+            {
+              "option": "Benicio del Toro",
+              "texts": [
+                "Benicio del Toro"
+              ]
+            },
+            {
+              "option": "Forest Whitaker",
+              "texts": [
+                "Forest Whitaker"
+              ]
+            },
+            {
+              "option": "Eric Andre",
+              "texts": [
+                "Eric Andre"
+              ]
+            },
+            {
+              "option": "Hugh Grant",
+              "texts": [
+                "Hugh Grant"
+              ]
+            },
+            {
+              "option": "Julie Walters",
+              "texts": [
+                "Julie Walters"
+              ]
+            },
+            {
+              "option": "Donald Glover",
+              "texts": [
+                "Donald Glover"
+              ]
+            },
+            {
+              "option": "Danny DeVito",
+              "texts": [
+                "Danny DeVito"
+              ]
+            },
+            {
+              "option": "Holly Hunter",
+              "texts": [
+                "Holly Hunter"
+              ]
+            },
+            {
+              "option": "Demi Moore",
+              "texts": [
+                "Demi Moore"
+              ]
+            },
+            {
+              "option": "Michelle Williams",
+              "texts": [
+                "Michelle Williams"
+              ]
+            },
+            {
+              "option": "Jay Baruchel",
+              "texts": [
+                "Jay Baruchel"
+              ]
+            },
+            {
+              "option": "Michael J. Fox",
+              "texts": [
+                "Michael J. Fox"
+              ]
+            },
+            {
+              "option": "Nathalie Emmanuel",
+              "texts": [
+                "Nathalie Emmanuel"
+              ]
+            },
+            {
+              "option": "Luke Evans",
+              "texts": [
+                "Luke Evans"
+              ]
+            },
+            {
+              "option": "Jennifer Lopez",
+              "texts": [
+                "Jennifer Lopez"
+              ]
+            },
+            {
+              "option": "Ellen DeGeneres",
+              "texts": [
+                "Ellen DeGeneres"
+              ]
+            },
+            {
+              "option": "Jet Li",
+              "texts": [
+                "Jet Li"
+              ]
+            },
+            {
+              "option": "Tessa Thompson",
+              "texts": [
+                "Tessa Thompson"
+              ]
+            },
+            {
+              "option": "Dolph Lundgren",
+              "texts": [
+                "Dolph Lundgren"
+              ]
+            },
+            {
+              "option": "Nick Jonas",
+              "texts": [
+                "Nick Jonas"
+              ]
+            },
+            {
+              "option": "Mads Mikkelsen",
+              "texts": [
+                "Mads Mikkelsen"
+              ]
+            },
+            {
+              "option": "Kenneth Branagh",
+              "texts": [
+                "Kenneth Branagh"
+              ]
+            },
+            {
+              "option": "Laurence Fishburne",
+              "texts": [
+                "Laurence Fishburne"
+              ]
+            },
+            {
+              "option": "John Cena",
+              "texts": [
+                "John Cena"
+              ]
+            },
+            {
+              "option": "Miles Teller",
+              "texts": [
+                "Miles Teller"
+              ]
+            },
+            {
+              "option": "Dan Fogler",
+              "texts": [
+                "Dan Fogler"
+              ]
+            },
+            {
+              "option": "Riz Ahmed",
+              "texts": [
+                "Riz Ahmed"
+              ]
+            },
+            {
+              "option": "Andy Samberg",
+              "texts": [
+                "Andy Samberg"
+              ]
+            },
+            {
+              "option": "David Schwimmer",
+              "texts": [
+                "David Schwimmer"
+              ]
+            },
+            {
+              "option": "Patrick Wilson",
+              "texts": [
+                "Patrick Wilson"
+              ]
+            },
+            {
+              "option": "Craig T. Nelson",
+              "texts": [
+                "Craig T. Nelson"
+              ]
+            },
+            {
+              "option": "Daniel Kaluuya",
+              "texts": [
+                "Daniel Kaluuya"
+              ]
+            },
+            {
+              "option": "Brendan Fraser",
+              "texts": [
+                "Brendan Fraser"
+              ]
+            },
+            {
+              "option": "Renée Zellweger",
+              "texts": [
+                "Renée Zellweger"
+              ]
+            },
+            {
+              "option": "Martin Lawrence",
+              "texts": [
+                "Martin Lawrence"
+              ]
+            },
+            {
+              "option": "Drew Barrymore",
+              "texts": [
+                "Drew Barrymore"
+              ]
+            },
+            {
+              "option": "Sarah Vowell",
+              "texts": [
+                "Sarah Vowell"
+              ]
+            },
+            {
+              "option": "Albert Brooks",
+              "texts": [
+                "Albert Brooks"
+              ]
+            },
+            {
+              "option": "Will Arnett",
+              "texts": [
+                "Will Arnett"
+              ]
+            },
+            {
+              "option": "T.J. Miller",
+              "texts": [
+                "T.J. Miller"
+              ]
+            },
+            {
+              "option": "Alison Sudol",
+              "texts": [
+                "Alison Sudol"
+              ]
+            },
+            {
+              "option": "Bill Nighy",
+              "texts": [
+                "Bill Nighy"
+              ]
+            },
+            {
+              "option": "Megan Fox",
+              "texts": [
+                "Megan Fox"
+              ]
+            },
+            {
+              "option": "Hayden Christensen",
+              "texts": [
+                "Hayden Christensen"
+              ]
+            },
+            {
+              "option": "James Earl Jones",
+              "texts": [
+                "James Earl Jones"
+              ]
+            },
+            {
+              "option": "Seann William Scott",
+              "texts": [
+                "Seann William Scott"
+              ]
+            },
+            {
+              "option": "Steve Buscemi",
+              "texts": [
+                "Steve Buscemi"
+              ]
+            },
+            {
+              "option": "Jessica Alba",
+              "texts": [
+                "Jessica Alba"
+              ]
+            },
+            {
+              "option": "Ed Helms",
+              "texts": [
+                "Ed Helms"
+              ]
+            },
+            {
+              "option": "Kate Beckinsale",
+              "texts": [
+                "Kate Beckinsale"
+              ]
+            },
+            {
+              "option": "Andy Garcia",
+              "texts": [
+                "Andy Garcia"
+              ]
+            },
+            {
+              "option": "Maggie Smith",
+              "texts": [
+                "Maggie Smith"
+              ]
+            },
+            {
+              "option": "James Spader",
+              "texts": [
+                "James Spader"
+              ]
+            },
+            {
+              "option": "Jeff Goldblum",
+              "texts": [
+                "Jeff Goldblum"
+              ]
+            },
+            {
+              "option": "Vince Vaughn",
+              "texts": [
+                "Vince Vaughn"
+              ]
+            },
+            {
+              "option": "Milla Jovovich",
+              "texts": [
+                "Milla Jovovich"
+              ]
+            },
+            {
+              "option": "Halle Berry",
+              "texts": [
+                "Halle Berry"
+              ]
+            },
+            {
+              "option": "Joaquin Phoenix",
+              "texts": [
+                "Joaquin Phoenix"
+              ]
+            },
+            {
+              "option": "Selena Gomez",
+              "texts": [
+                "Selena Gomez"
+              ]
+            },
+            {
+              "option": "Joseph Gordon-Levitt",
+              "texts": [
+                "Joseph Gordon-Levitt"
+              ]
+            },
+            {
+              "option": "Sean Connery",
+              "texts": [
+                "Sean Connery"
+              ]
+            },
+            {
+              "option": "John Oliver",
+              "texts": [
+                "John Oliver"
+              ]
+            },
+            {
+              "option": "Rebecca Ferguson",
+              "texts": [
+                "Rebecca Ferguson"
+              ]
+            },
+            {
+              "option": "Jodie Foster",
+              "texts": [
+                "Jodie Foster"
+              ]
+            },
+            {
+              "option": "Christoph Waltz",
+              "texts": [
+                "Christoph Waltz"
+              ]
+            },
+            {
+              "option": "Glenn Close",
+              "texts": [
+                "Glenn Close"
+              ]
+            },
+            {
+              "option": "Andrew Garfield",
+              "texts": [
+                "Andrew Garfield"
+              ]
+            },
+            {
+              "option": "Cedric the Entertainer",
+              "texts": [
+                "Cedric the Entertainer"
+              ]
+            },
+            {
+              "option": "Katherine Waterston",
+              "texts": [
+                "Katherine Waterston"
+              ]
+            },
+            {
+              "option": "Glen Powell",
+              "texts": [
+                "Glen Powell"
+              ]
+            },
+            {
+              "option": "Alfre Woodard",
+              "texts": [
+                "Alfre Woodard"
+              ]
+            },
+            {
+              "option": "Tom McGrath",
+              "texts": [
+                "Tom McGrath"
+              ]
+            },
+            {
+              "option": "James Franco",
+              "texts": [
+                "James Franco"
+              ]
+            },
+            {
+              "option": "Lea Seydoux",
+              "texts": [
+                "Lea Seydoux"
+              ]
+            },
+            {
+              "option": "Ryan Gosling",
+              "texts": [
+                "Ryan Gosling"
+              ]
+            },
+            {
+              "option": "Julianne Moore",
+              "texts": [
+                "Julianne Moore"
+              ]
+            },
+            {
+              "option": "Mindy Kaling",
+              "texts": [
+                "Mindy Kaling"
+              ]
+            },
+            {
+              "option": "Elizabeth Debicki",
+              "texts": [
+                "Elizabeth Debicki"
+              ]
+            },
+            {
+              "option": "Billy Eichner",
+              "texts": [
+                "Billy Eichner"
+              ]
+            },
+            {
+              "option": "Kelly Marie Tran",
+              "texts": [
+                "Kelly Marie Tran"
+              ]
+            },
+            {
+              "option": "Jai Courtney",
+              "texts": [
+                "Jai Courtney"
+              ]
+            },
+            {
+              "option": "Dan Stevens",
+              "texts": [
+                "Dan Stevens"
+              ]
+            },
+            {
+              "option": "Guy Pearce",
+              "texts": [
+                "Guy Pearce"
+              ]
+            },
+            {
+              "option": "John Kani",
+              "texts": [
+                "John Kani"
+              ]
+            },
+            {
+              "option": "JD McCrary",
+              "texts": [
+                "JD McCrary"
+              ]
+            },
+            {
+              "option": "Shahadi Wright Joseph",
+              "texts": [
+                "Shahadi Wright Joseph"
+              ]
+            },
+            {
+              "option": "Jay Ellis",
+              "texts": [
+                "Jay Ellis"
+              ]
+            },
+            {
+              "option": "Meg Ryan",
+              "texts": [
+                "Meg Ryan"
+              ]
+            },
+            {
+              "option": "Awkwafina",
+              "texts": [
+                "Awkwafina"
+              ]
+            },
+            {
+              "option": "Djimon Hounsou",
+              "texts": [
+                "Djimon Hounsou"
+              ]
+            },
+            {
+              "option": "Viola Davis",
+              "texts": [
+                "Viola Davis"
+              ]
+            },
+            {
+              "option": "Joe Pesci",
+              "texts": [
+                "Joe Pesci"
+              ]
+            },
+            {
+              "option": "Susan Sarandon",
+              "texts": [
+                "Susan Sarandon"
+              ]
+            },
+            {
+              "option": "Dakota Johnson",
+              "texts": [
+                "Dakota Johnson"
+              ]
+            },
+            {
+              "option": "Sigourney Weaver",
+              "texts": [
+                "Sigourney Weaver"
+              ]
+            },
+            {
+              "option": "Dylan O’Brien",
+              "texts": [
+                "Dylan O’Brien"
+              ]
+            },
+            {
+              "option": "Tom Wilkinson",
+              "texts": [
+                "Tom Wilkinson"
+              ]
+            },
+            {
+              "option": "Georgie Henley",
+              "texts": [
+                "Georgie Henley"
+              ]
+            },
+            {
+              "option": "Skandar Keynes",
+              "texts": [
+                "Skandar Keynes"
+              ]
+            },
+            {
+              "option": "Lewis James Pullman",
+              "texts": [
+                "Lewis James Pullman"
+              ]
+            },
+            {
+              "option": "Jason Sudeikis",
+              "texts": [
+                "Jason Sudeikis"
+              ]
+            },
+            {
+              "option": "Gemma Chan",
+              "texts": [
+                "Gemma Chan"
+              ]
+            },
+            {
+              "option": "Robbie Coltrane",
+              "texts": [
+                "Robbie Coltrane"
+              ]
+            },
+            {
+              "option": "Paul Newman",
+              "texts": [
+                "Paul Newman"
+              ]
+            },
+            {
+              "option": "Chloë Grace Moretz",
+              "texts": [
+                "Chloë Grace Moretz"
+              ]
+            },
+            {
+              "option": "Anna Kendrick",
+              "texts": [
+                "Anna Kendrick"
+              ]
+            },
+            {
+              "option": "Domhnall Gleeson",
+              "texts": [
+                "Domhnall Gleeson"
+              ]
+            },
+            {
+              "option": "Stellan Skarsgård",
+              "texts": [
+                "Stellan Skarsgård"
+              ]
+            },
+            {
+              "option": "Melissa McCarthy",
+              "texts": [
+                "Melissa McCarthy"
+              ]
+            },
+            {
+              "option": "Michelle Monaghan",
+              "texts": [
+                "Michelle Monaghan"
+              ]
+            },
+            {
+              "option": "Anna Faris",
+              "texts": [
+                "Anna Faris"
+              ]
+            },
+            {
+              "option": "Stanley Tucci",
+              "texts": [
+                "Stanley Tucci"
+              ]
+            },
+            {
+              "option": "Ben Whishaw",
+              "texts": [
+                "Ben Whishaw"
+              ]
+            },
+            {
+              "option": "Heath Ledger",
+              "texts": [
+                "Heath Ledger"
+              ]
+            },
+            {
+              "option": "Isla Fisher",
+              "texts": [
+                "Isla Fisher"
+              ]
+            },
+            {
+              "option": "Eiza González",
+              "texts": [
+                "Eiza González"
+              ]
+            },
+            {
+              "option": "Seth MacFarlane",
+              "texts": [
+                "Seth MacFarlane"
+              ]
+            },
+            {
+              "option": "Naomie Harris",
+              "texts": [
+                "Naomie Harris"
+              ]
+            },
+            {
+              "option": "Danny Ramirez",
+              "texts": [
+                "Danny Ramirez"
+              ]
+            },
+            {
+              "option": "Monica Barbaro",
+              "texts": [
+                "Monica Barbaro"
+              ]
+            },
+            {
+              "option": "Greg Tarzan Davis",
+              "texts": [
+                "Greg Tarzan Davis"
+              ]
+            },
+            {
+              "option": "Zoë Kravitz",
+              "texts": [
+                "Zoë Kravitz"
+              ]
+            },
+            {
+              "option": "Joonas Suotamo",
+              "texts": [
+                "Joonas Suotamo"
+              ]
+            },
+            {
+              "option": "Felicity Jones",
+              "texts": [
+                "Felicity Jones"
+              ]
+            },
+            {
+              "option": "Elizabeth Banks",
+              "texts": [
+                "Elizabeth Banks"
+              ]
+            },
+            {
+              "option": "Edward Norton",
+              "texts": [
+                "Edward Norton"
+              ]
+            },
+            {
+              "option": "Jeremy Irons",
+              "texts": [
+                "Jeremy Irons"
+              ]
+            },
+            {
+              "option": "Gugu Mbatha-Raw",
+              "texts": [
+                "Gugu Mbatha-Raw"
+              ]
+            },
+            {
+              "option": "Ashton Kutcher",
+              "texts": [
+                "Ashton Kutcher"
+              ]
+            },
+            {
+              "option": "Jesse McCartney",
+              "texts": [
+                "Jesse McCartney"
+              ]
+            },
+            {
+              "option": "Judi Dench",
+              "texts": [
+                "Judi Dench"
+              ]
+            },
+            {
+              "option": "Dominic Cooper",
+              "texts": [
+                "Dominic Cooper"
+              ]
+            },
+            {
+              "option": "Danny Glover",
+              "texts": [
+                "Danny Glover"
+              ]
+            },
+            {
+              "option": "Kevin Spacey",
+              "texts": [
+                "Kevin Spacey"
+              ]
+            },
+            {
+              "option": "Wesley Snipes",
+              "texts": [
+                "Wesley Snipes"
+              ]
+            },
+            {
+              "option": "Jamie Dornan",
+              "texts": [
+                "Jamie Dornan"
+              ]
+            },
+            {
+              "option": "Hailee Steinfeld",
+              "texts": [
+                "Hailee Steinfeld"
+              ]
+            },
+            {
+              "option": "John Malkovich",
+              "texts": [
+                "John Malkovich"
+              ]
+            },
+            {
+              "option": "Helen Mirren",
+              "texts": [
+                "Helen Mirren"
+              ]
+            },
+            {
+              "option": "Diego Luna",
+              "texts": [
+                "Diego Luna"
+              ]
+            },
+            {
+              "option": "Jared Leto",
+              "texts": [
+                "Jared Leto"
+              ]
+            },
+            {
+              "option": "Hannibal Buress",
+              "texts": [
+                "Hannibal Buress"
+              ]
+            },
+            {
+              "option": "Ray Winstone",
+              "texts": [
+                "Ray Winstone"
+              ]
+            },
+            {
+              "option": "Bette Midler",
+              "texts": [
+                "Bette Midler"
+              ]
+            },
+            {
+              "option": "James Corden",
+              "texts": [
+                "James Corden"
+              ]
+            },
+            {
+              "option": "Matthew Gray Gubler",
+              "texts": [
+                "Matthew Gray Gubler"
+              ]
+            },
+            {
+              "option": "Marisa Tomei",
+              "texts": [
+                "Marisa Tomei"
+              ]
+            },
+            {
+              "option": "Rebel Wilson",
+              "texts": [
+                "Rebel Wilson"
+              ]
+            },
+            {
+              "option": "Michael Shannon",
+              "texts": [
+                "Michael Shannon"
+              ]
+            },
+            {
+              "option": "Nick Nolte",
+              "texts": [
+                "Nick Nolte"
+              ]
+            },
+            {
+              "option": "Mickey Rourke",
+              "texts": [
+                "Mickey Rourke"
+              ]
+            },
+            {
+              "option": "Lake Bell",
+              "texts": [
+                "Lake Bell"
+              ]
+            },
+            {
+              "option": "Wanda Sykes",
+              "texts": [
+                "Wanda Sykes"
+              ]
+            },
+            {
+              "option": "Ian McShane",
+              "texts": [
+                "Ian McShane"
+              ]
+            },
+            {
+              "option": "John Cho",
+              "texts": [
+                "John Cho"
+              ]
+            },
+            {
+              "option": "Keri Russell",
+              "texts": [
+                "Keri Russell"
+              ]
+            },
+            {
+              "option": "Jenny Slate",
+              "texts": [
+                "Jenny Slate"
+              ]
+            },
+            {
+              "option": "Ice Cube",
+              "texts": [
+                "Ice Cube"
+              ]
+            },
+            {
+              "option": "Andy Richter",
+              "texts": [
+                "Andy Richter"
+              ]
+            },
+            {
+              "option": "Gwendoline Christie",
+              "texts": [
+                "Gwendoline Christie"
+              ]
+            },
+            {
+              "option": "Eric Stonestreet",
+              "texts": [
+                "Eric Stonestreet"
+              ]
+            },
+            {
+              "option": "Ana de Armas",
+              "texts": [
+                "Ana de Armas"
+              ]
+            },
+            {
+              "option": "Patrick Gallagher",
+              "texts": [
+                "Patrick Gallagher"
+              ]
+            },
+            {
+              "option": "Mizuo Peck",
+              "texts": [
+                "Mizuo Peck"
+              ]
+            },
+            {
+              "option": "Mila Kunis",
+              "texts": [
+                "Mila Kunis"
+              ]
+            },
+            {
+              "option": "Christopher Walken",
+              "texts": [
+                "Christopher Walken"
+              ]
+            },
+            {
+              "option": "Frances McDormand",
+              "texts": [
+                "Frances McDormand"
+              ]
+            },
+            {
+              "option": "Joel Kinnaman",
+              "texts": [
+                "Joel Kinnaman"
+              ]
+            },
+            {
+              "option": "Diane Keaton",
+              "texts": [
+                "Diane Keaton"
+              ]
+            },
+            {
+              "option": "Jamie Lee Curtis",
+              "texts": [
+                "Jamie Lee Curtis"
+              ]
+            },
+            {
+              "option": "Richard Dreyfuss",
+              "texts": [
+                "Richard Dreyfuss"
+              ]
+            },
+            {
+              "option": "Jordan Peele",
+              "texts": [
+                "Jordan Peele"
+              ]
+            },
+            {
+              "option": "Yahya Abdul-Mateen II",
+              "texts": [
+                "Yahya Abdul-Mateen II"
+              ]
+            },
+            {
+              "option": "Nathan Lane",
+              "texts": [
+                "Nathan Lane"
+              ]
+            },
+            {
+              "option": "Jonathan Groff",
+              "texts": [
+                "Jonathan Groff"
+              ]
+            },
+            {
+              "option": "Audra McDonald",
+              "texts": [
+                "Audra McDonald"
+              ]
+            },
+            {
+              "option": "Keke Palmer",
+              "texts": [
+                "Keke Palmer"
+              ]
+            },
+            {
+              "option": "Naomi Scott",
+              "texts": [
+                "Naomi Scott"
+              ]
+            },
+            {
+              "option": "Santino Fontana",
+              "texts": [
+                "Santino Fontana"
+              ]
+            },
+            {
+              "option": "Sam Rockwell",
+              "texts": [
+                "Sam Rockwell"
+              ]
+            },
+            {
+              "option": "Ginnifer Goodwin",
+              "texts": [
+                "Ginnifer Goodwin"
+              ]
+            },
+            {
+              "option": "Huck Milner",
+              "texts": [
+                "Huck Milner"
+              ]
+            },
+            {
+              "option": "Eric Bana",
+              "texts": [
+                "Eric Bana"
+              ]
+            },
+            {
+              "option": "Paula Patton",
+              "texts": [
+                "Paula Patton"
+              ]
+            },
+            {
+              "option": "Alexander Skarsgård",
+              "texts": [
+                "Alexander Skarsgård"
+              ]
+            },
+            {
+              "option": "Amber Heard",
+              "texts": [
+                "Amber Heard"
+              ]
+            },
+            {
+              "option": "Val Kilmer",
+              "texts": [
+                "Val Kilmer"
+              ]
+            },
+            {
+              "option": "Zachary Quinto",
+              "texts": [
+                "Zachary Quinto"
+              ]
+            },
+            {
+              "option": "Ving Rhames",
+              "texts": [
+                "Ving Rhames"
+              ]
+            },
+            {
+              "option": "Craig Ferguson",
+              "texts": [
+                "Craig Ferguson"
+              ]
+            },
+            {
+              "option": "Noomi Rapace",
+              "texts": [
+                "Noomi Rapace"
+              ]
+            },
+            {
+              "option": "Sarah Jessica Parker",
+              "texts": [
+                "Sarah Jessica Parker"
+              ]
+            },
+            {
+              "option": "Teri Polo",
+              "texts": [
+                "Teri Polo"
+              ]
+            },
+            {
+              "option": "Maya Rudolph",
+              "texts": [
+                "Maya Rudolph"
+              ]
+            },
+            {
+              "option": "Hannah John-Kamen",
+              "texts": [
+                "Hannah John-Kamen"
+              ]
+            },
+            {
+              "option": "Roger Moore",
+              "texts": [
+                "Roger Moore"
+              ]
+            },
+            {
+              "option": "Amy Poehler",
+              "texts": [
+                "Amy Poehler"
+              ]
+            },
+            {
+              "option": "Lily James",
+              "texts": [
+                "Lily James"
+              ]
+            },
+            {
+              "option": "Jack Reynor",
+              "texts": [
+                "Jack Reynor"
+              ]
+            },
+            {
+              "option": "Christopher Mintz-Plasse",
+              "texts": [
+                "Christopher Mintz-Plasse"
+              ]
+            },
+            {
+              "option": "Dana Carvey",
+              "texts": [
+                "Dana Carvey"
+              ]
+            },
+            {
+              "option": "Karen Allen",
+              "texts": [
+                "Karen Allen"
+              ]
+            },
+            {
+              "option": "Ellie Kemper",
+              "texts": [
+                "Ellie Kemper"
+              ]
+            },
+            {
+              "option": "Richard Harris",
+              "texts": [
+                "Richard Harris"
+              ]
+            },
+            {
+              "option": "Bill Skarsgård",
+              "texts": [
+                "Bill Skarsgård"
+              ]
+            },
+            {
+              "option": "Katherine Heigl",
+              "texts": [
+                "Katherine Heigl"
+              ]
+            },
+            {
+              "option": "Barbra Streisand",
+              "texts": [
+                "Barbra Streisand"
+              ]
+            },
+            {
+              "option": "Conrad Vernon",
+              "texts": [
+                "Conrad Vernon"
+              ]
+            },
+            {
+              "option": "Blythe Danner",
+              "texts": [
+                "Blythe Danner"
+              ]
+            },
+            {
+              "option": "Sofia Boutella",
+              "texts": [
+                "Sofia Boutella"
+              ]
+            },
+            {
+              "option": "Haley Joel Osment",
+              "texts": [
+                "Haley Joel Osment"
+              ]
+            },
+            {
+              "option": "Emilia Clarke",
+              "texts": [
+                "Emilia Clarke"
+              ]
+            },
+            {
+              "option": "Rose Byrne",
+              "texts": [
+                "Rose Byrne"
+              ]
+            },
+            {
+              "option": "Shailene Woodley",
+              "texts": [
+                "Shailene Woodley"
+              ]
+            },
+            {
+              "option": "William Moseley",
+              "texts": [
+                "William Moseley"
+              ]
+            },
+            {
+              "option": "Jennifer Garner",
+              "texts": [
+                "Jennifer Garner"
+              ]
+            },
+            {
+              "option": "Armie Hammer",
+              "texts": [
+                "Armie Hammer"
+              ]
+            },
+            {
+              "option": "Lee Pace",
+              "texts": [
+                "Lee Pace"
+              ]
+            },
+            {
+              "option": "Anna Popplewell",
+              "texts": [
+                "Anna Popplewell"
+              ]
+            },
+            {
+              "option": "Trey Parker",
+              "texts": [
+                "Trey Parker"
+              ]
+            },
+            {
+              "option": "Clark Gregg",
+              "texts": [
+                "Clark Gregg"
+              ]
+            },
+            {
+              "option": "Lashana Lynch",
+              "texts": [
+                "Lashana Lynch"
+              ]
+            },
+            {
+              "option": "Josh Hutcherson",
+              "texts": [
+                "Josh Hutcherson"
+              ]
+            },
+            {
+              "option": "Octavia Spencer",
+              "texts": [
+                "Octavia Spencer"
+              ]
+            },
+            {
+              "option": "Tyler Perry",
+              "texts": [
+                "Tyler Perry"
+              ]
+            },
+            {
+              "option": "Elliot Page",
+              "texts": [
+                "Elliot Page"
+              ]
+            },
+            {
+              "option": "Christine Baranski",
+              "texts": [
+                "Christine Baranski"
+              ]
+            },
+            {
+              "option": "Sarah Silverman",
+              "texts": [
+                "Sarah Silverman"
+              ]
+            },
+            {
+              "option": "Christina Hendricks",
+              "texts": [
+                "Christina Hendricks"
+              ]
+            },
+            {
+              "option": "Ron Perlman",
+              "texts": [
+                "Ron Perlman"
+              ]
+            },
+            {
+              "option": "Byung-hun Lee",
+              "texts": [
+                "Byung-hun Lee"
+              ]
+            },
+            {
+              "option": "Freida Pinto",
+              "texts": [
+                "Freida Pinto"
+              ]
+            },
+            {
+              "option": "Aaron Eckhart",
+              "texts": [
+                "Aaron Eckhart"
+              ]
+            },
+            {
+              "option": "Nicola Peltz",
+              "texts": [
+                "Nicola Peltz"
+              ]
+            },
+            {
+              "option": "Elle Fanning",
+              "texts": [
+                "Elle Fanning"
+              ]
+            },
+            {
+              "option": "Gael Garcia Bernal",
+              "texts": [
+                "Gael Garcia Bernal"
+              ]
+            },
+            {
+              "option": "Annie Potts",
+              "texts": [
+                "Annie Potts"
+              ]
+            },
+            {
+              "option": "Wang Baoqiang",
+              "texts": [
+                "Wang Baoqiang"
+              ]
+            },
+            {
+              "option": "Benjamin Bratt",
+              "texts": [
+                "Benjamin Bratt"
+              ]
+            },
+            {
+              "option": "Adewale Akinnuoye-Agbaje",
+              "texts": [
+                "Adewale Akinnuoye-Agbaje"
+              ]
+            },
+            {
+              "option": "Alyson Hannigan",
+              "texts": [
+                "Alyson Hannigan"
+              ]
+            },
+            {
+              "option": "Tony Hale",
+              "texts": [
+                "Tony Hale"
+              ]
+            },
+            {
+              "option": "Kaya Scodelario",
+              "texts": [
+                "Kaya Scodelario"
+              ]
+            },
+            {
+              "option": "Patton Oswalt",
+              "texts": [
+                "Patton Oswalt"
+              ]
+            },
+            {
+              "option": "Jimmy Vee",
+              "texts": [
+                "Jimmy Vee"
+              ]
+            },
+            {
+              "option": "Patrick Swayze",
+              "texts": [
+                "Patrick Swayze"
+              ]
+            },
+            {
+              "option": "Vera Farmiga",
+              "texts": [
+                "Vera Farmiga"
+              ]
+            },
+            {
+              "option": "Alicia Vikander",
+              "texts": [
+                "Alicia Vikander"
+              ]
+            },
+            {
+              "option": "Regina Hall",
+              "texts": [
+                "Regina Hall"
+              ]
+            },
+            {
+              "option": "Goldie Hawn",
+              "texts": [
+                "Goldie Hawn"
+              ]
+            },
+            {
+              "option": "Ken Jeong",
+              "texts": [
+                "Ken Jeong"
+              ]
+            },
+            {
+              "option": "Callum Turner",
+              "texts": [
+                "Callum Turner"
+              ]
+            },
+            {
+              "option": "Jay Hernandez",
+              "texts": [
+                "Jay Hernandez"
+              ]
+            },
+            {
+              "option": "William Shatner",
+              "texts": [
+                "William Shatner"
+              ]
+            },
+            {
+              "option": "Ethan Hawke",
+              "texts": [
+                "Ethan Hawke"
+              ]
+            },
+            {
+              "option": "Sharon Stone",
+              "texts": [
+                "Sharon Stone"
+              ]
+            },
+            {
+              "option": "Justin Timberlake",
+              "texts": [
+                "Justin Timberlake"
+              ]
+            },
+            {
+              "option": "Zhang Hanyu",
+              "texts": [
+                "Zhang Hanyu"
+              ]
+            },
+            {
+              "option": "Marwan Kenzari",
+              "texts": [
+                "Marwan Kenzari"
+              ]
+            },
+            {
+              "option": "Clive Owen",
+              "texts": [
+                "Clive Owen"
+              ]
+            },
+            {
+              "option": "Mena Massoud",
+              "texts": [
+                "Mena Massoud"
+              ]
+            },
+            {
+              "option": "Navid Negahban",
+              "texts": [
+                "Navid Negahban"
+              ]
+            },
+            {
+              "option": "Cara Delevingne",
+              "texts": [
+                "Cara Delevingne"
+              ]
+            },
+            {
+              "option": "Dan Aykroyd",
+              "texts": [
+                "Dan Aykroyd"
+              ]
+            },
+            {
+              "option": "Zachary Levi",
+              "texts": [
+                "Zachary Levi"
+              ]
+            },
+            {
+              "option": "Marion Cotillard",
+              "texts": [
+                "Marion Cotillard"
+              ]
+            },
+            {
+              "option": "Tori Kelly",
+              "texts": [
+                "Tori Kelly"
+              ]
+            },
+            {
+              "option": "Will Poulter",
+              "texts": [
+                "Will Poulter"
+              ]
+            },
+            {
+              "option": "Charlie Day",
+              "texts": [
+                "Charlie Day"
+              ]
+            },
+            {
+              "option": "Steve Coogan",
+              "texts": [
+                "Steve Coogan"
+              ]
+            },
+            {
+              "option": "Dan Whitney",
+              "texts": [
+                "Dan Whitney"
+              ]
+            },
+            {
+              "option": "Christopher Eccleston",
+              "texts": [
+                "Christopher Eccleston"
+              ]
+            },
+            {
+              "option": "Jake Lloyd",
+              "texts": [
+                "Jake Lloyd"
+              ]
+            }
+          ]
+        },
+        "genre": {
+          "name": "genre",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "action",
+              "texts": [
+                "action"
+              ]
+            },
+            {
+              "option": "adventure",
+              "texts": [
+                "adventure"
+              ]
+            },
+            {
+              "option": "animation",
+              "texts": [
+                "animation"
+              ]
+            },
+            {
+              "option": "comedy",
+              "texts": [
+                "comedy"
+              ]
+            },
+            {
+              "option": "crime",
+              "texts": [
+                "crime"
+              ]
+            },
+            {
+              "option": "documentary",
+              "texts": [
+                "documentary"
+              ]
+            },
+            {
+              "option": "drama",
+              "texts": [
+                "drama"
+              ]
+            },
+            {
+              "option": "family",
+              "texts": [
+                "family"
+              ]
+            },
+            {
+              "option": "fantasy",
+              "texts": [
+                "fantasy"
+              ]
+            },
+            {
+              "option": "history",
+              "texts": [
+                "history"
+              ]
+            },
+            {
+              "option": "horror",
+              "texts": [
+                "horror"
+              ]
+            },
+            {
+              "option": "music",
+              "texts": [
+                "music"
+              ]
+            },
+            {
+              "option": "mystery",
+              "texts": [
+                "mystery"
+              ]
+            },
+            {
+              "option": "romance",
+              "texts": [
+                "romance"
+              ]
+            },
+            {
+              "option": "science fiction",
+              "texts": [
+                "science fiction"
+              ]
+            },
+            {
+              "option": "tv movie",
+              "texts": [
+                "tv movie"
+              ]
+            },
+            {
+              "option": "thriller",
+              "texts": [
+                "thriller"
+              ]
+            },
+            {
+              "option": "war",
+              "texts": [
+                "war"
+              ]
+            },
+            {
+              "option": "western",
+              "texts": [
+                "western"
+              ]
+            }
+          ]
+        },
+        "moviename": {
+          "name": "moviename",
+          "type": "regex",
+          "rules": [
+            "/['\"]+([\\w\\W\\s]*)['\"]+/gm"
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "message.get_genre": {
+      "genre": {
+        "intent": "message.get_genre",
+        "entity": "genre",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "message.get_movie": {
+      "genre": {
+        "intent": "message.get_movie",
+        "entity": "genre",
+        "mandatory": false,
+        "locales": {}
+      },
+      "actor": {
+        "intent": "message.get_movie",
+        "entity": "actor",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}

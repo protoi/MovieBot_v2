@@ -7,9 +7,10 @@ const Query = require("../model");
 //This function takes an intent as parameter and gives those documents from mongo DB where the intent matches
 
 const get_document_on_the_basis_of_intents = async (request, response) => {
+  let query = null;
   let intent = request.query.intent;
   try {
-    const query = await Query.find({
+     query = await Query.find({
       /* "EntityIntent_tuple": {
         "intents": "message.get_actor",
       }, */
@@ -30,8 +31,9 @@ const get_document_on_the_basis_of_intents = async (request, response) => {
 //This Function groups the documents on the basis of intents and gives their respective count
 
 const group_documents_by_intent = async (request, response) => {
+  let query = null;
   try {
-    const query = await Query.aggregate([
+     query = await Query.aggregate([
       {
         $group: {
           _id: "$EntityIntent_tuple.intents",
@@ -63,8 +65,9 @@ const group_queries_by_date_week = async (request, response) => {
   let date = request.query.date;
   let start_date = "2023-02-01";
   let end_date = "2023-02-09";
+  let query = null;
   try {
-    const query = await Query.aggregate([
+    query = await Query.aggregate([
       {
         $group: {
           _id: {
@@ -159,8 +162,9 @@ const get_documents_within_given_time_frame = async (request, response) => {
 //Then returns a map containing the names of the genres as key and its frequency and value
 
 const get_genre_frequencies = async (request, response) => {
+  let query = null;
   try {
-    const query = await Query.find(
+     query = await Query.find(
       { "EntityIntent_tuple.entities.genre": { $ne: [] } },
       {
         "EntityIntent_tuple.entities.genre": 1,
@@ -169,6 +173,8 @@ const get_genre_frequencies = async (request, response) => {
     );
   } catch (err) {
     logger.error("Could not fetch data");
+    response.send(err);
+    return;
   }
   let freq_map = new Map();
   query.forEach((element) => {
@@ -189,8 +195,8 @@ const get_genre_frequencies = async (request, response) => {
 //Exporting the required functions
 module.exports = {
   get_document_on_the_basis_of_intents,
-  group_documents_by_intent,
   get_documents_within_given_time_frame,
   group_queries_by_date_week,
   get_genre_frequencies,
+  group_documents_by_intent,
 };

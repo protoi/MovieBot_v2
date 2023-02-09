@@ -290,6 +290,7 @@ class IMDB {
    * @returns
    */
   async get_movie_query_from_intents(ans) {
+    let entity_valuelist = null;
     let { movie_info, message_body } = await this.get_movie_info(
       ans.entities.moviename[0]
     );
@@ -322,17 +323,21 @@ class IMDB {
 
       case "message.get_genre":
         if (message_body != null) break;
+        let genre_list = await this.get_genre_from_IDs(movie_info.genre_ids);
+        entity_valuelist = genre_list;
         message_body = WhatsappUtilsObj.generate_body_genre({
           movie_name: movie_info.original_title,
-          genre: await this.get_genre_from_IDs(movie_info.genre_ids),
+          genre: genre_list,
         });
         // logger.debug("Intent - getting genre from query");
         break;
       case "message.get_actor":
         if (message_body != null) break;
+        let actor_list = await this.get_cast_from_movie_id(movie_info.id);
+        entity_valuelist = actor_list;
         message_body = WhatsappUtilsObj.generate_body_actor({
           movie_name: movie_info.original_title,
-          actors: await this.get_cast_from_movie_id(movie_info.id),
+          actors: actor_list,
         });
         // logger.debug("Intent - getting actor list from query");
         break;
@@ -358,7 +363,7 @@ class IMDB {
         // logger.error("Failed to detect intent ");
         break;
     }
-    return { movie_info, message_body };
+    return { movie_info, message_body, entity_valuelist };
   }
 }
 module.exports = { IMDB };

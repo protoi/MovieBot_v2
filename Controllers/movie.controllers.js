@@ -4,6 +4,7 @@ const { logger } = require("../logger");
 const nlp_model = require("../NLP/retain_model");
 const WhatsappUtils = require("../WhatsappUtils");
 const IMDB = require("../IMDB");
+const Query = require("../model");
 
 //Objects
 const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
@@ -27,6 +28,11 @@ const verify_token = (req, res) => {
   } else res.sendStatus(403);
 };
 
+
+var mongo_payload = {};
+
+
+
 const fetch_info_and_post_to_whatsapp = async (req, res) => {
   // console.log(req.body);
   // const num_msg_tuple = WhatsappUtilsObj.extract_number_and_message(req.body);
@@ -44,6 +50,12 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
   logger.debug(`Extracted message : ${msg} `);
   logger.debug(`Destination Phone number : ${num}`);
+
+  //Adding Number and Message to mongodb payload
+
+  mongo_payload.Destination_Phone_number = num;
+  mongo_payload.Query_Message = msg;
+
   let movie_info = null;
   let message_body = null;
 
@@ -83,9 +95,12 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     console.error(`entity and intent extraction failed: ${err.message}`);
   }
 
+  //Adding Enitity and Intent to mongodb payload
+  mongo_payload.EntityIntent_tuple = EntityIntent_tuple;
+
   if (EntityIntent_tuple != null) {
     try {
-      ({ movie_info, message_body } =
+      ({ movie_info, message_body, entity_valuelist } =
         await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
     } catch (err) {
       console.error(
@@ -94,26 +109,37 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     }
   }
 
+  //Adding Response Body to mongodb payload
+  mongo_payload.Response_Body = message_body;
+  mongo_payload.Entity_valuelist = entity_valuelist;
+
+
+
   if (message_body == null) message_body = "oh no, something went wrong";
 
-  const payload = WhatsappUtilsObj.generate_payload(num, message_body);
+  /* const payload = WhatsappUtilsObj.generate_payload(num, message_body);
 
-  const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
+  const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload); */
 
-  /* axios(payload)
-    .then((response) => {
-      logger.debug("Message sent successfully");
-      console.log("Message sent successfully");
-    })
-    .catch((err) => {
-      logger.error("Something went wrong while sending the message");
-      console.log("Something went wrong while sending the message");
-    }); */
+  mongo_payload.Time_Stamp = Date();
+  console.log(mongo_payload);
+  const query = new Query(mongo_payload);
 
-  console.log(`===========BODY===========\n${message_body}`);
-  console.log(`success status: ${success}`);
+  try {
+    await query.save();
+    res.send(query);
+  } catch (error) {
+    console.log("Here");
+    //res.send(error);
+    res.status(500).send(error);
+    //return;
+  }
 
-  res.sendStatus(200);
+
+  /* console.log(`===========BODY===========\n${message_body}`);
+  console.log(`success status: ${success}`); */
+
+  //res.sendStatus(200);
 };
 
 module.exports = {

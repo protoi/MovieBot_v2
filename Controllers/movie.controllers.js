@@ -124,7 +124,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
     const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
 
-    const query = new Query(mongo_payload);
+    //const query = new Query(mongo_payload);
     res.sendStatus(200);
 
     /*try {

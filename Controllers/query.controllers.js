@@ -62,63 +62,81 @@ const group_documents_by_intent = async (request, response) => {
 //Then it groups document on the basis of the dates of the week
 
 const group_queries_by_date_week = async (request, response) => {
-  let date = request.query.date;
-  let start_date = "2023-02-01";
-  let end_date = "2023-02-09";
-  let query = null;
+  let start_date = null;
+  let end_date = null;
   try {
-    query = await Query.aggregate([
-      {
-        $group: {
-          _id: {
-            $cond: [
-              {
-                $and: [
-                  {
-                    $gte: [
-                      {
-                        $dateToString: {
-                          format: "%Y-%m-%d",
-                          date: "$Time_Stamp",
+    let date = new Date(request.query.date);
+    let first = date.getDate() - date.getDay() + 1;
+    let last = first + 6;
+    let firstday = new Date(date.setDate(first)).toISOString();
+    let lastday = new Date(date.setDate(last)).toISOString();
+    start_date = firstday.substring(0, 10);
+    end_date = lastday.substring(0, 10);
+  }
+  catch (err) {
+    response.send(err.message);
+    logger.error("Date format error")
+    return;
+  }
+
+    /* console.log(start_date);
+    console.log(end_date); */
+  
+  
+    let query = null;
+    try {
+      query = await Query.aggregate([
+        {
+          $group: {
+            _id: {
+              $cond: [
+                {
+                  $and: [
+                    {
+                      $gte: [
+                        {
+                          $dateToString: {
+                            format: "%Y-%m-%d",
+                            date: "$Time_Stamp",
+                          },
                         },
-                      },
-                      start_date,
-                    ],
-                  },
-                  {
-                    $lte: [
-                      {
-                        $dateToString: {
-                          format: "%Y-%m-%d",
-                          date: "$Time_Stamp",
+                        start_date,
+                      ],
+                    },
+                    {
+                      $lte: [
+                        {
+                          $dateToString: {
+                            format: "%Y-%m-%d",
+                            date: "$Time_Stamp",
+                          },
                         },
-                      },
-                      end_date,
-                    ],
-                  },
-                ],
-              },
-              {
-                $dateToString: {
-                  format: "%d/%m/%Y",
-                  date: "$Time_Stamp",
+                        end_date,
+                      ],
+                    },
+                  ],
                 },
-              },
-              "other",
-            ],
+                {
+                  $dateToString: {
+                    format: "%d/%m/%Y",
+                    date: "$Time_Stamp",
+                  },
+                },
+                "other",
+              ],
+            },
+            docs: { $push: "$$ROOT" },
           },
-          docs: { $push: "$$ROOT" },
         },
-      },
-    ]);
-  } catch (err) {
-    logger.error("Could not fetch data");
-  }
-  try {
-    response.send(query);
-  } catch (error) {
-    response.status(500).send(error);
-  }
+      ]);
+    } catch (err) {
+      logger.error("Could not fetch data");
+    }
+    try {
+      response.send(query);
+    } catch (error) {
+      response.status(500).send(error);
+    }
 };
 
 ///This function is not useful for now, ignore it
@@ -173,7 +191,7 @@ const get_genre_frequencies = async (request, response) => {
     );
   } catch (err) {
     logger.error("Could not fetch data");
-    response.send(err);
+    response.send(err.message);
     return;
   }
   let freq_map = new Map();

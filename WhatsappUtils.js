@@ -75,6 +75,12 @@ class WhatsappUtils {
    */
   generate_body_movie(data) {
     try {
+      /* console.log(
+        `DATA --- > \n\n${JSON.stringify(data, null, 2)}\n==============`
+      ); */
+      if (data.length == 0) {
+        return "no movies like that found";
+      }
       return data
         .map((movie) => {
           return `*${movie.title}*\n${movie.genre.join(", ")}\nRelease Date: ${
@@ -84,6 +90,7 @@ class WhatsappUtils {
         .join("\n\n");
     } catch (err) {
       console.log(err.message);
+      // return "no movies like that found";
     }
   }
 

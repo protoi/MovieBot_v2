@@ -15,12 +15,7 @@ exp.use(express.urlencoded({ extended: true }));
 
 mongoose.set("strictQuery", false);
 mongoose.connect(
-  `mongodb+srv://niladri:${process.env.MONGO_DB_PASSWORD}@cluster0.01lnzaz.mongodb.net/?retryWrites=true&w=majority`,
-  {
-    /* useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true, */
-  }
+  `mongodb+srv://niladri:${process.env.MONGO_DB_PASSWORD}@cluster0.01lnzaz.mongodb.net/MovieQueries?retryWrites=true&w=majority`,
 ); 
 
 

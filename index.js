@@ -28,7 +28,7 @@ exp.use(bodyparser.json());
 mongoose.set("strictQuery", false);
 
 mongoose.connect(
-  `mongodb+srv://niladri:${process.env.MONGO_DB_PASSWORD}@cluster0.01lnzaz.mongodb.net/MovieQueryDatabase?retryWrites=true&w=majority`
+  `mongodb+srv:// vercel-admin-user:${process.env.MONGO_DB_PASSWORD}@cluster0.01lnzaz.mongodb.net/MovieQueryDatabase?retryWrites=true&w=majority`
 );
 
 

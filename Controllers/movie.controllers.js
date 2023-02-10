@@ -116,24 +116,31 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
 
   if (message_body == null) message_body = "oh no, something went wrong";
-
-  /* const payload = WhatsappUtilsObj.generate_payload(num, message_body);
-
-  const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload); */
-
-  mongo_payload.Time_Stamp = Date();
-  console.log(mongo_payload);
-  const query = new Query(mongo_payload);
+    mongo_payload.Time_Stamp = Date();
+    console.log(mongo_payload);
 
   try {
-    await query.save();
-    res.send(query);
-  } catch (error) {
-    console.log("Here");
-    //res.send(error);
-    res.status(500).send(error);
-    //return;
+    const payload = WhatsappUtilsObj.generate_payload(num, message_body);
+
+    const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
+
+    const query = new Query(mongo_payload);
+
+    try {
+      await query.save();
+      res.send(query);
+    } catch (error) {
+      console.log("Here");
+      //res.send(error);
+      res.status(500).send(error);
+      //return;
+    }
   }
+  catch (err) {
+    res.send(err.message);
+    logger.error("Could not send message");
+  }
+  
 
 
   /* console.log(`===========BODY===========\n${message_body}`);

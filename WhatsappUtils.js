@@ -119,7 +119,7 @@ class WhatsappUtils {
 
       const config = {
         method: "post",
-        url: "https://graph.facebook.com/v15.0/105933825735159/messages",
+        url: "https://graph.facebook.com/v15.0/101412459527848/messages",
         headers: {
           Authorization: `Bearer ${process.env.TOKEN}`,
           "Content-Type": "application/json",

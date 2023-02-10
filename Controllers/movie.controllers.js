@@ -124,10 +124,10 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
     const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
 
-    //const query = new Query(mongo_payload);
-    res.sendStatus(200);
+    const query = new Query(mongo_payload);
+    //res.sendStatus(200);
 
-    /*try {
+    try {
       await query.save();
       res.send(query);
     } catch (error) {
@@ -135,7 +135,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
       //res.send(error);
       res.status(500).send(error);
       //return;
-    }*/
+    }
   }
   catch (err) {
     res.send(err.message);

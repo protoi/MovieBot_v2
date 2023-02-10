@@ -9,7 +9,7 @@ const {
 const validate_dependencies = async (req, res, next) => {
   console.log("entered middleware");
   console.log("===============");
-  console.log(JSON.stringify(req, null, 2));
+  console.log(JSON.stringify(req.body, null, 2));
   console.log("===============");
 
   console.log(req.body);

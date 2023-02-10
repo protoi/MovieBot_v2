@@ -119,10 +119,10 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     mongo_payload.Time_Stamp = Date();
     console.log(mongo_payload);
 
-  try {
-    const payload = WhatsappUtilsObj.generate_payload(num, message_body);
+  const payload = WhatsappUtilsObj.generate_payload(num, message_body);
+  console.log(payload);
 
-    const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
+    const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload); 
 
     const query = new Query(mongo_payload);
     //res.sendStatus(200);
@@ -136,11 +136,6 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
       res.status(500).send(error);
       //return;
     }
-  }
-  catch (err) {
-    res.send(err.message);
-    logger.error("Could not send message");
-  }
   
 
 

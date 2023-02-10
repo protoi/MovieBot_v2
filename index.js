@@ -13,7 +13,7 @@ exp.use(express.urlencoded({ extended: true }));
 
 mongoose.set("strictQuery", false);
 mongoose.connect(
-  "mongodb+srv://niladri:KtJaWVe6TrvhbHZE@cluster0.01lnzaz.mongodb.net/?retryWrites=true&w=majority",
+  `mongodb+srv://niladri:${process.env.MONGO_DB_PASSWORD}@cluster0.01lnzaz.mongodb.net/?retryWrites=true&w=majority`,
   {
     /*useNewUrlParser: true,
     //useFindAndModify: false,
@@ -26,7 +26,6 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 });
-
 
 exp.use("/", default_router);
 exp.use("/", movie_router);

@@ -10,7 +10,6 @@ const PORT = 9999;
 const exp = express();
 exp.use(express.json());
 exp.use(express.urlencoded({ extended: true }));
-//niladri:${process.env.MONGO_DB_PASSWORD}
 
 
 
@@ -23,12 +22,6 @@ mongoose.connect(
     useUnifiedTopology: true, */
   }
 ); 
-
-
-
-
-
-
 
 
 

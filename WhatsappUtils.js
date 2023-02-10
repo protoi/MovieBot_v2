@@ -9,6 +9,7 @@ class WhatsappUtils {
    * @returns {[object|null]} if successful it will return an object containing the number and message of the sender otherwise it will return null
    */
   extract_number_and_message(payload) {
+    console.log(JSON.stringify(payload, null, 2));
     try {
       const number = payload.entry[0].changes[0].value["messages"][0]["from"];
       const message =

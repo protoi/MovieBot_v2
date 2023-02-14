@@ -51,7 +51,7 @@ const group_documents_by_intent = async (request, response) => {
   }
 
   try {
-    response.send(query);
+    response.status(200).json(query);
   } catch (error) {
     response.status(500).send(error);
   }

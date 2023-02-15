@@ -39,9 +39,6 @@ const group_documents_by_intent = async (request, response) => {
       {
         $group: {
           _id: "$EntityIntent_tuple.intents",
-          all: {
-            $push: "$$ROOT",
-          },
           count: {
             $sum: 1,
           },
@@ -212,6 +209,73 @@ const get_genre_frequencies = async (request, response) => {
   }
 };
 
+
+
+const get_actor_frequencies = async (request, response) => {
+  let query = null;
+  try {
+    query = await Query.find(
+      { "EntityIntent_tuple.entities.actor": { $ne: [] } },
+      {
+        "EntityIntent_tuple.entities.actor": 1,
+        _id: 0,
+      }
+    );
+  } catch (err) {
+    logger.error("Could not fetch data");
+    response.send(err.message);
+    return;
+  }
+  let freq_map = new Map();
+  query.forEach((element) => {
+    let actor = element["EntityIntent_tuple"]["entities"]["actor"];
+    actor.forEach((element) => {
+      if (freq_map[element] == null) freq_map[element] = 1;
+      freq_map[element]++;
+    });
+  });
+
+  try {
+    response.send(freq_map);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+};
+
+
+
+const get_movie_frequencies = async (request, response) => {
+  let query = null;
+  try {
+    query = await Query.find(
+      { "EntityIntent_tuple.entities.moviename": { $ne: [] } },
+      {
+        "EntityIntent_tuple.entities.moviename": 1,
+        _id: 0,
+      }
+    );
+  } catch (err) {
+    logger.error("Could not fetch data");
+    response.send(err.message);
+    return;
+  }
+  let freq_map = new Map();
+  query.forEach((element) => {
+    let moviename = element["EntityIntent_tuple"]["entities"]["moviename"];
+    moviename.forEach((element) => {
+      if (freq_map[element] == null) freq_map[element] = 1;
+      freq_map[element]++;
+    });
+  });
+
+  try {
+    response.send(freq_map);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+};
+
+
 //Exporting the required functions
 module.exports = {
   get_document_on_the_basis_of_intents,
@@ -219,4 +283,6 @@ module.exports = {
   group_queries_by_date_week,
   get_genre_frequencies,
   group_documents_by_intent,
+  get_actor_frequencies,
+  get_movie_frequencies,
 };

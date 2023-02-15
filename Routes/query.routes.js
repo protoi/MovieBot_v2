@@ -19,5 +19,14 @@ query_router.get(
   "/query/get_genre_frequencies",
   query_controllers.get_genre_frequencies
 );
+query_router.get(
+  "/query/get_actor_frequencies",
+  query_controllers.get_actor_frequencies
+);
+
+query_router.get(
+  "/query/get_movie_frequencies",
+  query_controllers.get_movie_frequencies
+);
 
 module.exports = { query_router };

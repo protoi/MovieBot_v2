@@ -50,15 +50,15 @@ describe("Test JSON response", () => {
 
 
 describe("Test Genre counts", () => {
-  it("should return a valid object containng the genres with their corresponding query counts", (done) => {
+  it("should checks if each key in the response object is a number", (done) => {
     // Make a request and get the response object
     request.get(
       "http://localhost:9999/query/get_genre_frequencies",
       (error, response, body) => {
-
-        let parsedBody = JSON.parse(body);
-        expect(parsedBody).to.have.property("horror");
-
+        let res = JSON.parse(body);
+        for (const key in res) {
+          assert(typeof res[key] === "number");
+        }
         done();
       }
     );

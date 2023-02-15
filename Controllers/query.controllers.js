@@ -4,6 +4,8 @@ const { logger } = require("../logger");
 const { aggregate } = require("../model");
 const Query = require("../model");
 
+const restructure_query_module = require("./restructure_date_query")
+
 //This function takes an intent as parameter and gives those documents from mongo DB where the intent matches
 
 const get_document_on_the_basis_of_intents = async (request, response) => {
@@ -116,7 +118,7 @@ const group_queries_by_date_week = async (request, response) => {
               },
               {
                 $dateToString: {
-                  format: "%d/%m/%Y",
+                  format: "%Y/%m/%d",
                   date: "$Time_Stamp",
                 },
               },
@@ -124,6 +126,7 @@ const group_queries_by_date_week = async (request, response) => {
             ],
           },
           docs: { $push: "$$ROOT" },
+          count: {$sum: 1},
         },
       },
     ]);
@@ -131,6 +134,7 @@ const group_queries_by_date_week = async (request, response) => {
     logger.error("Could not fetch data");
   }
   try {
+     query = restructure_query_module.restructure_query(query);
     response.send(query);
   } catch (error) {
     response.status(500).send(error);

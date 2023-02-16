@@ -1,5 +1,6 @@
 const { default_router } = require("./Routes/default.routes");
 const { movie_router } = require("./Routes/movie.routes");
+const cors = require("cors");
 
 const { onboarding_router } = require("./Routes/onboarding.routes");
 const { frequency_router } = require("./Routes/frequency.routes");
@@ -30,6 +31,8 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 }); */
+
+exp.use(cors());
 
 exp.use("/", default_router);
 exp.use("/", movie_router);

@@ -1,5 +1,7 @@
 const axios = require("axios");
-const { logger } = require("../logger");
+const {
+  logger
+} = require("../logger");
 //our classes
 const nlp_model = require("../NLP/retain_model");
 const WhatsappUtils = require("../WhatsappUtils");
@@ -46,7 +48,10 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
   // let num = num_msg_tuple.num;
   // let msg = num_msg_tuple.msg;
 
-  let { num, msg } = req.num_msg_tuple;
+  let {
+    num,
+    msg
+  } = req.num_msg_tuple;
 
   logger.debug(`Extracted message : ${msg} `);
   logger.debug(`Destination Phone number : ${num}`);
@@ -60,6 +65,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
   let message_body = null;
 
   let EntityIntent_tuple = null;
+  let entity_valuelist = null;
 
   try {
     EntityIntent_tuple = await model.extract_characteristics(msg);
@@ -100,8 +106,16 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
   if (EntityIntent_tuple != null) {
     try {
-      ({ movie_info, message_body, entity_valuelist } =
-        await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
+      if (EntityIntent_tuple.intents === "message.greetings")
+        message_body = "Hello there \n What's do you want to know today, Ask me anything regarding movies \n I am the Movie Bot and I know everything from TMDB.\nHereare somethings you can do :\n\"Give me the actor list of 'Superman Returns\"\n\"In which year 'Sholay' was released\"\n\"Action movies of Sylvester Stallone\"\n";
+      else {
+        ({
+            movie_info,
+            message_body,
+            entity_valuelist
+          } =
+          await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
+      }
     } catch (err) {
       console.error(
         `could not fetch movie information or response message: ${err.message}`
@@ -116,27 +130,27 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
 
 
   if (message_body == null) message_body = "oh no, something went wrong";
-    mongo_payload.Time_Stamp = Date();
-    console.log(mongo_payload);
+  mongo_payload.Time_Stamp = Date();
+  console.log(mongo_payload);
 
   const payload = WhatsappUtilsObj.generate_payload(num, message_body);
   console.log(payload);
 
-    const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload); 
+  const success = await WhatsappUtilsObj.send_message_to_whatsapp(payload);
 
-    const query = new Query(mongo_payload);
-    //res.sendStatus(200);
+  const query = new Query(mongo_payload);
+  //res.sendStatus(200);
 
-    try {
-      await query.save();
-      res.send(query);
-    } catch (error) {
-      console.log("Here");
-      //res.send(error);
-      res.status(500).send(error);
-      //return;
-    }
-  
+  try {
+    await query.save();
+    res.send(query);
+  } catch (error) {
+    console.log("Here");
+    //res.send(error);
+    res.status(500).send(error);
+    //return;
+  }
+
 
 
   /* console.log(`===========BODY===========\n${message_body}`);

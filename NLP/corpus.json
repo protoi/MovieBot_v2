@@ -3,6 +3,11 @@
   "locale": "en-US",
   "data": [
     {
+      "intent": "message.greetings",
+      "signature": "get_greetings(none: none) -> String",
+      "utterances": ["hello", "Hello", "What is this", "hola","aloha","Introduce"]
+    },
+    {
       "intent": "message.get_plot",
       "signature": "get_plot(movie_name: String) -> String",
       "utterances": [

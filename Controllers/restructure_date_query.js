@@ -8,6 +8,7 @@ const weekday = [
   "Saturday",
 ];
 
+const reStructurer = require("./yet_another_restructuring_by_date");
 let restructure_query = (query) => {
   //removing the other _id values
 
@@ -87,7 +88,7 @@ let restructure_query = (query) => {
     restructured_element.daily_queries = daily_queries;
     restructured_arr.push(restructured_element);
   });
-  console.log(restructured_arr);
+  console.log(reStructurer.yet_another_restructuring(restructured_arr));
   return restructured_arr;
 };
 

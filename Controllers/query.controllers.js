@@ -4,7 +4,7 @@ const { logger } = require("../logger");
 const { aggregate } = require("../model");
 const Query = require("../model");
 
-const restructure_query_module = require("./restructure_date_query")
+const restructure_query_module = require("../Restructuring_Utils/restructure_date_query");
 
 
 //This function takes an intent as parameter and gives those documents from mongo DB where the intent matches

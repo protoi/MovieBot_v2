@@ -6,6 +6,7 @@
       "intent": "message.greetings",
       "signature": "get_greetings(none: none) -> String",
       "utterances": [
+        "hi",
         "hello",
         "Hello",
         "What is this",

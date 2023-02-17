@@ -29,6 +29,8 @@ let yet_another_restructuring = (data) => {
   let allHours = Array.from(Array(24).keys()).map((h) => h.toString());
 
   data.forEach((element) => {
+    if (element.queries == 0)
+      return;
     let queryData = element.daily_queries;
     // If not, add a new object for that hour with queries set to 0 and an empty hourly_queries array.
     allHours.forEach((hour) => {

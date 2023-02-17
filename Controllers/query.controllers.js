@@ -73,7 +73,7 @@ const group_queries_by_date_week = async (request, response) => {
     start_date = firstday.substring(0, 10);
     end_date = lastday.substring(0, 10);
   } catch (err) {
-    response.send(err.message);
+    response.status(400).send(err.message);
     logger.error("Date format error");
     return;
   }

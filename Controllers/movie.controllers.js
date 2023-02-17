@@ -1,7 +1,5 @@
 const axios = require("axios");
-const {
-  logger
-} = require("../logger");
+const { logger } = require("../logger");
 //our classes
 const nlp_model = require("../NLP/retain_model");
 const WhatsappUtils = require("../WhatsappUtils");
@@ -30,10 +28,7 @@ const verify_token = (req, res) => {
   } else res.sendStatus(403);
 };
 
-
 var mongo_payload = {};
-
-
 
 const fetch_info_and_post_to_whatsapp = async (req, res) => {
   // console.log(req.body);
@@ -48,10 +43,7 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
   // let num = num_msg_tuple.num;
   // let msg = num_msg_tuple.msg;
 
-  let {
-    num,
-    msg
-  } = req.num_msg_tuple;
+  let { num, msg } = req.num_msg_tuple;
 
   logger.debug(`Extracted message : ${msg} `);
   logger.debug(`Destination Phone number : ${num}`);
@@ -107,13 +99,19 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
   if (EntityIntent_tuple != null) {
     try {
       if (EntityIntent_tuple.intents === "message.greetings")
-        message_body = "Hello there \n What's do you want to know today, Ask me anything regarding movies \n I am the Movie Bot and I know everything from TMDB.\nHereare somethings you can do :\n\"Give me the actor list of 'Superman Returns\"\n\"In which year 'Sholay' was released\"\n\"Action movies of Sylvester Stallone\"\n";
+        message_body = `Greetings!
+If you have any questions about movies, feel free to ask me as I am the Movie Bot with extensive knowledge from TMDB.
+Here are a few examples of what you can ask:
+- "Can you provide me with the list of actors in 'Superman Returns'?"
+- "Do you happen to know the year in which 'Sholay' was released?"
+- "What are some of Sylvester Stallone's action movies?"
+- "Show me the plot of 'Rise of the planet of the apes'
+- Tell me the cast of 'Jaws'
+- What are the genres of 'Spirited Away'
+
+If you need help just type "hello"`;
       else {
-        ({
-            movie_info,
-            message_body,
-            entity_valuelist
-          } =
+        ({ movie_info, message_body, entity_valuelist } =
           await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
       }
     } catch (err) {
@@ -126,8 +124,6 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
   //Adding Response Body to mongodb payload
   mongo_payload.Response_Body = message_body;
   mongo_payload.Entity_valuelist = entity_valuelist;
-
-
 
   if (message_body == null) message_body = "oh no, something went wrong";
   mongo_payload.Time_Stamp = Date();
@@ -150,8 +146,6 @@ const fetch_info_and_post_to_whatsapp = async (req, res) => {
     res.status(500).send(error);
     //return;
   }
-
-
 
   /* console.log(`===========BODY===========\n${message_body}`);
   console.log(`success status: ${success}`); */

@@ -14,7 +14,8 @@
         "aloha",
         "Introduce",
         "introduce yourself",
-        "what do you do"
+        "what do you do",
+        "help"
       ]
     },
     {
@@ -43,7 +44,8 @@
         "What was the year of release of ",
         "Year of release of the movie ",
         "when did  come out",
-        "when did  movie come out"
+        "when did  movie come out",
+        "When was  released ?"
       ]
     },
     {
@@ -277,7 +279,15 @@
         "Movies of @genre category from the year ",
         "List movies of @genre category from the year ",
         "Send me movies of @genre category from the year ",
-        "Send movies of @genre category from the year"
+        "Send movies of @genre category from the year",
+
+        "Give me the latest movies of @actor",
+        "@actor latest movies",
+        "newest movie of @actor",
+        "@actor newest movies",
+        "latest @genre movies",
+        "Give me @actor latest movies",
+        "Give me @actor 's latest movies"
       ]
     }
   ],

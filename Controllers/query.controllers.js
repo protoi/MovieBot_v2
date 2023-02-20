@@ -46,14 +46,10 @@ const group_documents_by_intent = async (request, response) => {
         },
       },
     ]);
+    response.status(200).json(query);
   } catch (err) {
     logger.error("Could not fetch data");
-  }
-
-  try {
-    response.status(200).json(query);
-  } catch (error) {
-    response.status(500).send(error);
+    response.status(500).send(error.message);
   }
 };
 

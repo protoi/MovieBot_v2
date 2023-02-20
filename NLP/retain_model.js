@@ -4,7 +4,7 @@ const path = require("path");
 
 class NLP {
   constructor() {
-    this.SCORE_THRESHOLD = 0.3;
+    this.SCORE_THRESHOLD = 0.5;
     this.model_finished_loading = false;
     this.manager = new NlpManager();
     this.load_model();

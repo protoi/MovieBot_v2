@@ -30,6 +30,8 @@ const { dockStart } = require("@nlpjs/basic");
     "show me actor list of 'rise of the planet of the apes'",
     "list of actors in 'superman returns'",
     "In which year 'SpiderMan 2' was released",
+    "Give me Tom Holland's latest movies ",
+    "Give me Sylvester Stallone's latest movies"
   ];
   const answers = [
     "message.get_actor",
@@ -46,6 +48,8 @@ const { dockStart } = require("@nlpjs/basic");
     "message.get_actor",
     "message.get_actor",
     "message.get_movie_year",
+    "message.get_movie",
+    "message.get_movie",
   ];
   // Train the network
   await manager.train();

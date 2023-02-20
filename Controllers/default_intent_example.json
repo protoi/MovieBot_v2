@@ -1,0 +1,8 @@
+{
+  "message.get_movie": "Give me movies of Brad Pitt",
+  "message.get_genre": "What is the genre of 'Spectre'",
+  "message.get_actor": "Give me the list of actors in 'Spectre'",
+  "message.get_year": "What is the release year of'Spectre'",
+  "message.get_plot": "Plot of 'Spectre'"
+
+}

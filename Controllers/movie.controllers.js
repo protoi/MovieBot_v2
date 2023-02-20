@@ -5,6 +5,7 @@ const nlp_model = require("../NLP/retain_model");
 const WhatsappUtils = require("../WhatsappUtils");
 const IMDB = require("../IMDB");
 const Query = require("../model");
+const default_messages = require("./default_intent_example.json");
 
 //Objects
 const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
@@ -110,7 +111,16 @@ Here are a few examples of what you can ask:
 - What are the genres of 'Spirited Away'
 
 If you need help just type "hello"`;
-      else {
+      else if (
+        EntityIntent_tuple.entities.genre.length == 0 &&
+        EntityIntent_tuple.entities.actor.length == 0 &&
+        EntityIntent_tuple.entities.daterange.length == 0 &&
+        EntityIntent_tuple.entities.moviename.length == 0
+      ) {
+        message_body = "Please try something like this";
+        let identified_intent = EntityIntent_tuple.intents;
+        message_body +=" "+ default_messages[identified_intent];
+      } else {
         ({ movie_info, message_body, entity_valuelist } =
           await IMDBObj.get_movie_query_from_intents(EntityIntent_tuple));
       }

@@ -4,7 +4,7 @@ const assert = require("assert");
 const { response } = require("express");
 
 describe("/query/group_documents_by_intents api test", () => {
-  it("check if response body is contains the required fields", (done) => {
+  it("checking fields of response", (done) => {
     // Make a request and get the response object
     request.get(
       "http://localhost:9999/query/group_documents_by_intents",

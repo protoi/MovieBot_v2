@@ -7,9 +7,15 @@ let daysOfWeek = [
   "Saturday",
   "Sunday",
 ];
-let yet_another_restructuring = (data) => {
 
-    // console.log(ty)
+/**
+ * Fixes formatting for restructurd query Object
+ * @param {Object} data Restructured Query
+ * @returns {Array.<Object>}
+ */
+
+let yet_another_restructuring = (data) => {
+  // console.log(ty)
 
   for (let day of daysOfWeek) {
     // Check if the current day is already in the data array
@@ -24,13 +30,11 @@ let yet_another_restructuring = (data) => {
   // Sort the data array by day of the week
   data.sort((a, b) => daysOfWeek.indexOf(a.day) - daysOfWeek.indexOf(b.day));
 
-
   // First, create a new array with all 24 hours represented
   let allHours = Array.from(Array(24).keys()).map((h) => h.toString());
 
   data.forEach((element) => {
-    if (element.queries == 0)
-      return;
+    if (element.queries == 0) return;
     let queryData = element.daily_queries;
     // If not, add a new object for that hour with queries set to 0 and an empty hourly_queries array.
     allHours.forEach((hour) => {
@@ -49,8 +53,8 @@ let yet_another_restructuring = (data) => {
 
     element.daily_queries = queryData;
   });
-    
-    return data;
+
+  return data;
 };
 
 module.exports = { yet_another_restructuring };

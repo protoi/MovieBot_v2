@@ -1,4 +1,32 @@
-const WhatsappUtils = require("./WhatsappUtils");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: IMDB.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: IMDB.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const WhatsappUtils = require("./WhatsappUtils");
 const WhatsappUtilsObj = new WhatsappUtils.WhatsappUtils();
 
 const axios = require("axios");
@@ -49,19 +77,19 @@ class IMDB {
 
   /**
    * Function to map an actor with their corresponding IMDB ID. The actor will be mapped with null if their ID is not found
-   * @param {Array.<string>} actor_names an array of strings, which are the cast names
-   * @returns {Map<string, (number|null)>} mapping of actor name with ID
+   * @param {Array.&lt;string>} actor_names an array of strings, which are the cast names
+   * @returns {Map&lt;string, (number|null)>} mapping of actor name with ID
    */
   async map_actors_with_ID(actor_names) {
     const actor_mappings = new Map();
 
-    for (let index = 0; index < actor_names.length; index++) {
+    for (let index = 0; index &lt; actor_names.length; index++) {
       const actor_name = actor_names[index];
 
       try {
         let config = {
           method: "get",
-          url: `https://api.themoviedb.org/3/search/person?api_key=${process.env.THE_MOVIE_DB_KEY}&query=${actor_name}`,
+          url: `https://api.themoviedb.org/3/search/person?api_key=${process.env.THE_MOVIE_DB_KEY}&amp;query=${actor_name}`,
           headers: {},
         };
 
@@ -82,8 +110,8 @@ class IMDB {
 
   /**
    * Maps the string genre list to it's corresponding IMDB ID. The ID can be null if genre cannot be mapped
-   * @param {Array.<String>} genre_names an array of strings which are genres
-   * @returns {Map<string, number>} mapping between genre and it's unique ID
+   * @param {Array.&lt;String>} genre_names an array of strings which are genres
+   * @returns {Map&lt;string, number>} mapping between genre and it's unique ID
    */
   map_genres_with_ID(genre_names) {
     const genre_mapping = new Map();
@@ -104,8 +132,8 @@ class IMDB {
 
   /**
    * returns an array of strings which is the genre strings associated with the genre IDs
-   * @param {Array.<(number|null)>} genre_IDs Array of integers, can contain null values.
-   * @returns {Array.<string>} an array of strings corresponding to an ID's genre name.
+   * @param {Array.&lt;(number|null)>} genre_IDs Array of integers, can contain null values.
+   * @returns {Array.&lt;string>} an array of strings corresponding to an ID's genre name.
    */
   get_genre_from_IDs(genre_IDs) {
     return genre_IDs
@@ -140,7 +168,7 @@ class IMDB {
   async find_movie_info(movie_name) {
     let config = {
       method: "get",
-      url: `https://api.themoviedb.org/3/search/movie?api_key=${process.env.THE_MOVIE_DB_KEY}&language=en-US&query=${movie_name}&page=1&include_adult=false`,
+      url: `https://api.themoviedb.org/3/search/movie?api_key=${process.env.THE_MOVIE_DB_KEY}&amp;language=en-US&amp;query=${movie_name}&amp;page=1&amp;include_adult=false`,
       headers: {},
     };
     try {
@@ -161,12 +189,12 @@ class IMDB {
   /**
    *  male, female and other gender cast members from a movie ID
    * @param {number} movie_id unique ID IMDB for a given movie
-   * @returns {Object.<string, Array.<string>>} returns an object containing three arrays of strings, male, female and other gender cast members, will return null if no such movie is found
+   * @returns {Object.&lt;string, Array.&lt;string>>} returns an object containing three arrays of strings, male, female and other gender cast members, will return null if no such movie is found
    */
   async get_cast_from_movie_id(movie_id) {
     let config = {
       method: "get",
-      url: `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${process.env.THE_MOVIE_DB_KEY}&language=en-US`,
+      url: `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${process.env.THE_MOVIE_DB_KEY}&amp;language=en-US`,
       headers: {},
     };
     try {
@@ -194,7 +222,7 @@ class IMDB {
   async find_queries(search_terms) {
     /**
      * Turns the actor id or genre id mapping into a string of comma separated IDs
-     * @param {Map<string, number>} entity_map a Mapping of either (actor, actorID) or (genre, genreID)
+     * @param {Map&lt;string, number>} entity_map a Mapping of either (actor, actorID) or (genre, genreID)
      * @returns {string} stringified comma separated actorIDs or genreIDs, excludes the null values
      */
     const join_and_stringify_IDs = (entity_map) => {
@@ -298,7 +326,7 @@ class IMDB {
    * sends a GET request to the IMDB API /discover/
    * @async
    * @param {Object} entities object containing Maps of actor/genre and their IDs, stringified actor/genre IDs and a year
-   * @returns {Array.<Object>} array of objects containing detailed movie informations
+   * @returns {Array.&lt;Object>} array of objects containing detailed movie informations
    */
   async GET_movie_names_using_genre_and_actor(entities) {
     // send GET request to discover
@@ -306,7 +334,7 @@ class IMDB {
     try {
       let config = {
         method: "get",
-        url: `https://api.themoviedb.org/3/discover/movie?primary_release_year=${entities.year}&with_genres=${entities.genre_string}&with_people=${entities.actor_string}&sort_by=popularity.desc&api_key=${process.env.THE_MOVIE_DB_KEY}`,
+        url: `https://api.themoviedb.org/3/discover/movie?primary_release_year=${entities.year}&amp;with_genres=${entities.genre_string}&amp;with_people=${entities.actor_string}&amp;sort_by=popularity.desc&amp;api_key=${process.env.THE_MOVIE_DB_KEY}`,
         headers: {},
       };
 
@@ -326,7 +354,7 @@ class IMDB {
    * 2. The information about the movie if it was supposed to be queried
    * 3. The raw message to be send to the user
    * @param {Object} entityIntentContainer
-   * @returns {Object.<string, (Object|Object|string)>}
+   * @returns {Object.&lt;string, (Object|Object|string)>}
    */
   async get_movie_query_from_intents(entityIntentContainer) {
     let entity_valuelist = null;
@@ -347,7 +375,7 @@ class IMDB {
 
         const top3_movie_list = [];
 
-        for (let index = 0; index < Math.min(3, movie_info.length); index++) {
+        for (let index = 0; index &lt; Math.min(3, movie_info.length); index++) {
           const movie = movie_info[index];
           top3_movie_list.push({
             title: movie.original_title,
@@ -408,3 +436,26 @@ class IMDB {
   }
 }
 module.exports = { IMDB };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-API.html">API</a></li></ul><h3>Classes</h3><ul><li><a href="IMDB.html">IMDB</a></li><li><a href="NLP.html">NLP</a></li><li><a href="WhatsappUtils.html">WhatsappUtils</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fetch_info_and_post_to_whatsapp">fetch_info_and_post_to_whatsapp</a></li><li><a href="global.html#ping">ping</a></li><li><a href="global.html#restructure_query">restructure_query</a></li><li><a href="global.html#validate_dependencies">validate_dependencies</a></li><li><a href="global.html#verify_token">verify_token</a></li><li><a href="global.html#yet_another_restructuring">yet_another_restructuring</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Feb 21 2023 17:45:01 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

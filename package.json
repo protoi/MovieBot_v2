@@ -311,10 +311,12 @@
     "zlibjs": "^0.3.1"
   },
   "devDependencies": {
+    "jsdoc": "^4.0.2",
     "mocha": "^10.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "generate-docs": "./node_modules/.bin/jsdoc -c jsdoc_conf.json"
   },
   "repository": {
     "type": "git",

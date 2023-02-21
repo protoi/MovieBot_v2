@@ -1,10 +1,17 @@
 const { logger } = require("../logger");
-
+import { Request, Response, NextFunction } from "express";
 const {
   WhatsappUtilsObj,
   IMDBObj,
   model,
 } = require("../Controllers/movie.controllers");
+
+/**
+ * Forwards the Request object to the pipeline if and only if it has a valid mobile number and a valid message. If the Request body is of invalid shape it sends back a HTTP error code of 200
+ * @param {Request} req HTTP Request object
+ * @param {Response} res HTTP Response object
+ * @param {NextFunction} next @fetch_info_and_post_to_whatsapp
+ */
 
 const validate_dependencies = async (req, res, next) => {
   console.log("entered middleware");

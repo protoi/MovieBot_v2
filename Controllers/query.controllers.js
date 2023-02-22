@@ -1,5 +1,5 @@
 /**
- * @exports API
+ * @module API_source
  */
 
 const { Request, Response } = require("express");
@@ -7,11 +7,15 @@ const { Logger } = require("winston");
 const { logger } = require("../logger");
 // const { aggregate } = require("../model");
 const Query = require("../model");
+const { MongoUtils } = require("../MongoUtils");
 
-const restructure_query_module = require("../Restructuring_Utils/restructure_date_query");
+// const restructure_query_module = require("../Restructuring_Utils/restructure_date_query");
+const mongoUtilsObject = new MongoUtils();
 
 /**
  * extracts the intent from the Request Body and sends the documents from mongoDB as a HTTP Response that have matching intents
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Request object
  * @param {Response} response HTTP Response object
  */
@@ -40,6 +44,8 @@ const get_document_on_the_basis_of_intents = async (request, response) => {
 //This Function groups the documents on the basis of intents and gives their respective count
 /**
  * Groups the documents on the basis of intents and sends their respective counts as a HTTP Response
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Request Object
  * @param {Response} response HTTP Response Object
  */
@@ -69,9 +75,10 @@ const group_documents_by_intent = async (request, response) => {
 
 /**
  * Extracts the date formatted as YYYY/MM/DD and returns the weeks queries cumulatively grouped with respect to time (week, day, hour)
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Response object containing a field called "date" containing a value of the format YYYY/MM/DD
  * @param {Response} response HTTP Response Object
- * @returns {}
  */
 const group_queries_by_date_week = async (request, response) => {
   let start_date = null;
@@ -144,7 +151,7 @@ const group_queries_by_date_week = async (request, response) => {
     logger.error("Could not fetch data");
   }
   try {
-    query = restructure_query_module.restructure_query(query);
+    query = mongoUtilsObject.restructure_query(query);
     response.send(query);
   } catch (error) {
     response.status(500).send(error);
@@ -194,9 +201,10 @@ const get_documents_within_given_time_frame = async (request, response) => {
 
 /**
  * Fetches the non-zero frequencies of all genres that have been queried
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Response Object
  * @param {Response} response HTTP Response Object
- * @returns {}
  */
 const get_genre_frequencies = async (request, response) => {
   let query = null;
@@ -231,9 +239,10 @@ const get_genre_frequencies = async (request, response) => {
 
 /**
  * Fetches the non-zero frequencies of all cast members that have been queried
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Response Object
  * @param {Response} response HTTP Response Object
- * @returns {}
  */
 const get_actor_frequencies = async (request, response) => {
   let query = null;
@@ -268,9 +277,10 @@ const get_actor_frequencies = async (request, response) => {
 
 /**
  * Fetches the non-zero frequencies of all movies that have been queried
+ * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Response Object
  * @param {Response} response HTTP Response Object
- * @returns {}
  */
 const get_movie_frequencies = async (request, response) => {
   let query = null;

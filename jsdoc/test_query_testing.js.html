@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: test/query_testing.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: test/query_testing.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var expect = require("chai").expect;
+var request = require("request");
+const assert = require("assert");
+const { response } = require("express");
+
+describe("/query/group_documents_by_intents api test",
+/**
+ * @name lambda test function
+ * @async
+ */
+() => {
+  it("checking fields of response", (done) => {
+    // Make a request and get the response object
+    request.get(
+      "http://localhost:9999/query/group_documents_by_intents",
+      (error, response, body) => {
+        try {
+          expect(response.statusCode == 200);
+          let parsedBody = JSON.parse(body);
+          expect(parsedBody).to.be.a("array");
+          parsedBody.forEach((element) => {
+            //Check whether response from mongodb contains the fields _id and count
+            //Then respectively checking whether they have the correct
+            expect(element).to.have.property("count");
+            assert(typeof element.count === "number" &amp;&amp; element.count >= 0);
+            expect(element).to.have.property("_id");
+            assert(typeof element._id === "string");
+          });
+          done();
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
+    );
+  });
+});
+
+describe("Test Genre counts", () => {
+  let genres = [
+    "action",
+    "adventure",
+    "animation",
+    "comedy",
+    "crime",
+    "documentary",
+    "drama",
+    "family",
+    "fantasy",
+    "history",
+    "horror",
+    "music",
+    "mystery",
+    "romance",
+    "science fiction",
+    "tv movie",
+    "thriller",
+    "war",
+    "western",
+  ];
+
+  it("should check if each key in the response object is a number", (done) => {
+    // Make a request and get the response object
+    request.get(
+      "http://localhost:9999/query/get_genre_frequencies",
+      (error, response, body) => {
+        assert(response.statusCode == 200);
+        let res = JSON.parse(body);
+        for (const key in res) {
+          expect(genres).to.deep.include(key);
+          assert(typeof res[key] === "number");
+        }
+        done();
+      }
+    );
+  });
+});
+
+describe("Testing date query", () => {
+  let dates = [
+    "2023/02/12",
+    "202z/02/192",
+    "2023/02asfsf12",
+    "2023/02/07",
+    "2023/02/zzz12",
+  ];
+  dates.forEach((element) => {
+    it("should check that the given date param is valid and validate the response fields", (done) => {
+      request.get(
+        `http://localhost:9999/query/group_queries_by_date_week?date=${element}`,
+        (error, response, body) => {
+          if (response.statusCode == 200) {
+            console.log("ok");
+            let res = JSON.parse(body);
+            res.forEach((element) => {
+              expect(element).to.have.property("day");
+              expect(element).to.have.property("queries");
+              expect(element).to.have.property("daily_queries");
+              assert(typeof element.day === "string");
+              assert(typeof element.queries === "number");
+              assert(typeof element.daily_queries === "object");
+              if (element.daily_queries.length != 0)
+                element.daily_queries.forEach((daily_query) => {
+                  expect(daily_query).to.have.property("hour");
+                  expect(daily_query).to.have.property("queries");
+                  expect(daily_query).to.have.property("hourly_queries");
+                  if (daily_query.hourly_queries.length != 0)
+                    daily_query.hourly_queries.forEach((hourly_query) => {
+                      expect(hourly_query).to.have.property("timestamp");
+                      expect(hourly_query).to.have.nested.property(
+                        "data.entity.genre"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.entity.actor"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.entity.daterange"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.entity.moviename"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.intent"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.Actual_Message"
+                      );
+                      expect(hourly_query).to.have.nested.property(
+                        "data.Response_Message"
+                      );
+                    });
+                });
+            });
+          } else console.log("Bad request");
+          done();
+        }
+      );
+    });
+  });
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-API.html">API</a></li></ul><h3>Classes</h3><ul><li><a href="IMDB.html">IMDB</a></li><li><a href="MongoUtils.html">MongoUtils</a></li><li><a href="NLP.html">NLP</a></li><li><a href="WhatsappUtils.html">WhatsappUtils</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fetch_info_and_post_to_whatsapp">fetch_info_and_post_to_whatsapp</a></li><li><a href="global.html#lambdatestfunction">lambda test function</a></li><li><a href="global.html#ping">ping</a></li><li><a href="global.html#restructure_query">restructure_query</a></li><li><a href="global.html#validate_dependencies">validate_dependencies</a></li><li><a href="global.html#verify_token">verify_token</a></li><li><a href="global.html#yet_another_restructuring">yet_another_restructuring</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Feb 22 2023 11:05:42 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

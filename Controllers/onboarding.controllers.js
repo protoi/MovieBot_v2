@@ -1,6 +1,4 @@
-/**
- * @module API
- */
+
 let axios = require("axios");
 const { Request, Response } = require("express");
 let logger = require("winston");
@@ -8,9 +6,9 @@ let logger = require("winston");
 /**
  * Sends a link to the WhatsApp chatbot on-boarding QR Code as a HTTP Response
  * @function
+ * @memberof module:API_source
  * @param {Request} request HTTP Response Object
  * @param {Response} response HTTP Response Object
- * @returns {}
  */
 
 const get_onboarding_qrcode = async (req, res) => {

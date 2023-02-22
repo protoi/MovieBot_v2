@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Routes/query.routes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Routes/query.routes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module /query/
+ */
+
+const express = require("express");
+const query_router = express.Router();
+const query_controllers = require("../Controllers/query.controllers");
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns the queries of the supplied intent as an array
+ *
+ * &lt;b>Type&lt;/b>: GET
+ * &lt;table>
+ * &lt;tr>
+ *   &lt;th>Params&lt;/th>
+ *   &lt;th>Optional&lt;/th>
+ *   &lt;th>Options&lt;/th>
+ * &lt;/tr>
+ * &lt;tr>
+ *   &lt;td>intent&lt;/td>
+ *   &lt;td>No&lt;/td>
+ *    &lt;td>
+ *      &lt;ul style="list-style-type:none;">
+ *        &lt;li>message.get_actor&lt;/li>
+ *        &lt;li>message.get_movie&lt;/li>
+ *        &lt;li>message.get_plot&lt;/li>
+ *        &lt;li>message.get_genre&lt;/li>
+ *        &lt;li>message.greetings&lt;/li>
+ *        &lt;li>message.get_release_year&lt;/li>
+ *      &lt;/ul>
+ *    &lt;/td>
+ * &lt;/tr>
+ * &lt;/table>
+ *
+ * &lt;b>Example: &lt;/b> /query/get_documents_by_intents?intent=message.get_movie
+ * @name /query/get_documents_by_intents
+ */
+query_router.get(
+  "/query/get_documents_by_intents",
+  query_controllers.get_document_on_the_basis_of_intents
+);
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns an intent frequency mapping as an array of objects of the structure {_id: Intent, count: number } with count more than 0
+ *
+ * &lt;b>Type&lt;/b>: GET
+ *
+ * &lt;b>Example: &lt;/b> /query/get_documents_by_intents?intent=message.get_movie
+ * @name /query/group_documents_by_intents
+ */
+query_router.get(
+  "/query/group_documents_by_intents",
+  query_controllers.group_documents_by_intent
+);
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns an array of objects containing queries submitted, grouped by the weeks day (monday, tuesday... etc) and hour
+ *
+ * &lt;b>Type&lt;/b>: GET
+ * &lt;table>
+ * &lt;tr>
+ *   &lt;th>Params&lt;/th>
+ *   &lt;th>Optional&lt;/th>
+ *   &lt;th>Format&lt;/th>
+ * &lt;/tr>
+ * &lt;tr>
+ *   &lt;td>date&lt;/td>
+ *   &lt;td>No&lt;/td>
+ *    &lt;td>yyyy/mm/dd&lt;/td>
+ * &lt;/tr>
+ * &lt;/table>
+ *
+ * &lt;b>Example: &lt;/b> /query/group_queries_by_date_week?date=2022/02/17
+ * @name /query/group_queries_by_date_week
+ */
+
+query_router.get(
+  "/query/group_queries_by_date_week",
+  query_controllers.group_queries_by_date_week
+);
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns a genre - frequency mapping as an array of objects of the structure { genre : count } with count more than 0
+ *
+ * &lt;b>Type&lt;/b>: GET
+ *
+ * &lt;b>Example: &lt;/b> /query/get_genre_frequencies
+ * @name /query/get_genre_frequencies
+ */
+query_router.get(
+  "/query/get_genre_frequencies",
+  query_controllers.get_genre_frequencies
+);
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns an actor - frequency mapping as an array of objects of the structure {actor_name : count } with count more than 0
+ *
+ * &lt;b>Type&lt;/b>: GET
+ *
+ * &lt;b>Example: &lt;/b> /query/get_actor_frequencies
+ * @name /query/get_actor_frequencies
+ */
+query_router.get(
+  "/query/get_actor_frequencies",
+  query_controllers.get_actor_frequencies
+);
+
+/**
+ * &lt;b>Functionality&lt;/b>: Returns a movie - frequency mapping as an array of objects of the structure {movie name: count } with count more than 0
+ *
+ * &lt;b>Type&lt;/b>: GET
+ *
+ * &lt;b>Example: &lt;/b> /query/get_movie_frequencies
+ * @name /query/get_movie_frequencies
+ */
+query_router.get(
+  "/query/get_movie_frequencies",
+  query_controllers.get_movie_frequencies
+);
+
+module.exports = { query_router };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-_query_.html">/query/</a></li><li><a href="module-API_source.html">API_source</a></li></ul><h3>Classes</h3><ul><li><a href="IMDB.html">IMDB</a></li><li><a href="MongoUtils.html">MongoUtils</a></li><li><a href="NLP.html">NLP</a></li><li><a href="WhatsappUtils.html">WhatsappUtils</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fetch_info_and_post_to_whatsapp">fetch_info_and_post_to_whatsapp</a></li><li><a href="global.html#ping">ping</a></li><li><a href="global.html#restructure_query">restructure_query</a></li><li><a href="global.html#validate_dependencies">validate_dependencies</a></li><li><a href="global.html#verify_token">verify_token</a></li><li><a href="global.html#yet_another_restructuring">yet_another_restructuring</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Feb 22 2023 13:23:31 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

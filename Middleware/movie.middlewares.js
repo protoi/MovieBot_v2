@@ -1,5 +1,5 @@
 const { logger } = require("../logger");
-import { Request, Response, NextFunction } from "express";
+const { Request, Response, NextFunction } = require ("express");
 const {
   WhatsappUtilsObj,
   IMDBObj,

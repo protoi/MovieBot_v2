@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: /query/</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: /query/</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~/query/get_actor_frequencies"><span class="type-signature">(inner) </span>/query/get_actor_frequencies<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns an actor - frequency mapping as an array of objects of the structure {actor_name : count } with count more than 0</p>
+<p><b>Type</b>: GET</p>
+<p><b>Example: </b> /query/get_actor_frequencies</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~/query/get_documents_by_intents"><span class="type-signature">(inner) </span>/query/get_documents_by_intents<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns the queries of the supplied intent as an array</p>
+<p><b>Type</b>: GET</p>
+<table>
+<tr>
+  <th>Params</th>
+  <th>Optional</th>
+  <th>Options</th>
+</tr>
+<tr>
+  <td>intent</td>
+  <td>No</td>
+   <td>
+     <ul style="list-style-type:none;">
+       <li>message.get_actor</li>
+       <li>message.get_movie</li>
+       <li>message.get_plot</li>
+       <li>message.get_genre</li>
+       <li>message.greetings</li>
+       <li>message.get_release_year</li>
+     </ul>
+   </td>
+</tr>
+</table>
+<p><b>Example: </b> /query/get_documents_by_intents?intent=message.get_movie</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~/query/get_genre_frequencies"><span class="type-signature">(inner) </span>/query/get_genre_frequencies<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns a genre - frequency mapping as an array of objects of the structure { genre : count } with count more than 0</p>
+<p><b>Type</b>: GET</p>
+<p><b>Example: </b> /query/get_genre_frequencies</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~/query/get_movie_frequencies"><span class="type-signature">(inner) </span>/query/get_movie_frequencies<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns a movie - frequency mapping as an array of objects of the structure {movie name: count } with count more than 0</p>
+<p><b>Type</b>: GET</p>
+<p><b>Example: </b> /query/get_movie_frequencies</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line108">line 108</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~/query/group_documents_by_intents"><span class="type-signature">(inner) </span>/query/group_documents_by_intents<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns an intent frequency mapping as an array of objects of the structure {_id: Intent, count: number } with count more than 0</p>
+<p><b>Type</b>: GET</p>
+<p><b>Example: </b> /query/get_documents_by_intents?intent=message.get_movie</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~/query/group_queries_by_date_week"><span class="type-signature">(inner) </span>/query/group_queries_by_date_week<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p><b>Functionality</b>: Returns an array of objects containing queries submitted, grouped by the weeks day (monday, tuesday... etc) and hour</p>
+<p><b>Type</b>: GET</p>
+<table>
+<tr>
+  <th>Params</th>
+  <th>Optional</th>
+  <th>Format</th>
+</tr>
+<tr>
+  <td>date</td>
+  <td>No</td>
+   <td>yyyy/mm/dd</td>
+</tr>
+</table>
+<p><b>Example: </b> /query/group_queries_by_date_week?date=2022/02/17</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Routes_query.routes.js.html">Routes/query.routes.js</a>, <a href="Routes_query.routes.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-_query_.html">/query/</a></li><li><a href="module-API_source.html">API_source</a></li></ul><h3>Classes</h3><ul><li><a href="IMDB.html">IMDB</a></li><li><a href="MongoUtils.html">MongoUtils</a></li><li><a href="NLP.html">NLP</a></li><li><a href="WhatsappUtils.html">WhatsappUtils</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fetch_info_and_post_to_whatsapp">fetch_info_and_post_to_whatsapp</a></li><li><a href="global.html#ping">ping</a></li><li><a href="global.html#restructure_query">restructure_query</a></li><li><a href="global.html#validate_dependencies">validate_dependencies</a></li><li><a href="global.html#verify_token">verify_token</a></li><li><a href="global.html#yet_another_restructuring">yet_another_restructuring</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Feb 22 2023 13:23:31 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

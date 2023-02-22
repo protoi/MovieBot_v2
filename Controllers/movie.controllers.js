@@ -1,5 +1,5 @@
 const axios = require("axios");
-import { Request, Response } from "express";
+const { Request, Response } = require ("express");
 const { logger } = require("../logger");
 //our classes
 const nlp_model = require("../NLP/retain_model");

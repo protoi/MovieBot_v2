@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: NLP</title>
+    <title>JSDoc: Class: MongoUtils</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: NLP</h1>
+    <h1 class="page-title">Class: MongoUtils</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>NLP<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>MongoUtils<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Creates a NLP class</p></div>
+            <div class="class-description"><p>Utility functions to restructure the queries from just time stamps to a cascade of days (7) and hours (24)</p></div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="NLP"><span class="type-signature"></span>new NLP<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="MongoUtils"><span class="type-signature"></span>new MongoUtils<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NLP_retain_model.js.html">NLP/retain_model.js</a>, <a href="NLP_retain_model.js.html#line9">line 9</a>
+        <a href="MongoUtils.js.html">MongoUtils.js</a>, <a href="MongoUtils.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -149,7 +149,7 @@
     
 
     
-    <h4 class="name" id="extract_characteristics"><span class="type-signature">(async) </span>extract_characteristics<span class="signature">(message)</span><span class="type-signature"> &rarr; {Object.&lt;String, Object.&lt;String, (Object.&lt;string, Array.&lt;(string|number)>>|string|number)>>}</span></h4>
+    <h4 class="name" id="reStructurer"><span class="type-signature"></span>reStructurer<span class="signature">(data)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
@@ -157,7 +157,7 @@
 
 
 <div class="description">
-    <p>extracts entities, intents and probability of intent from a given string</p>
+    <p>Fixes formatting for restructurd query Object</p>
 </div>
 
 
@@ -193,13 +193,13 @@
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>data</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
             
@@ -209,7 +209,7 @@
 
             
 
-            <td class="description last"><p>the message for whom the intents and entities are to be extracted</p></td>
+            <td class="description last"><p>Restructured Query</p></td>
         </tr>
 
     
@@ -250,7 +250,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NLP_retain_model.js.html">NLP/retain_model.js</a>, <a href="NLP_retain_model.js.html#line29">line 29</a>
+        <a href="MongoUtils.js.html">MongoUtils.js</a>, <a href="MongoUtils.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -278,10 +278,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>returns an object containing the entities, intent and the probability of said intent</p>
-</div>
-
 
 
 <dl>
@@ -290,7 +286,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Object.&lt;String, Object.&lt;String, (Object.&lt;string, Array.&lt;(string|number)>>|string|number)>></span>
+<span class="param-type">Array.&lt;Object></span>
 
 
     </dd>
@@ -308,7 +304,7 @@
     
 
     
-    <h4 class="name" id="load_model"><span class="type-signature"></span>load_model<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="restructure_query"><span class="type-signature"></span>restructure_query<span class="signature">(query)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
     
@@ -316,7 +312,7 @@
 
 
 <div class="description">
-    <p>loads &quot;mymodel.nlp&quot; model from the file directory</p>
+    <p>Restructures the raw mongoDB query object to be useable by the front-end</p>
 </div>
 
 
@@ -325,6 +321,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>MongoDB Response object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -360,7 +405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NLP_retain_model.js.html">NLP/retain_model.js</a>, <a href="NLP_retain_model.js.html#line17">line 17</a>
+        <a href="MongoUtils.js.html">MongoUtils.js</a>, <a href="MongoUtils.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -385,6 +430,24 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 

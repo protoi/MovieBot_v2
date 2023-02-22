@@ -1,5 +1,4 @@
-import { Request, Response } from "express";
-
+const {Request, Response} = require("express");
 /**
  * Responds with "Hello World"
  * @param {Request} req HTTP Response Object
